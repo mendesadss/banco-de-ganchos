@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Banco de Ganchos, Global Brand</title>
+<style>
+  :root{
+    --preto:#0B0B0B;
+    --grafite:#141414;
+    --card:#181818;
+    --linha:#262626;
+    --branco:#F5F5F5;
+    --cinza:#8C8C8C;
+    --verde:#008060;
+    --verde-claro:#5FD08A;
+    --verde-escuro:#00553F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--preto);color:var(--branco);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:80px;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+  header{border-bottom:1px solid var(--linha);background:linear-gradient(180deg,#0B0B0B 0%,#101010 100%);padding:44px 0 32px}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--verde-claro);font-weight:700;margin-bottom:14px}
+  h1{font-size:clamp(28px,5vw,44px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  h1 span{color:var(--verde-claro)}
+  .sub{color:var(--cinza);font-size:15px;max-width:680px}
+  .sub b{color:var(--branco)}
+
+  .stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .stat{background:var(--card);border:1px solid var(--linha);border-radius:10px;padding:12px 16px;min-width:120px;flex:1}
+  .stat .n{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .stat .n.verde{color:var(--verde-claro)}
+  .stat .l{font-size:11px;color:var(--cinza);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+
+  .progresso{margin-top:16px}
+  .barra{height:6px;background:var(--linha);border-radius:99px;overflow:hidden}
+  .barra i{display:block;height:100%;width:0;background:var(--verde);transition:width .3s ease}
+  .progresso p{font-size:12px;color:var(--cinza);margin-top:8px}
+  .progresso p b{color:var(--verde-claro)}
+
+  .controles{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--linha);padding:14px 0;margin-bottom:28px}
+  .ctrl-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .busca{flex:1;min-width:170px;background:var(--card);border:1px solid var(--linha);color:var(--branco);border-radius:8px;padding:9px 12px;font-size:13px;font-family:inherit}
+  .busca:focus{outline:none;border-color:var(--verde)}
+  .busca::placeholder{color:#5a5a5a}
+  .chip{background:var(--card);border:1px solid var(--linha);color:var(--cinza);border-radius:99px;padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+  .chip:hover{border-color:#3a3a3a;color:var(--branco)}
+  .chip.on{background:var(--verde);border-color:var(--verde);color:#fff}
+  .chip.ghost.on{background:transparent;border-color:var(--verde-claro);color:var(--verde-claro)}
+
+  /* SEMANA */
+  .semana{margin:44px 0 18px;padding:18px 20px;background:var(--grafite);border:1px solid var(--linha);border-left:3px solid var(--verde);border-radius:10px}
+  .semana .top{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:6px}
+  .semana h2{font-size:19px;font-weight:800;letter-spacing:-.01em}
+  .semana .obj{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--verde-claro);font-weight:700}
+  .semana p{font-size:13px;color:var(--cinza);max-width:640px}
+  .semana .mix{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .mixtag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 8px;border-radius:99px;border:1px solid var(--linha);color:var(--cinza)}
+  .mixtag b{color:var(--branco)}
+
+  .card{display:flex;gap:14px;background:var(--card);border:1px solid var(--linha);border-left:3px solid var(--verde);border-radius:10px;padding:16px 18px;margin-bottom:10px;transition:border-color .15s,opacity .2s}
+  .card.sec{border-left-color:#3d3d3d}
+  .card:hover{border-color:#333;border-left-color:var(--verde-claro)}
+  .card.sec:hover{border-left-color:#6b6b6b}
+  .card.feito{opacity:.36}
+  .card.feito .hook{text-decoration:line-through;text-decoration-color:var(--verde)}
+
+  .chk{position:relative;flex-shrink:0;padding-top:2px}
+  .chk input{appearance:none;width:22px;height:22px;border:2px solid #3a3a3a;border-radius:6px;background:transparent;cursor:pointer;transition:all .15s}
+  .chk input:hover{border-color:var(--verde-claro)}
+  .chk input:checked{background:var(--verde);border-color:var(--verde)}
+  .chk input:checked::after{content:"";position:absolute;left:7px;top:5px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+
+  .body{flex:1;min-width:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+  .num{font-size:11px;font-weight:800;color:#fff;background:var(--verde-escuro);border-radius:5px;padding:2px 7px;letter-spacing:.04em}
+  .card.sec .num{background:#2e2e2e;color:var(--cinza)}
+  .tag{font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;padding:3px 8px;border-radius:99px;border:1px solid var(--linha);color:var(--cinza)}
+  .tag.pilar{color:var(--verde-claro);border-color:rgba(95,208,138,.35)}
+  .tag.func{color:#fff;border-color:#3a3a3a;background:#242424}
+  .tag.s{background:var(--verde);color:#fff;border-color:var(--verde)}
+  .tag.a{color:var(--verde-claro);border-color:rgba(95,208,138,.4)}
+  .tag.b{color:var(--cinza)}
+
+  .hook{font-size:16px;line-height:1.45;font-weight:500;margin-bottom:8px;cursor:pointer}
+  .hook:hover{color:var(--verde-claro)}
+  .rodape{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:#666}
+  .rodape .tema{color:#8C8C8C}
+  .rodape .tec{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#5a5a5a}
+
+  .copiado{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--verde);color:#fff;padding:10px 20px;border-radius:99px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .2s;z-index:50}
+  .copiado.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  .vazio{text-align:center;color:var(--cinza);padding:60px 20px;font-size:14px}
+
+  .nota{background:var(--grafite);border:1px solid var(--linha);border-radius:10px;padding:18px 20px;margin:28px 0;font-size:14px;color:#c4c4c4}
+  .nota b{color:var(--branco)}
+  .nota .t{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-claro);font-weight:700;margin-bottom:8px}
+  .legenda{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12px;color:var(--cinza)}
+  .legenda span b{color:var(--branco)}
+  footer{border-top:1px solid var(--linha);margin-top:50px;padding-top:24px;font-size:12px;color:#5a5a5a}
+  .reset{background:transparent;border:1px solid var(--linha);color:#666;border-radius:8px;padding:7px 13px;font-size:12px;cursor:pointer;font-family:inherit}
+  .reset:hover{border-color:#8a2b2b;color:#c46b6b}
+  @media(max-width:600px){.hook{font-size:15px}.stat{min-width:calc(50% - 5px)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">@mendes.adss · Global Brand</div>
+    <h1>Banco de Ganchos<br><span>8 semanas, 143 posts</span></h1>
+    <p class="sub">Organizado por <b>função dentro da semana</b>, não por ordem de força. Toda semana carrega os quatro degraus ao mesmo tempo (dor, crença, método, saga), porque toda semana chega gente nova pelo Reels. A <b>proporção deriva</b>: começa pesada em alcance e termina pesada em prova e autoridade.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="n" id="s-total">0</div><div class="l">Posts na fila</div></div>
+      <div class="stat"><div class="n verde" id="s-drop">0</div><div class="l">Drop global</div></div>
+      <div class="stat"><div class="n" id="s-sec">0</div><div class="l">Secundários</div></div>
+      <div class="stat"><div class="n" id="s-feitos">0</div><div class="l">Já gravados</div></div>
+    </div>
+
+    <div class="progresso">
+      <div class="barra"><i id="barra"></i></div>
+      <p><b id="p-pct">0%</b> do banco gravado · <span id="p-falta">0</span> ganchos restantes</p>
+    </div>
+  </div>
+</header>
+
+<div class="controles">
+  <div class="wrap ctrl-row">
+    <input class="busca" id="busca" placeholder="Buscar gancho, tema ou palavra...">
+    <button class="chip on" data-f="todos">Todos</button>
+    <button class="chip" data-f="dor">Dor</button>
+    <button class="chip" data-f="crenca">Crença</button>
+    <button class="chip" data-f="metodo">Método</button>
+    <button class="chip" data-f="saga">Saga</button>
+    <button class="chip" data-f="sec">Secundários</button>
+    <button class="chip ghost" id="esconder">Esconder gravados</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="nota">
+    <div class="t">A lógica da ordem</div>
+    O Reels entrega cada vídeo majoritariamente pra <b>quem ainda não te segue</b>. Então a escada de consciência não pode ser cronológica, senão na semana 6 quem te descobre cai num vídeo sobre chargeback e não tem motivo pra te seguir. A escada acontece <b>dentro da semana</b>: todo bloco tem entrada (dor), virada de crença, método e saga. O que muda ao longo dos dois meses é o <b>peso</b> de cada função.
+    <div class="legenda">
+      <span><b>Dor:</b> identificação pura. Traz gente nova, gera comentário.</span>
+      <span><b>Crença:</b> muda a cabeça. Transforma view em follow.</span>
+      <span><b>Método:</b> específico. Perde alcance de propósito, retém quem compra.</span>
+      <span><b>Saga:</b> continuidade. É o que faz voltar, e é o gatilho de confiança nº1.</span>
+    </div>
+  </div>
+
+  <div id="lista"></div>
+
+  <div id="reserva-box" style="margin-top:50px">
+    <div class="semana" style="border-left-color:#3d3d3d">
+      <div class="top"><h2>Banco de reserva</h2><span class="obj">fora da fila</span></div>
+      <p>Ganchos bons que ficaram de fora só pra manter o equilíbrio das semanas. Usa como substituto quando algum da fila não te descer bem na hora de gravar.</p>
+    </div>
+    <div id="reserva"></div>
+  </div>
+
+  <footer>
+    <p>Fonte: Avatar Mestre (comprador da mentoria) + pesquisa de público e banco de linguagem em <code>ADS Mendes/</code>. Método Audience (7 gatilhos, 30 templates, elementos de conteúdo notável) e acervo de copy (Hopkins, Halbert, Georgi).</p>
+    <p style="margin-top:14px"><button class="reset" id="reset">Zerar todos os checkboxes</button></p>
+  </footer>
+</div>
+
+<div class="copiado" id="toast">Gancho copiado</div>
+
+<script>
+/* ================= DADOS ================= */
+/* A ORDEM DOS ARRAYS NÃO PODE MUDAR: os IDs do checklist dependem do índice. */
+
+const DROP = [
+ {h:`Você não falhou no drop. Você comprou, te jogaram num grupo com 400 pessoas, e chamaram aquilo de mentoria.`, t:`O inimigo: te venderam e te largaram`, g:`Reconhecimento · T26 · Opinião forte`, tier:`S`},
+ {h:`O cara sumiu no dia seguinte ao pix cair. E você passou seis meses achando que o burro era você.`, t:`O inimigo: abandono`, g:`Reconhecimento · T23 · Identificação`, tier:`S`},
+ {h:`"Tô travado." Não é falta de capacidade. É falta de direção. Ninguém trava por burrice, trava por não saber qual é o próximo passo.`, t:`Travado, não burro`, g:`Reconhecimento · T27 · Identificação`, tier:`S`},
+ {h:`Esquece o milhão. 10k por mês em dólar já te tira do modo de sobrevivência. É a única meta que eu persigo com quem eu pego na mão.`, t:`A meta realista`, g:`Recompensa · T29 · Opinião forte`, tier:`S`},
+ {h:`Você já vendeu antes. Já teve o print, já sentiu. E hoje está montando loja no Brasil de novo, brigando por margem. Você sabe que o problema não é capacidade.`, t:`Perfil B: já vendeu, quer migrar`, g:`Reconhecimento · T23 · Identificação`, tier:`S`},
+ {h:`Te prometeram acompanhamento até o primeiro resultado. No dia 40, quando você travou de verdade, quem respondeu foi um bot.`, t:`O inimigo: suporte que some`, g:`Reconhecimento · T27 · Identificação`, tier:`S`},
+ {h:`Loja meio montada, produto meio escolhido, anúncio que nunca subiu. Você não está começando. Está congelado. E congelado tem cura.`, t:`Travado`, g:`Reconhecimento · T22 · Identificação`, tier:`S`},
+ {h:`O drop que te venderam é golpe mesmo: COD, contra-entrega, produto vagabundo, cliente que não atende a porta. Aquilo não é negócio, é rifa.`, t:`Drop de verdade vs COD`, g:`Disrupção · T26 · Opinião forte`, tier:`S`},
+ {h:`O curso te mandou rodar tráfego no dia 1. Foi ali que você queimou a grana. E ainda te venderam que a culpa foi da tua falta de constância.`, t:`Rasgar grana`, g:`Reconhecimento · T27 · Opinião forte`, tier:`S`},
+ {h:`Você não está desanimado com o drop. Está desanimado com quem te vendeu o drop. E confundir as duas coisas já custou um ano da sua vida.`, t:`O inimigo`, g:`Reconhecimento · T26 · Emoção quente`, tier:`S`},
+ {h:`Estou montando uma loja global do zero na frente de vocês, com print de tudo. Se der errado, vocês vão ver também. Esse é o combinado.`, t:`A saga (prova ao vivo)`, g:`Autoridade · T06 · Prova`, tier:`S`},
+ {h:`Você não precisa sair do Brasil pra ganhar em dólar. Precisa parar de vender pro Brasil. É diferente, e ninguém te explica isso direito.`, t:`Dólar morando no BR`, g:`Disrupção · T26 · Opinião forte`, tier:`S`},
+ {h:`Você não sente falta do dinheiro daquela primeira venda. Sente falta de como você era naquela semana. Isso dá pra ter de volta, e em dólar.`, t:`Perfil B: nostalgia do resultado`, g:`Reconhecimento · T21 · Emoção quente`, tier:`S`},
+ {h:`Ninguém documenta a parte feia. Por isso você acha que só você trava. Hoje eu vou te mostrar o meu dia ruim.`, t:`A saga`, g:`Disrupção · T28 · Identificação`, tier:`S`},
+ {h:`Seu colega comprou a mentoria e te deixaram de fora. Isso não foi descuido. É o modelo de negócio funcionando exatamente como foi desenhado.`, t:`O inimigo`, g:`Disrupção · T26 · Argumentação`, tier:`S`},
+ {h:`Todo guru te vende o Porsche porque ele precisa que você sonhe. Eu vou te dar uma meta que você acredita, porque eu preciso que você chegue nela.`, t:`A meta realista`, g:`Disrupção · T19 · Opinião forte`, tier:`S`},
+ {h:`Você já sabe minerar produto, já sabe montar loja, já viu 40 vídeos. E continua parado. O teu problema nunca foi informação.`, t:`Travado`, g:`Reconhecimento · T23 · Opinião forte`, tier:`S`},
+ {h:`Medo de torrar dinheiro de novo não é fraqueza. É cicatriz. E cicatriz bem usada te faz gastar melhor que 90% do mercado.`, t:`Medo de rasgar grana`, g:`Reconhecimento · T28 · Emoção quente`, tier:`S`},
+ {h:`Você passou três semanas estudando estrutura de campanha e não gravou um criativo. Isso não é estratégia. É fuga com cara de estudo, e eu fiz exatamente igual.`, t:`Tráfego: fuga com cara de estudo`, g:`Reconhecimento · T23 · Identificação`, tier:`A`},
+ {h:`Mesmo trabalho, mesma loja, mesmo anúncio. Só que numa moeda cinco vezes mais forte. É só isso que separa você de quem já foi.`, t:`Dólar`, g:`Crença · T13 · Brevidade`, tier:`A`},
+ {h:`O Brasil está saturado, lá fora está vazio. Isso não é opinião, é o CPM. Vou colocar os dois lado a lado na tela.`, t:`Mar azul`, g:`Crença irrefutável · T13 · Prova`, tier:`A`},
+ {h:`30 dias sem vender não quer dizer que não funciona. Quer dizer que você testou um produto. Um. Quem vende testa dez e o décimo paga os nove. Você parou no segundo e chamou de conclusão.`, t:`Tempo até a primeira venda`, g:`Reconhecimento · T27 · Identificação`, tier:`A`},
+ {h:`Tem um motivo pro guru vender pra 500 pessoas de uma vez: ele não precisa que você tenha resultado. Precisa que você compre.`, t:`O inimigo`, g:`Disrupção · T07 · Opinião forte`, tier:`A`},
+ {h:`Se você tivesse escolhido o mercado antes do produto, não teria rasgado o dinheiro que rasgou. E ninguém te ensinou essa ordem.`, t:`Mercado antes do produto`, g:`Disrupção · T27 · Algo novo`, tier:`A`},
+ {h:`Você não quer ficar rico. Você quer sair do sufoco e dormir tranquilo. E essas duas coisas custam números completamente diferentes.`, t:`A meta realista`, g:`Reconhecimento · T26 · Identificação`, tier:`A`},
+ {h:`Produto vencedor não existe. Existe oferta vencedora. O mesmo produto que te deu prejuízo está pagando a casa de outro cara agora, e a diferença não está no produto.`, t:`Produto vencedor`, g:`Disrupção · T26 · Opinião forte`, tier:`A`},
+ {h:`Você faturou alto e não sobrou nada. Imposto, parcelamento, chargeback, devolução. Isso não é problema de gestão. É problema de moeda.`, t:`Perfil B: margem no BR`, g:`Disrupção · T26 · Argumentação`, tier:`A`},
+ {h:`Teste simples pra saber se você comprou mentoria ou PDF caro: manda uma mensagem hoje à meia-noite. Se ninguém responder até amanhã, você já sabe.`, t:`O inimigo`, g:`Recompensa · T01 · Valor prático`, tier:`A`},
+ {h:`Se a tua operação depende do cliente atender a campainha pra você receber, você não tem loja. Você tem torcida.`, t:`COD`, g:`Disrupção · T28 · Emoção quente`, tier:`A`},
+ {h:`Você já rasgou grana com anúncio. Então não sobe anúncio ainda. Existe uma etapa antes, e é exatamente a que o curso pulou.`, t:`Validação antes do tráfego`, g:`Reconhecimento · T11 · Valor prático`, tier:`A`},
+ {h:`Você tá negociando R$ 10 de desconto com um cliente que pergunta o frete três vezes. Do outro lado, o americano paga [valor real] pelo mesmo produto e nem pergunta. A diferença não é o produto. É o bolso do outro lado.`, t:`Nacional vs internacional`, g:`Reconhecimento · T13 · Identificação`, tier:`A`},
+ {h:`Cansado de nego que vende e não orienta? Eu também já fui esse cliente. É por isso que eu faço do jeito que faço, e não é bondade, é trauma.`, t:`O inimigo`, g:`Autoridade · T02 · História`, tier:`A`},
+ {h:`Você briga por R$ 90 de ticket com um cliente que pede desconto. Lá fora o mesmo produto sai por [valor real] e ninguém pergunta o frete.`, t:`Ticket BR vs global`, g:`Reconhecimento · T13 · Identificação`, tier:`A`},
+ {h:`Você não precisa aprender a vender. Precisa parar de vender no país errado.`, t:`Perfil B: migrar`, g:`Disrupção · T26 · Brevidade`, tier:`A`},
+ {h:`Existem 3 detalhes que denunciam que a sua loja é dropshipping. O americano vê em 2 segundos e fecha a aba sem dizer nada. Vou mostrar os 3, e você vai reconhecer os 3.`, t:`Loja com cara de marca`, g:`Reconhecimento · T30 · Identificação`, tier:`A`},
+ {h:`Muita ideia na cabeça e nada sai do lugar. Ideia demais dá no mesmo que nenhuma. Vou te dar a única que importa essa semana.`, t:`Travado`, g:`Recompensa · T04 · Valor prático`, tier:`A`},
+ {h:`"Não tenho dinheiro pra começar." Você não precisa de dinheiro pra começar. Precisa de dinheiro pra errar. E ninguém te explica a diferença.`, t:`Objeção de caixa`, g:`Disrupção · T05 · Algo novo`, tier:`A`},
+ {h:`Feijão com arroz bem feito ganha de estratégia complexa mal feita. Você está tentando fazer risoto sem saber cozinhar arroz.`, t:`Simplicidade`, g:`Disrupção · T13 · Brevidade`, tier:`A`},
+ {h:`Teu CPA não está alto. Tua oferta está fraca. O leilão do Meta está te cobrando pelo criativo ruim, e ele nunca vai te avisar disso.`, t:`CPA alto`, g:`Disrupção · T26 · Opinião forte`, tier:`A`},
+ {h:`Não precisa ser milionário. 10k por mês, todo mês, muda mais a tua vida do que um mês de 100k que nunca mais se repete.`, t:`A meta realista`, g:`Crença · T13 · Argumentação`, tier:`A`},
+ {h:`Você odeia dropshipping porque só conheceu a versão ruim dele. Deixa eu te mostrar a versão que ninguém te vendeu, porque nela dá trabalho.`, t:`Drop de verdade`, g:`Reconhecimento · T05 · Opinião forte`, tier:`A`},
+ {h:`O drop no Brasil te obriga a vender barato pra quem não tem dinheiro. O drop global te deixa vender caro pra quem tem. A conta é essa e ela não muda.`, t:`BR vs global`, g:`Crença · T13 · Argumentação`, tier:`A`},
+ {h:`Quem já vendeu e quebrou tem uma vantagem que iniciante nenhum tem: você já sabe exatamente onde dói. Só faltou o mercado certo.`, t:`Perfil B`, g:`Recompensa · T19 · Opinião forte`, tier:`A`},
+ {h:`Sem carrão, sem Dubai, sem foguete. Meu dia é 40 minutos olhando anúncio, 20 minutos de suporte, e o resto é vida. Se você esperava mais do que isso, o problema não é o modelo. É o que te venderam.`, t:`Rotina real`, g:`Disrupção · T28 · Opinião forte`, tier:`A`},
+ {h:`O que destrava você não é mais conteúdo. É alguém olhando a tua loja e dizendo: muda isso aqui e sobe esse anúncio hoje.`, t:`Direção > informação`, g:`Recompensa · T29 · Ponte pra oferta`, tier:`A`},
+ {h:`Mil visitas e nenhuma venda não é problema de tráfego. É a sua página dizendo "não confia em mim" mil vezes seguidas. E ela diz isso em três lugares específicos.`, t:`Conversão baixa`, g:`Disrupção · T26 · Valor prático`, tier:`A`},
+ {h:`Comecei com um cartão pagando a fatura do outro. Não é conselho. É prova de que dá pra começar apertado, e eu vou te contar como não repetir os meus erros.`, t:`Começar apertado`, g:`Autoridade · T08 · História`, tier:`A`},
+ {h:`"Esse produto está saturado." Não está. Saturou o ângulo. A dor continua lá, intacta, e quem entra com ângulo novo pega o mercado já aquecido sem pagar por isso.`, t:`Produto saturado`, g:`Crença · T05 · Argumentação`, tier:`A`},
+ {h:`Escalar no Brasil é aumentar volume e perder margem. Escalar na gringa é aumentar preço. Você já tentou o primeiro e sabe onde ele termina.`, t:`Perfil B: escalar`, g:`Crença · T13 · Argumentação`, tier:`A`},
+ {h:`Não larga o emprego. Sério. Eu montei a operação em 2 horas por noite, depois do expediente, com o salário pagando os testes. Quem larga antes da primeira venda volta pro CLT em três meses, e mais amargo.`, t:`Fazendo CLT`, g:`Disrupção · T11 · Opinião forte`, tier:`A`},
+ {h:`Loja global não é loja de dropshipping. É marca. E o gringo compra de marca, não de página que grita promoção em vermelho.`, t:`Branding`, g:`Crença · T13 · Algo novo`, tier:`A`},
+ {h:`Tem gente de 19 anos vendendo em dólar e gente de 35 esperando o momento certo. "Momento certo" é o nome educado do medo de perder dinheiro de novo. Eu sei, porque eu já perdi.`, t:`Momento certo`, g:`Reconhecimento · T22 · Identificação`, tier:`A`},
+ {h:`Sabe o que 10k por mês em dólar significa na prática? É você parar de olhar o preço antes de olhar o produto. É pouco e é tudo.`, t:`A meta realista`, g:`Reconhecimento · T21 · Identificação`, tier:`A`},
+ {h:`Antes de colocar 1 real em anúncio, eu faço um teste que custa zero e leva 40 minutos. Se você tivesse feito esse teste, não teria perdido os R$ 3 mil no último curso que comprou.`, t:`Validar antes de gastar`, g:`Reconhecimento · T24 · Valor prático`, tier:`A`},
+ {h:`Existem dois negócios com o mesmo nome. Num deles você recebe em real depois que o cliente devolve. No outro você recebe em dólar antes de comprar o produto.`, t:`Drop de verdade vs COD`, g:`Disrupção · T13 · Argumentação`, tier:`A`},
+ {h:`Dropshipping é golpe? Metade do que te vendem sobre dropshipping é. O golpe não é o modelo, é o cara que te vende o curso e nunca teve uma loja no ar. Pede o print da conta dele e vê o que acontece.`, t:`É golpe?`, g:`Disrupção · T07 · Opinião forte`, tier:`A`},
+ {h:`Você não tem caixa pra errar dez vezes. Então a gente erra barato: teste com valor definido, prazo curto e regra de corte antes de subir a campanha.`, t:`Errar barato`, g:`Recompensa · T12 · Valor prático`, tier:`A`},
+ {h:`"Dropshipping morreu." Quem fala isso tentou vender pro Brasil. O que morreu não foi o modelo, foi o mercado que ele escolheu. E existe uma única coisa que mudou de 2020 pra cá.`, t:`Vale a pena em 2026`, g:`Crença · T26 · Opinião forte`, tier:`A`},
+ {h:`Migrar pro global não é começar do zero. É levar tudo que você já sabe pra um lugar onde vale cinco vezes mais.`, t:`Perfil B: migrar`, g:`Recompensa · T28 · Ponte pra oferta`, tier:`A`},
+ {h:`Se você vende por menos de 3 vezes o custo do produto, você não tem negócio. Tem um hobby caro. E quem lucra com o teu hobby é o Meta.`, t:`Precificação`, g:`Disrupção · T27 · Opinião forte`, tier:`A`},
+ {h:`10 dólares por dia não testa nada. Você não está comprando dado, está comprando opinião. E opinião barata é o que faz o iniciante desistir achando que não funciona.`, t:`Quanto investir por dia`, g:`Disrupção · T27 · Algo novo`, tier:`B`},
+ {h:`Mar azul é palavra bonita pra uma coisa simples: menos gente vendendo pra quem tem mais dinheiro pra comprar. Só isso.`, t:`Mar azul`, g:`Crença · T28 · Baixo carregamento`, tier:`B`},
+ {h:`Os 3 primeiros segundos decidem quase todo o resultado, e você está colocando logo animado ali. O americano rola o feed em pouco mais de um segundo. Você tem menos tempo do que imagina e eu vou te dizer o que entra no lugar.`, t:`Criativo que converte`, g:`Recompensa · T11 · Valor prático`, tier:`B`},
+ {h:`Cada real que o dólar sobe, o teu concorrente daqui chora e você comemora. Esse é o único lado da moeda em que vale a pena estar.`, t:`Dólar`, g:`Crença · T19 · Emoção quente`, tier:`B`},
+ {h:`Ninguém compra da sua loja no primeiro clique. Existe uma página no meio do caminho que faz o trabalho sujo, e é ela que separa quem fatura de quem só paga anúncio.`, t:`Advertorial`, g:`Mistério · T04 · Named oddity`, tier:`B`},
+ {h:`Loja geral vende. Loja de nicho escala. Loja de um produto vira marca. Você escolheu a primeira porque parecia mais segura, e foi a escolha mais cara que você fez.`, t:`Nicho vs loja geral`, g:`Reconhecimento · T13 · Identificação`, tier:`B`},
+ {h:`Dia [X] da loja. Gastei [valor], vendi [valor], e o erro de ontem me custou [valor]. Vou te mostrar exatamente onde eu errei.`, t:`A saga`, g:`Prova · T25 · Prova`, tier:`B`},
+ {h:`Perdi 3 contas de anúncio. Na quarta eu entendi que o Meta não pune o que você vende. Pune outra coisa. Se você não souber qual, vai perder a sua também.`, t:`Conta bloqueada`, g:`Autoridade · T04 · Algo novo`, tier:`B`},
+ {h:`Escalar não é aumentar orçamento. É aguentar o caixa. Quase ninguém quebra vendendo pouco. Quebra vendendo muito, sem saber quanto dinheiro fica preso no meio do caminho.`, t:`Escalar`, g:`Disrupção · T26 · Argumentação`, tier:`B`},
+ {h:`O americano que me comprou ontem não sabe meu nome, minha idade, nem que eu sou brasileiro. Comprou mesmo assim. Porque ele não compra de você. Ele compra de uma coisa só, e não é a sua cara.`, t:`Sem aparecer`, g:`Fato curioso · T28 · Prova`, tier:`B`},
+ {h:`"Mas como o dinheiro chega até mim?" É aqui que a maioria trava e desiste. Não precisa de banco americano, não precisa de sócio gringo, não precisa de LLC. Precisa de três peças e eu vou desenhar as três.`, t:`Receber em dólar`, g:`Mistério · T14 · Valor prático`, tier:`B`},
+ {h:`Eu perdi [valor real] aprendendo três coisas. Você aprende de graça nos próximos 40 segundos, e é por isso que esse vídeo existe.`, t:`Erros que quebram a loja`, g:`Autoridade · T08 · História`, tier:`B`},
+ {h:`O melhor momento pra começar foi ontem. O segundo melhor é antes do próximo Q4, e ele está bem mais perto do que você imagina.`, t:`Momento certo`, g:`Recompensa · T24 · Urgência honesta`, tier:`B`},
+ {h:`A regra que me impediu de queimar dinheiro: gastou 3 vezes o preço do produto sem uma venda, mata. Sem chorar, sem "mais um dia". O "mais um dia" já te custou caro antes.`, t:`Matar ou escalar`, g:`Recompensa · T01 · Valor prático`, tier:`B`},
+ {h:`Produto de 20 dólares é o jeito mais rápido de trabalhar 12 horas por dia e fechar o mês no zero. Volume nunca salvou margem ruim. Nunca.`, t:`Ticket baixo`, g:`Crença · T10 · Never`, tier:`B`},
+ {h:`Parei de comprar no AliExpress e o prazo caiu de 20 dias pra 8. Não foi escala, não foi sorte. Foi uma pessoa. Chama agente de fornecimento e ninguém no começo te conta que ele existe.`, t:`Fornecedor e agente`, g:`Mistério · T06 · Named oddity`, tier:`B`},
+ {h:`Mesmo produto: R$ 97 aqui, [valor] lá. Faz a conta em real e me responde uma pergunta: o problema é você ou é o país pra quem você está tentando vender?`, t:`Poder de compra`, g:`Crença irrefutável · T13 · Argumentação`, tier:`B`},
+ {h:`Todo mundo usa Shopify e usa igual. O tema que vem de fábrica entrega uma loja que grita "não confie em mim". Não é a plataforma. É o que você deixou do jeito que veio.`, t:`Shopify e tema padrão`, g:`Disrupção · T27 · Opinião forte`, tier:`B`},
+ {h:`Não é Shopify Payments. Não é PayPal. E é exatamente por não saber essa resposta que o brasileiro acha que vender pro exterior é impossível pra ele.`, t:`Gateway de pagamento`, g:`Mistério · T29 · Named oddity`, tier:`B`},
+ {h:`Você não precisa de R$ 10 mil. Precisa saber a hora exata de colocar o primeiro real, e não é no dia 1. É depois de um teste que custa zero e que ninguém te ensina porque não dá pra vender curso disso.`, t:`Quanto preciso pra começar`, g:`Mistério · T29 · Valor prático`, tier:`B`},
+ {h:`Eu pago 15 dólares pra um americano gravar o vídeo do meu produto. Sotaque nativo, casa americana, cara comum. Ele grava, eu vendo, e o cliente confia porque vê alguém igual a ele.`, t:`UGC sem aparecer`, g:`Fato curioso · T21 · Prova`, tier:`B`},
+ {h:`"Chega em 25 dias." Essa frase mata a loja antes do primeiro reembolso. Existe um tipo de fornecedor que entrega em 7 e ele não está no AliExpress.`, t:`Frete e prazo`, g:`Mistério · T04 · Named oddity`, tier:`B`},
+ {h:`Com R$ 500 você não escala nada. Mas com R$ 500 e 4 dias você descobre se a oferta presta. E essa informação vale mais do que os R$ 500.`, t:`Começar com pouco`, g:`Recompensa · T12 · Valor prático`, tier:`B`},
+ {h:`Uma fatia grande do meu faturamento vem de gente que já tinha desistido de comprar. Elas não voltaram sozinhas. Foram trazidas de volta por três mensagens que você não tem configuradas.`, t:`Carrinho abandonado`, g:`Fato curioso · T21 · Prova`, tier:`B`},
+ {h:`Eu não divulgo muito e não pego todo mundo. Não é escassez de marketing: é que eu respondo todo dia, e ninguém responde todo dia pra 400 pessoas.`, t:`Escassez honesta`, g:`Autoridade · T18 · Escassez honesta`, tier:`B`},
+ {h:`Esse produto custa 4 dólares no fornecedor e está faturando alto neste momento. Não anota o produto. Anota a DOR que ele resolve, porque é ela que vende, e ela não satura.`, t:`Produto vendendo agora`, g:`Recompensa · T01 · Valor prático`, tier:`B`},
+ {h:`Existe um site que mostra há quanto tempo o anúncio do teu concorrente está no ar. Anúncio velho é anúncio lucrativo, porque ninguém paga pra perder. É a única espionagem que importa e é de graça.`, t:`Espionar concorrente`, g:`Fato curioso · T16 · Algo novo`, tier:`B`},
+ {h:`Abrir empresa nos Estados Unidos antes da primeira venda é a forma mais cara de procrastinar. Existe um número de faturamento em que a LLC passa a valer, e eu vou te dar o número.`, t:`LLC`, g:`Disrupção · T11 · Valor prático`, tier:`B`},
+ {h:`TikTok te dá venda barata e cliente que some. Meta te dá venda cara e cliente que volta. Escolher errado no começo é o que faz a loja parecer que "não funciona".`, t:`TikTok vs Meta`, g:`Crença · T13 · Argumentação`, tier:`B`},
+ {h:`Eu não falo inglês fluente e minha loja fatura em inglês todo dia. Quem escreve não sou eu e não custa nada. Isso não é atalho, é ferramenta, e a diferença entre as duas coisas é o que separa quem lucra de quem quebra.`, t:`Sem falar inglês`, g:`Crença · T28 · Prova`, tier:`B`},
+ {h:`Fiz 12 criativos em 20 minutos com IA. O que fez um deles funcionar não foi a IA, foi o que eu escrevi no prompt. E eu vou te entregar o prompt.`, t:`IA pra criativo`, g:`Recompensa · T08 · Valor prático`, tier:`B`},
+ {h:`O cliente pediu reembolso, você devolveu por gentileza, e o banco cobrou de novo do teu bolso. Isso tem nome, tem taxa e tem como evitar antes de acontecer, mas só se você souber antes.`, t:`Chargeback`, g:`Reconhecimento · T23 · Never`, tier:`B`},
+ {h:`Setembro é pra construir. Novembro é pra imprimir. Quem começa em novembro paga o CPM mais caro do ano pra aprender o que devia ter aprendido em setembro, e culpa o modelo.`, t:`Q4 e sazonalidade`, g:`Recompensa · T20 · Valor prático`, tier:`B`},
+ {h:`Você pode ter a melhor oferta do mundo e perder a conta em 24 horas por causa de uma palavra na sua página. O Meta não publica essa lista. Eu aprendi ela do jeito caro.`, t:`Produtos que derrubam conta`, g:`Autoridade · T15 · Never`, tier:`B`},
+ {h:`Cada app instalado come um pedaço do teu lucro todo mês. Eu rodo a operação inteira com 3. Os outros 12 que você instalou cobram pra resolver um problema que você ainda não tem.`, t:`Apps`, g:`Crença · T10 · Valor prático`, tier:`B`},
+ {h:`Você não precisa de CNPJ pra vender. Precisa de CNPJ pra não perder o que vendeu. Existe uma linha exata onde isso vira urgente, e quem cruza ela sem estrutura devolve o lucro do ano inteiro.`, t:`CNPJ`, g:`Recompensa · T24 · Never`, tier:`B`},
+ {h:`O cliente americano não sabe que sou brasileiro e não faria diferença se soubesse. Ele não compra de um país. Ele compra de uma página que responde a dúvida dele antes de ele pensar nela.`, t:`Vender pros EUA sendo BR`, g:`Fato curioso · T21 · Algo novo`, tier:`B`},
+ {h:`Mudou uma regra na alfândega dos Estados Unidos e a margem de muita loja evaporou sem o dono perceber. Se você vende pra lá, para o que está fazendo e confere isso hoje.`, t:`Alfândega`, g:`Recompensa negativa · T15 · Notícia`, tier:`B`},
+ {h:`Todo mundo corre pros Estados Unidos e paga caro pela mesma atenção. Tem país europeu com CPM muito mais barato e quase ninguém anunciando. Meu critério pra escolher mercado vem antes de escolher produto, e é o inverso do que te ensinaram.`, t:`Além dos EUA`, g:`Disrupção · T19 · Algo novo`, tier:`B`},
+ {h:`Faturou em dólar e achou que o Leão não enxerga? Enxerga. E no dia em que ele bater você não vai querer estar com esse dinheiro na conta pessoal. O jeito certo é mais barato do que o susto.`, t:`Imposto`, g:`Crença · T09 · Never`, tier:`B`}
+];
+
+const SEC = [
+ {h:`Você domina a habilidade mais cara do mercado, fazer anúncio vender. E está alugando ela por R$ 1.500 por mês pra um cliente que atrasa o pagamento.`, p:`Gestor de tráfego`, g:`Reconhecimento · T27 · Opinião forte`, tier:`S`},
+ {h:`Você não é vendedor da Shopee. Você é o departamento de marketing dela, sem salário, sem crachá e sem participação.`, p:`Afiliado`, g:`Disrupção · T28 · Emoção quente`, tier:`S`},
+ {h:`Você não tem medo de tentar. Você tem medo de tentar e todo mundo ver que não deu certo. Ninguém fala isso em voz alta, e é o que trava nove em cada dez.`, p:`Fora do mercado`, g:`Reconhecimento · T22 · Identificação`, tier:`S`},
+ {h:`Sua loja fatura R$ 100 mil e você tira R$ 8 mil. Isso não é problema de gestão. É problema de moeda, e nenhum consultor vai te falar isso.`, p:`Produto próprio`, g:`Reconhecimento · T26 · Identificação`, tier:`S`},
+ {h:`Um negócio que fatura 10k por mês te paga o mesmo que R$ 1 milhão aplicado. Faz a conta com calma e depois me diz de novo onde está o risco.`, p:`Investidor`, g:`Crença irrefutável · T13 · Argumentação`, tier:`S`},
+ {h:`Teu cliente fatura 10 e te paga 1. E ainda te cobra relatório no domingo. Me diz quem é o funcionário nessa história.`, p:`Gestor de tráfego`, g:`Disrupção · T13 · Emoção quente`, tier:`S`},
+ {h:`Afiliado constrói audiência e aluga ela. No dia em que a plataforma cortar a comissão, você descobre que o negócio nunca foi teu.`, p:`Afiliado`, g:`Crença · T27 · Emoção quente`, tier:`S`},
+ {h:`Se você já perdeu R$ 3 mil num curso, você não é burro. Você é caro. Já pagou a aula mais dolorida do mercado, agora só falta usar o que ela ensinou.`, p:`Fora do mercado`, g:`Reconhecimento · T28 · Identificação`, tier:`S`},
+ {h:`Você tem produto próprio e margem apertada. O preço não está errado. A moeda está.`, p:`Produto próprio`, g:`Disrupção · T26 · Brevidade`, tier:`S`},
+ {h:`Você estuda ativo, dividendo e renda passiva. E nunca construiu o único ativo que você controla de verdade: um negócio.`, p:`Investidor`, g:`Disrupção · T26 · Opinião forte`, tier:`A`},
+ {h:`Você sabe fazer estranho comprar. É a coisa mais rara que existe. E você usa isso pra enriquecer os outros e chama de humildade.`, p:`Gestor de tráfego`, g:`Disrupção · T22 · Opinião forte`, tier:`A`},
+ {h:`Você grava, edita, posta, viraliza e vende. E o cadastro do cliente vai pra empresa de outra pessoa. Você fez a parte difícil e ficou com a parte pequena.`, p:`Afiliado`, g:`Disrupção · T27 · Identificação`, tier:`A`},
+ {h:`"Isso não é pra mim." Repete essa frase por mais dois anos e ela vira profecia. O custo de ficar exatamente onde você está não aparece em planilha nenhuma, e é o mais caro de todos.`, p:`Fora do mercado`, g:`Disrupção · T23 · Opinião forte`, tier:`A`},
+ {h:`Você fatura bem e não sobra nada. Imposto, maquininha, parcelamento, devolução. Vender mais não resolve isso. Vender pra outro lugar resolve.`, p:`Produto próprio`, g:`Reconhecimento · T27 · Argumentação`, tier:`A`},
+ {h:`Investidor entende de risco melhor que qualquer um. Então me responde: por que 100% do teu capital depende de decisão que outra empresa toma sem te consultar?`, p:`Investidor`, g:`Crença · T22 · Argumentação`, tier:`A`},
+ {h:`Você otimiza a campanha do dentista. O dentista compra a Hilux. E você renova o contrato no mês seguinte, pelo mesmo valor.`, p:`Gestor de tráfego`, g:`Reconhecimento · T19 · Identificação`, tier:`A`},
+ {h:`Se a plataforma te banir amanhã, quanto sobra? Se a resposta for zero, você não tem negócio. Tem uma conta em nome de outra empresa.`, p:`Afiliado`, g:`Crença · T22 · Argumentação`, tier:`A`},
+ {h:`O que trava você não é falta de método. É não querer virar o amigo que "vive tentando negócio". E ele é o único do grupo que vai sair.`, p:`Fora do mercado`, g:`Disrupção · T22 · Moeda social`, tier:`A`},
+ {h:`Você não precisa trocar de produto. Precisa trocar de cliente. É o movimento mais barato que existe e quase ninguém faz.`, p:`Produto próprio`, g:`Disrupção · T01 · Opinião forte`, tier:`A`},
+ {h:`Diversificar não é ter cinco ações. É ter uma fonte de renda que não depende da bolsa, do CDI e do teu chefe. Você tem uma?`, p:`Investidor`, g:`Disrupção · T26 · Algo novo`, tier:`A`},
+ {h:`No dia em que teu maior cliente sair, quanto cai o teu faturamento? Se passar de 40%, você não tem um negócio. Tem um emprego com CNPJ e sem férias.`, p:`Gestor de tráfego`, g:`Crença · T22 · Argumentação`, tier:`A`},
+ {h:`O algoritmo mudou e a tua renda caiu pela metade. Isso não foi azar. É o preço de construir em terreno alugado.`, p:`Afiliado`, g:`Reconhecimento · T27 · Identificação`, tier:`A`},
+ {h:`Contando o deslocamento, você vende 13 horas do teu dia por R$ 3.500. Isso não é um emprego, é um preço. E quem aceitou o preço foi você.`, p:`Fora do mercado`, g:`Crença · T13 · Identificação`, tier:`A`},
+ {h:`Teu cliente pede desconto, parcela em 12 vezes e ainda quer frete grátis. O americano paga à vista e não pergunta o frete. Mesmo produto, outro bolso.`, p:`Produto próprio`, g:`Crença · T13 · Ponte pro drop`, tier:`A`},
+ {h:`Você aprendeu a fazer o dinheiro trabalhar. Falta aprender a fazer o dinheiro nascer. São duas habilidades diferentes e só uma delas te tira do emprego.`, p:`Investidor`, g:`Disrupção · T13 · Brevidade`, tier:`A`},
+ {h:`Você já pensou "se eu rodo pro cliente, por que não rodo pra mim?". Pensou, e travou na hora de escolher o produto. O produto é a parte fácil, e eu vou te provar isso.`, p:`Gestor de tráfego`, g:`Mistério · T04 · Ponte pro drop`, tier:`A`},
+ {h:`Você entrega o cliente pra Shopee e recebe uma migalha de comissão. O cliente é dela pra sempre. Você fica sem lista, sem loja e sem cliente.`, p:`Afiliado`, g:`Disrupção · T23 · Argumentação`, tier:`A`},
+ {h:`Você não quer ser rico. Você quer parar de somar o carrinho no mercado antes de chegar no caixa. E isso está bem mais perto do que te venderam.`, p:`Fora do mercado`, g:`Reconhecimento · T14 · Identificação`, tier:`A`},
+ {h:`Você acha que vender pro exterior é complicado. Complicado é sustentar uma loja com 12% de margem e cliente que abre chargeback.`, p:`Produto próprio`, g:`Disrupção · T05 · Argumentação`, tier:`A`},
+ {h:`Você aporta R$ 2 mil por mês e espera 20 anos. Ou usa os mesmos R$ 2 mil pra construir um ativo que te paga em dólar. Um dos dois financia o outro, e não é o que você pensa.`, p:`Investidor`, g:`Disrupção · T13 · Algo novo`, tier:`A`},
+ {h:`Você não precisa de mais um cliente. Precisa de um produto teu. No serviço você troca hora por dinheiro igual CLT, só que sem carteira e sem décimo terceiro.`, p:`Gestor de tráfego`, g:`Disrupção · T26 · Opinião forte`, tier:`B`},
+ {h:`Você domina a parte mais difícil do jogo, que é fazer alguém querer comprar. O que te falta é a parte fácil: ser o dono do que ele compra.`, p:`Afiliado`, g:`Recompensa · T26 · Ponte pro drop`, tier:`B`},
+ {h:`Empreender é arriscado, dizem. Depender de um chefe que te demite por e-mail também é. Só que esse risco nunca te pediu permissão.`, p:`Fora do mercado`, g:`Crença · T05 · Argumentação`, tier:`B`},
+ {h:`Teu concorrente baixou o preço de novo. Você vai baixar também? Existe um mercado onde essa conversa simplesmente não acontece.`, p:`Produto próprio`, g:`Reconhecimento · T14 · Ponte pro drop`, tier:`B`},
+ {h:`Renda passiva não existe no começo. Todo ativo foi trabalho antes de virar renda. Inclusive o que você compra pronto na bolsa: alguém trabalhou pra construir.`, p:`Investidor`, g:`Crença · T05 · Algo novo`, tier:`B`},
+ {h:`Você tem a habilidade e não tem o ativo. É exatamente por isso que você trabalha mais que teu cliente e ganha menos que ele.`, p:`Gestor de tráfego`, g:`Reconhecimento · T27 · Brevidade`, tier:`B`},
+ {h:`Você já viu sua comissão ser cortada de um dia pro outro. Foi por e-mail. Sem reunião, sem aviso, sem direito a resposta. É assim que negócio dos outros funciona.`, p:`Afiliado`, g:`Reconhecimento · T23 · Identificação`, tier:`B`},
+ {h:`Você já pesquisou "como ganhar dinheiro na internet" na aba anônima e fechou com vergonha. Eu também já fiz isso. Vamos falar do que tem do outro lado dessa busca.`, p:`Fora do mercado`, g:`Reconhecimento · T22 · Identificação`, tier:`B`},
+ {h:`Quem vende no Brasil trabalha pra pagar imposto. Quem vende em dólar trabalha pra construir caixa. Mesma jornada, vida diferente.`, p:`Produto próprio`, g:`Crença · T13 · Emoção quente`, tier:`B`},
+ {h:`Teu dinheiro rende 12% ao ano parado e você chama isso de patrimônio. Um negócio é a única classe de ativo onde a variável principal é você. E é justamente isso que te assusta.`, p:`Investidor`, g:`Disrupção · T26 · Opinião forte`, tier:`B`},
+ {h:`Todo gestor de tráfego bom, uma hora, vira dono. Os que não viram passam a vida vendendo o próprio tempo com desconto.`, p:`Gestor de tráfego`, g:`Crença · T19 · Emoção quente`, tier:`B`},
+ {h:`Você vende um produto de R$ 30 pra ganhar R$ 2. Do outro lado do mundo, o mesmo vídeo vende um produto de dólar com margem de dono.`, p:`Afiliado`, g:`Disrupção · T13 · Ponte pro drop`, tier:`B`},
+ {h:`Você tem 19 anos e já se sente atrasado. Atrasado é chegar aos 30 com o mesmo salário e a mesma desculpa que você tem hoje.`, p:`Fora do mercado`, g:`Reconhecimento · T09 · Emoção quente`, tier:`B`},
+ {h:`Gestor de tráfego não vive de tráfego. Vive de cliente. E é por isso que o teu maior problema nunca vai ser o CPA.`, p:`Gestor de tráfego`, g:`Disrupção · T26 · Algo novo`, tier:`B`},
+ {h:`Rodar tráfego pro teu próprio produto tem uma diferença que ninguém te conta: o resultado não precisa da aprovação de ninguém. Nem do cliente, nem do sócio dele.`, p:`Gestor de tráfego`, g:`Recompensa · T21 · Algo novo`, tier:`B`},
+ {h:`Teu cliente te paga em real. Tua habilidade vale em dólar. E o Meta cobra o mesmo dos dois.`, p:`Gestor de tráfego`, g:`Crença · T13 · Brevidade`, tier:`B`},
+ {h:`Comissão em real, ou margem de dono em dólar. Mesmo criativo, mesmo esforço, mesmo público frio. A única diferença é de quem é a oferta.`, p:`Afiliado`, g:`Crença · T13 · Ponte pro drop`, tier:`B`},
+ {h:`O jogo do afiliado é volume. O jogo do dono é margem. Um dos dois te obriga a trabalhar pra sempre, e você já sabe qual.`, p:`Afiliado`, g:`Crença · T13 · Brevidade`, tier:`B`},
+ {h:`Todo afiliado grande, uma hora, cria o próprio produto. Nenhum deles voltou atrás. Pensa no porquê.`, p:`Afiliado`, g:`Crença · T04 · Argumentação`, tier:`B`},
+ {h:`Você não precisa de dinheiro. Você precisa começar a ganhar dinheiro. São duas frases diferentes e é aí que a maioria trava a vida inteira.`, p:`Fora do mercado`, g:`Reconhecimento · T26 · Brevidade`, tier:`B`},
+ {h:`Toda vez que aparece um anúncio de renda extra, você pensa: golpe. E na maioria das vezes você está certo. Vou te ensinar a separar os dois em 30 segundos, de graça.`, p:`Fora do mercado`, g:`Crença · T05 · Valor prático`, tier:`B`},
+ {h:`"Não sei o que fazer da minha vida." Ninguém descobre pensando. Descobre depois da primeira venda, porque ela muda a pergunta que você faz.`, p:`Fora do mercado`, g:`Disrupção · T14 · Algo novo`, tier:`B`},
+ {h:`Enquanto você espera segurança, a inflação come teu salário todo mês. Ninguém chama isso de risco, mas é o único risco que já está acontecendo com você.`, p:`Fora do mercado`, g:`Crença irrefutável · T23 · Argumentação`, tier:`B`},
+ {h:`Não larga o emprego. O teu CLT é o teu investidor e ele nem sabe disso. Usa o dinheiro dele pra construir a tua saída.`, p:`Fora do mercado`, g:`Disrupção · T11 · Opinião forte`, tier:`B`},
+ {h:`Não precisa de talento pra vender na internet. Precisa de um produto que resolve dor e de alguém com dinheiro pra pagar. As duas coisas já existem, e nenhuma delas está no Brasil.`, p:`Fora do mercado`, g:`Crença · T29 · Ponte pro drop`, tier:`B`},
+ {h:`Aqui você briga por preço. Lá fora você briga por atenção. Só uma dessas duas brigas tem margem no final do mês.`, p:`Produto próprio`, g:`Crença · T13 · Opinião forte`, tier:`B`},
+ {h:`Você já tem fornecedor, operação e criativo. Falta uma coisa só, e ela não custa dinheiro: um mercado que tenha dinheiro.`, p:`Produto próprio`, g:`Recompensa · T29 · Ponte pro drop`, tier:`B`},
+ {h:`Escalar no Brasil é aumentar volume. Escalar lá fora é aumentar preço. Sente a diferença de vida que isso dá.`, p:`Produto próprio`, g:`Disrupção · T13 · Brevidade`, tier:`B`}
+];
+
+/* ========== CLASSIFICAÇÃO POR FUNÇÃO (por índice, não mexer) ========== */
+const F_DROP = {
+  dor:    [0,1,2,4,5,6,8,9,12,14,16,17,18,24,35,42,51],
+  saga:   [10,13,31,43,44,46,66,71,84],
+  crenca: [3,7,11,15,19,20,22,23,25,26,28,30,32,33,36,37,39,40,41,48,49,50,52,54,55,57,58,61,63,69,72,76,96]
+};
+const F_SEC = { dor: [0,2,3,5,7,10,11,12,13,15,17,21,22,27,35,36,37,42] };
+
+const CAP_SEC = 43;                       // secundários que entram na fila (30%)
+const RES_IDX = [];                       // o resto vira reserva
+for (let i = CAP_SEC; i < SEC.length; i++) RES_IDX.push(i);
+
+function funcDrop(i){
+  if (F_DROP.dor.includes(i)) return 'dor';
+  if (F_DROP.saga.includes(i)) return 'saga';
+  if (F_DROP.crenca.includes(i)) return 'crenca';
+  return 'metodo';
+}
+function funcSec(i){ return F_SEC.dor.includes(i) ? 'dor' : 'crenca'; }
+
+/* ========== PLANO DAS 8 SEMANAS (a deriva) ========== */
+const SEMANAS = [
+ {n:1, obj:'Ser reconhecido',      d:'Peso máximo em identificação. O objetivo aqui não é ensinar, é fazer o cara pensar "esse aí viu o que aconteceu comigo". É o que gera o follow.', mix:{dor:8,crenca:6,metodo:3,saga:1}},
+ {n:2, obj:'Ser reconhecido',      d:'Ainda pesada em dor, mas a crença começa a subir. Você já foi reconhecido, agora começa a mostrar que enxerga o jogo diferente.', mix:{dor:7,crenca:7,metodo:3,saga:1}},
+ {n:3, obj:'Virar a crença',       d:'A dor cede espaço pra crença. Aqui ele para de achar que o problema é ele e começa a achar que o problema é o mercado onde ele estava vendendo.', mix:{dor:6,crenca:8,metodo:3,saga:1}},
+ {n:4, obj:'Virar a crença',       d:'Ponto de virada do calendário. Crença no topo, método subindo. Quem chegou na semana 1 já está pronto pra receber conteúdo específico.', mix:{dor:5,crenca:8,metodo:4,saga:1}},
+ {n:5, obj:'Provar o método',      d:'O método assume o comando. O alcance cai um pouco de propósito: você troca curioso por comprador. Especificidade é o que constrói autoridade.', mix:{dor:4,crenca:8,metodo:5,saga:1}},
+ {n:6, obj:'Provar o método',      d:'Semana mais técnica até aqui. Quem ficou é quem interessa. A dor continua presente em dose pequena só pra manter a porta de entrada aberta.', mix:{dor:3,crenca:8,metodo:6,saga:1}},
+ {n:7, obj:'Autoridade',           d:'Prova pesada e saga em dobro. O seguidor antigo já viu você errar e acertar em público. É aqui que a confiança vira intenção de compra.', mix:{dor:1,crenca:7,metodo:8,saga:2}},
+ {n:8, obj:'Preparar a venda',     d:'Fechamento do arco. Método, direção e escassez honesta. Você não pede a venda: mostra que o que falta pra ele não é mais conteúdo, é acompanhamento.', mix:{dor:1,crenca:6,metodo:9,saga:1}}
+];
+
+/* ========== MONTAGEM DA FILA ========== */
+/* Pools por função, já em ordem de força (a ordem dos arrays é o ranking). */
+const pools = {dor:{drop:[],sec:[]}, crenca:{drop:[],sec:[]}, metodo:{drop:[],sec:[]}, saga:{drop:[],sec:[]}};
+DROP.forEach((x,i) => pools[funcDrop(i)].drop.push({...x, pilar:'drop', id:'d'+i, func:funcDrop(i)}));
+SEC.forEach((x,i) => { if (i < CAP_SEC) pools[funcSec(i)].sec.push({...x, pilar:'sec', id:'s'+i, func:funcSec(i)}); });
+
+/* Sequência de pilar por função: espalha os secundários por igual ao longo da função,
+   o que faz eles caírem distribuídos entre as semanas em vez de amontoados. */
+const pilarSeq = {};
+Object.keys(pools).forEach(f => {
+  const D = pools[f].drop.length, S = pools[f].sec.length, T = D + S;
+  const seq = [];
+  for (let k = 0; k < T; k++){
+    const usaSec = Math.floor((k+1) * S / T) > Math.floor(k * S / T);
+    seq.push(usaSec ? 'sec' : 'drop');
+  }
+  pilarSeq[f] = seq;
+});
+const cursor = {dor:0, crenca:0, metodo:0, saga:0};
+function puxar(f){
+  const seq = pilarSeq[f];
+  let k = cursor[f];
+  while (k < seq.length){
+    const alvo = seq[k];
+    const outro = alvo === 'sec' ? 'drop' : 'sec';
+    cursor[f] = k + 1;
+    if (pools[f][alvo].length) return pools[f][alvo].shift();
+    if (pools[f][outro].length) return pools[f][outro].shift();
+    k++;
+  }
+  return pools[f].drop.shift() || pools[f].sec.shift() || null;
+}
+
+/* Espalha as funções dentro da semana pra não postar 8 vídeos de dor seguidos. */
+function ordemDaSemana(mix){
+  const slots = [];
+  Object.keys(mix).forEach(f => {
+    const q = mix[f];
+    for (let i = 0; i < q; i++) slots.push({f, pos:(i + 0.5) / q});
+  });
+  const peso = {dor:0, crenca:1, metodo:2, saga:3};
+  slots.sort((a,b) => a.pos - b.pos || peso[a.f] - peso[b.f]);
+  return slots.map(s => s.f);
+}
+
+const fila = [];
+SEMANAS.forEach(sem => {
+  const ordem = ordemDaSemana(sem.mix);
+  sem.posts = [];
+  ordem.forEach(f => {
+    const item = puxar(f);
+    if (item){ item.semana = sem.n; fila.push(item); sem.posts.push(item); }
+  });
+});
+const RESERVA = RES_IDX.map((i,k) => ({...SEC[i], pilar:'sec', id:'r'+k, func:funcSec(i)}));
+
+/* ========== ESTADO ========== */
+const KEY = 'gb_ganchos_gravados_v1';
+let feitos = {};
+try { feitos = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){ feitos = {}; }
+const salvar = () => { try { localStorage.setItem(KEY, JSON.stringify(feitos)); } catch(e){} };
+
+/* ========== RENDER ========== */
+const lista = document.getElementById('lista');
+const reservaBox = document.getElementById('reserva');
+const NOME_FUNC = {dor:'Dor', crenca:'Crença', metodo:'Método', saga:'Saga'};
+let filtro = 'todos', busca = '', esconder = false;
+
+function card(item, numero){
+  const marcado = !!feitos[item.id];
+  const sec = item.pilar === 'sec';
+  const el = document.createElement('div');
+  el.className = 'card' + (sec ? ' sec' : '') + (marcado ? ' feito' : '');
+  el.innerHTML = `
+    <label class="chk"><input type="checkbox" ${marcado?'checked':''}></label>
+    <div class="body">
+      <div class="meta">
+        <span class="num">${numero}</span>
+        <span class="tag func">${NOME_FUNC[item.func]}</span>
+        <span class="tag ${sec?'':'pilar'}">${sec ? item.p : 'Drop global'}</span>
+        <span class="tag ${item.tier.toLowerCase()}">Tier ${item.tier}</span>
+      </div>
+      <p class="hook">${item.h}</p>
+      <div class="rodape">
+        ${item.t ? `<span class="tema">${item.t}</span>` : ''}
+        <span class="tec">${item.g}</span>
+      </div>
+    </div>`;
+  const input = el.querySelector('input');
+  input.addEventListener('change', () => {
+    if (input.checked) feitos[item.id] = 1; else delete feitos[item.id];
+    salvar();
+    el.classList.toggle('feito', input.checked);
+    atualizarStats();
+    if (esconder) render();
+  });
+  el.querySelector('.hook').addEventListener('click', () => {
+    navigator.clipboard.writeText(item.h).then(toast);
+  });
+  return el;
+}
+
+function passa(item){
+  if (esconder && feitos[item.id]) return false;
+  if (['dor','crenca','metodo','saga'].includes(filtro) && item.func !== filtro) return false;
+  if (filtro === 'sec' && item.pilar !== 'sec') return false;
+  if (busca){
+    const alvo = (item.h + ' ' + (item.t||'') + ' ' + (item.p||'') + ' ' + item.g).toLowerCase();
+    if (!alvo.includes(busca)) return false;
+  }
+  return true;
+}
+
+function render(){
+  lista.innerHTML = '';
+  let n = 0, visiveis = 0;
+  SEMANAS.forEach(sem => {
+    const cards = [];
+    sem.posts.forEach(item => {
+      n++;
+      if (passa(item)) cards.push(card(item, n));
+    });
+    if (!cards.length) return;
+    const dropN = sem.posts.filter(x => x.pilar === 'drop').length;
+    const secN = sem.posts.length - dropN;
+    const cab = document.createElement('div');
+    cab.className = 'semana';
+    cab.innerHTML = `
+      <div class="top"><h2>Semana ${sem.n}</h2><span class="obj">${sem.obj}</span></div>
+      <p>${sem.d}</p>
+      <div class="mix">
+        <span class="mixtag">Dor <b>${sem.mix.dor}</b></span>
+        <span class="mixtag">Crença <b>${sem.mix.crenca}</b></span>
+        <span class="mixtag">Método <b>${sem.mix.metodo}</b></span>
+        <span class="mixtag">Saga <b>${sem.mix.saga}</b></span>
+        <span class="mixtag">Drop <b>${dropN}</b> · Secundários <b>${secN}</b></span>
+      </div>`;
+    lista.appendChild(cab);
+    cards.forEach(c => { lista.appendChild(c); visiveis++; });
+  });
+  if (!visiveis) lista.innerHTML = '<div class="vazio">Nenhum gancho com esse filtro.</div>';
+
+  reservaBox.innerHTML = '';
+  RESERVA.forEach((item,i) => { if (passa(item)) reservaBox.appendChild(card(item, 'R'+(i+1))); });
+  document.getElementById('reserva-box').style.display = reservaBox.children.length ? 'block' : 'none';
+  atualizarStats();
+}
+
+function atualizarStats(){
+  const total = fila.length;
+  const drop = fila.filter(x => x.pilar === 'drop').length;
+  const todos = fila.concat(RESERVA);
+  const marcados = todos.filter(x => feitos[x.id]).length;
+  const pct = todos.length ? Math.round(marcados / todos.length * 100) : 0;
+  document.getElementById('s-total').textContent = total;
+  document.getElementById('s-drop').textContent = drop + ' (' + Math.round(drop/total*100) + '%)';
+  document.getElementById('s-sec').textContent = (total-drop) + ' (' + Math.round((total-drop)/total*100) + '%)';
+  document.getElementById('s-feitos').textContent = marcados;
+  document.getElementById('barra').style.width = pct + '%';
+  document.getElementById('p-pct').textContent = pct + '%';
+  document.getElementById('p-falta').textContent = todos.length - marcados;
+}
+
+let toastTimer;
+function toast(){
+  const t = document.getElementById('toast');
+  t.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('on'), 1400);
+}
+
+document.querySelectorAll('.chip[data-f]').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.chip[data-f]').forEach(x => x.classList.remove('on'));
+    b.classList.add('on');
+    filtro = b.dataset.f;
+    render();
+  });
+});
+document.getElementById('esconder').addEventListener('click', function(){
+  esconder = !esconder;
+  this.classList.toggle('on', esconder);
+  this.textContent = esconder ? 'Mostrando só os que faltam' : 'Esconder gravados';
+  render();
+});
+document.getElementById('busca').addEventListener('input', e => { busca = e.target.value.trim().toLowerCase(); render(); });
+document.getElementById('reset').addEventListener('click', () => {
+  if (confirm('Isso desmarca TODOS os ganchos já gravados. Continuar?')){ feitos = {}; salvar(); render(); }
+});
+
+render();
+</script>
+</body>
+</html>
