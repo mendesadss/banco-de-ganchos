@@ -216,7 +216,8 @@
    "hook": "Estou montando uma loja global do zero na frente de vocês, com print de tudo. Se der errado, vocês vão ver também. Esse é o combinado.",
    "tema": "A saga (prova ao vivo)",
    "meta": "Autoridade · T06 · Prova",
-   "tier": "S"
+   "tier": "S",
+   "gravado": "2026-07-19"
   },
   {
    "id": "d11",
@@ -370,7 +371,8 @@
    "hook": "Teste simples pra saber se você comprou mentoria ou PDF caro: manda uma mensagem hoje à meia-noite. Se ninguém responder até amanhã, você já sabe.",
    "tema": "O inimigo",
    "meta": "Recompensa · T01 · Valor prático",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-07-19"
   },
   {
    "id": "d28",
@@ -1037,7 +1039,8 @@
    "hook": "Você não é vendedor da Shopee. Você é o departamento de marketing dela, sem salário, sem crachá e sem participação.",
    "tema": "Afiliado",
    "meta": "Disrupção · T28 · Emoção quente",
-   "tier": "S"
+   "tier": "S",
+   "gravado": "2026-07-19"
   },
   {
    "id": "s2",
