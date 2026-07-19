@@ -509,7 +509,19 @@ fetch('dados.json?v=' + Date.now())
     document.getElementById('lista').innerHTML = '<div class="vazio">Não consegui carregar o dados.json.<br>Se abriu o arquivo direto do computador, use o link publicado.</div>';
   });
 
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(function(){});
+/* Service worker: registra e força checagem de atualização a cada abertura.
+   Se vier versão nova, ela assume e a página recarrega uma única vez. */
+if ('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.update();
+    let recarregou = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (recarregou) return;
+      recarregou = true;
+      location.reload();
+    });
+  }).catch(function(){});
+}
 </script>
 </body>
 </html>
