@@ -7,7 +7,7 @@
    até limpar o cache na mão. Conteúdo novo tem que aparecer na hora.
 
    Ao mudar arquivos do shell, subir o número da versão abaixo. */
-const CACHE = 'banco-gb-v6';
+const CACHE = 'banco-gb-v7';
 const SHELL = ['./', './index.html', './sync.js', './manifest.webmanifest', './icon.svg', './icon-maskable.svg'];
 
 self.addEventListener('install', e => {
