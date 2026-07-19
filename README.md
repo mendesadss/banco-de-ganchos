@@ -16,12 +16,15 @@ Central de tudo que está pronto pra gravar no `@mendes.adss`: ganchos, roteiros
 
 ## As quatro abas
 
-- **Fila** — os 158 ganchos distribuídos em 8 semanas por pilar (dor, crença, método, saga)
-- **Roteiros** — roteiro completo com hook, corpo e CTA. Tem Modo Gravação em tela cheia
+- **Fila** — 188 ganchos distribuídos em 10 semanas por pilar (dor, crença, método, saga)
+- **Roteiros** — clica no gancho e abre o texto completo. Tem Modo Gravação em tela cheia
 - **Ideias** — tema levantado que ainda não virou roteiro
 - **Arquivo** — tudo que já foi gravado, fora do caminho
 
 Marcou o checkbox, o item sai da aba de origem e vai pro Arquivo.
+
+Os 30 ganchos que viviam no repo `novos-ganchos` foram incorporados em 19/07/2026
+(ids `n1` a `n30`) e ocupam as semanas 9 e 10. As semanas 1 a 7 não mudaram.
 
 ## Estrutura do dados.json
 

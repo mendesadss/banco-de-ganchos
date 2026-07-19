@@ -100,6 +100,17 @@
   .hook{font-size:16px;line-height:1.45;font-weight:500;margin-bottom:8px;cursor:pointer}
   .hook:hover{color:var(--verde-claro)}
   .titulo{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+
+  /* roteiro expansível */
+  .abre{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;color:var(--verde-claro);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-top:2px;padding:4px 0}
+  .abre:hover{color:#8FE3AF}
+  .abre .seta{display:inline-block;transition:transform .2s;font-size:10px}
+  .card.aberto .abre .seta{transform:rotate(90deg)}
+  .corpo{display:none;margin-top:12px;padding:16px 18px;background:#101010;border:1px solid var(--linha);border-radius:9px}
+  .card.aberto .corpo{display:block}
+  .corpo .txt{font-size:15px;line-height:1.72;white-space:pre-wrap;color:#DCDCDC}
+  .corpo .fim{margin-top:16px;padding-top:14px;border-top:1px solid #232323;font-size:14px;color:var(--cinza);line-height:1.6}
+  .corpo .fim b{color:var(--verde-claro)}
   .rodape{display:flex;flex-wrap:wrap;gap:10px;font-size:11px;color:#666;align-items:center}
   .rodape .tema{color:#8C8C8C}
   .rodape .tec{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#5a5a5a}
@@ -223,6 +234,7 @@ try { feitos = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){ feitos
 const salvar = () => { try { localStorage.setItem(KEY, JSON.stringify(feitos)); } catch(e){} };
 
 let D = null, aba = 'fila', filtro = 'todos', busca = '';
+const abertos = new Set();   // roteiros expandidos
 const NOMES = {dor:'Dor', crenca:'Crença', metodo:'Método', saga:'Saga'};
 
 function montarFila(d){
@@ -308,20 +320,27 @@ function cardGancho(item, n){
 
 function cardRoteiro(r){
   const marcado = !!feitos[r.id];
-  return '<div class="card roteiro ' + (marcado?'feito':'') + '" data-id="' + r.id + '">' +
+  const aberto = abertos.has(r.id);
+  return '<div class="card roteiro ' + (marcado?'feito':'') + (aberto?' aberto':'') + '" data-id="' + r.id + '">' +
     '<label class="chk"><input type="checkbox" ' + (marcado?'checked':'') + '></label>' +
     '<div class="body"><div class="meta">' +
       '<span class="tag func">' + (NOMES[r.func]||r.func) + '</span>' +
       '<span class="tag pilar">' + esc(r.duracao) + '</span>' +
       (r.publico ? '<span class="tag">' + esc(r.publico) + '</span>' : '') +
     '</div>' +
-    '<div class="titulo">' + esc(r.titulo) + '</div>' +
-    '<div class="hook" data-copy="' + esc(r.hook) + '">' + esc(r.hook) + '</div>' +
+    '<div class="titulo" data-abre="' + r.id + '">' + esc(r.titulo) + '</div>' +
+    '<div class="hook" data-abre="' + r.id + '">' + esc(r.hook) + '</div>' +
     '<div class="rodape"><span class="tec">' + esc(r.meta||'') + '</span><span class="tema">CTA: ' + esc(r.cta) + '</span></div>' +
     (r.fonte ? '<div class="fonte">' + esc(r.fonte) + '</div>' : '') +
+    '<div class="abre" data-abre="' + r.id + '"><span class="seta">▶</span>' + (aberto ? 'Fechar roteiro' : 'Ver roteiro completo') + '</div>' +
+    '<div class="corpo">' +
+      '<div class="txt">' + esc(r.corpo) + '</div>' +
+      '<div class="fim">Comenta <b>' + esc(r.cta) + '</b> aqui embaixo.<br><br>' + BORDAO + '</div>' +
+    '</div>' +
     '<div class="acoes">' +
       '<button class="bt prim" data-grav="' + r.id + '">Modo Gravação</button>' +
       '<button class="bt" data-full="' + r.id + '">Copiar roteiro</button>' +
+      '<button class="bt" data-copy="' + esc(r.hook) + '">Copiar gancho</button>' +
     '</div></div></div>';
 }
 
@@ -417,6 +436,14 @@ function abrirGrav(r){
 }
 
 document.getElementById('lista').addEventListener('click', e => {
+  const ab = e.target.closest('[data-abre]');
+  if (ab){
+    const id = ab.dataset.abre;
+    const card = ab.closest('.card');
+    if (abertos.has(id)){ abertos.delete(id); card.classList.remove('aberto'); ab.closest('.body').querySelector('.abre').lastChild.textContent = 'Ver roteiro completo'; }
+    else { abertos.add(id); card.classList.add('aberto'); ab.closest('.body').querySelector('.abre').lastChild.textContent = 'Fechar roteiro'; }
+    return;
+  }
   const cp = e.target.closest('[data-copy]');
   if (cp){ copiar(cp.dataset.copy, 'Copiado'); return; }
   const gv = e.target.closest('[data-grav]');

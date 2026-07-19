@@ -1,5 +1,5 @@
 {
- "versao": 2,
+ "versao": 3,
  "atualizado": "2026-07-19",
  "semanas": [
   {
@@ -88,6 +88,28 @@
     "crenca": 6,
     "metodo": 9,
     "saga": 1
+   }
+  },
+  {
+   "n": 9,
+   "obj": "Provar com terceiro",
+   "d": "A saga assume o comando. Entra história pessoal e resultado de mentorado, que é justamente o que faltava no banco. Quem chegou até aqui já entendeu o método, agora precisa acreditar que ele mesmo consegue.",
+   "mix": {
+    "dor": 0,
+    "crenca": 5,
+    "metodo": 3,
+    "saga": 7
+   }
+  },
+  {
+   "n": 10,
+   "obj": "Fechar o ciclo",
+   "d": "Última semana da rodada. Prova de vida e ponte pra venda no topo. É onde o conteúdo para de ensinar e começa a convidar, sem precisar pedir nada de forma explícita.",
+   "mix": {
+    "dor": 0,
+    "crenca": 4,
+    "metodo": 3,
+    "saga": 8
    }
   }
  ],
@@ -1514,6 +1536,306 @@
    "tema": "Produto próprio",
    "meta": "Disrupção · T13 · Brevidade",
    "tier": "B"
+  },
+  {
+   "id": "n1",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Vinte e três minutos atrás caiu uma venda. Eu estava dirigindo. Não é sobre trabalhar menos, é sobre a máquina não depender de você estar acordado.",
+   "tema": "Prova de vida",
+   "meta": "T21 · Autoridade · Prova",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n2",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "São oito e meia da noite de domingo e eu acabei de subir dez criativos. Isso não é disciplina. Isso é o preço que quase ninguém quer pagar.",
+   "tema": "Prova de vida",
+   "meta": "T02 · Autoridade · Emoção quente",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n3",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Meu celular hoje: uma venda da loja do Brasil, uma da loja em dólar, e uma da loja nova. Três operações, um celular, um cara. É isso que estrutura faz.",
+   "tema": "Prova de vida",
+   "meta": "T21 · Prova · Recompensa",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n4",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Eu não vim pra internet pra ser bonitinho. Vim porque quem tem atenção domina o jogo, e eu precisava sentar em mesas onde eu não era convidado.",
+   "tema": "Prova de vida",
+   "meta": "T26 · Disrupção · Opinião forte",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n5",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Deixa eu te mostrar o escritório vazio que eu aluguei semana passada. Em seis meses eu quero equipe aqui dentro. Você vai ver isso acontecendo em tempo real.",
+   "tema": "Prova de vida",
+   "meta": "T06 · Mistério · Abre saga",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n6",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Eu vendi um relógio e uma bicicleta por setecentos reais. Foi todo o dinheiro que eu tinha. Foi com isso que tudo começou.",
+   "tema": "História",
+   "meta": "T08 · Recompensa · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n7",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Eu ia comprar uma BMW com o primeiro lucro forte. Uma pergunta de um amigo me impediu. Dois meses depois essa pergunta salvou minha empresa.",
+   "tema": "História",
+   "meta": "T26 · Mistério · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n8",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Passei um ano no deserto. Trinta mil reais perdidos em curso, mentoria e loja que não vendia. Aí eu apostei a última ficha e faturei cento e cinquenta mil num mês.",
+   "tema": "História",
+   "meta": "T08 · Recompensa · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n9",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Com catorze anos eu vi minha mãe aperreada pra fazer a feira. Naquele dia eu entendi que se eu não fizesse por mim, ninguém faria.",
+   "tema": "História",
+   "meta": "T23 · Reconhecimento · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n10",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Eu me isolei mais de um ano. Sem sair, sem festa. Aí meus amigos disseram que eu mudei do nada. Ninguém viu o ano que eu passei trancado.",
+   "tema": "História",
+   "meta": "T02 · Disrupção · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n11",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Um seguidor me mandou uma sugestão boa em vez de pedir alguma coisa. Um mês depois ele era meu sócio. É assim que se entra numa mesa.",
+   "tema": "História",
+   "meta": "T26 · Fato curioso · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n12",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Eu comprava tênis de um fornecedor de Minas e revendia dobrando o valor. Vendia camisa no Facebook. Não era chique, mas era o outro lado do balcão.",
+   "tema": "História",
+   "meta": "T21 · Reconhecimento · História",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n13",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "Não é sobre ficar rico. É sobre acordar sem aquele aperto no peito de segunda-feira. Dez mil dólares por mês já compra isso.",
+   "tema": "Desejo",
+   "meta": "T29 · Disrupção · Identificação",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n14",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "Eu moro a dez minutos da praia e trabalho de onde eu quiser. Falam que eu tinha que estar em São Paulo pra crescer. Eu quero é paz.",
+   "tema": "Desejo",
+   "meta": "T26 · Disrupção · Opinião forte",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n15",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "A liberdade não é não trabalhar. É trabalhar no domingo porque você quis, não porque um patrão mandou.",
+   "tema": "Desejo",
+   "meta": "T13 · Crença · Brevidade",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n16",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "A melhor sensação não é a primeira venda. É a décima venda de um dia que você nem abriu o computador.",
+   "tema": "Desejo",
+   "meta": "T29 · Recompensa · Identificação",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n17",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "Sem estoque, sem funcionário, sem loja física, sem sair de casa. E o cliente paga em dólar. Me diz qual outro negócio te dá isso hoje.",
+   "tema": "Desejo",
+   "meta": "T13 · Recompensa · Argumentação",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n18",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "Trinta mil reais por mês não te faz rico. Te faz dono do teu horário. E dono do horário é o que eu chamo de vida começando.",
+   "tema": "Desejo",
+   "meta": "T29 · Disrupção · Opinião forte",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n19",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Testo vinte criativos. Um valida. Aí eu replico esse um mais vinte vezes. Não é sorte, é jogo de números, e eu vou te mostrar a conta.",
+   "tema": "Motor de negócio",
+   "meta": "T01 · Autoridade · Valor prático",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n20",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Gastei três vezes o valor do produto e não vendeu? Eu mato a campanha na hora. E não perdi dinheiro: eu comprei dados.",
+   "tema": "Motor de negócio",
+   "meta": "T01 · Recompensa · Valor prático",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n21",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Duas mil e trezentas visualizações num post orgânico me economizaram quarenta dólares de CPM. Conteúdo não é vaidade, é redução de custo de tráfego.",
+   "tema": "Motor de negócio",
+   "meta": "T21 · Fato curioso · Argumentação",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n22",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Fiz dois mil e trezentos dólares em sete dias sem gastar um real em tráfego. Foi e-mail. Se você depende cem por cento de anúncio, você não tem ativo.",
+   "tema": "Motor de negócio",
+   "meta": "T26 · Recompensa · Prova",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n23",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Uma almofada faz cem mil dólares por mês. Não é o produto. É que eles não vendem almofada, vendem dor nas costas resolvida.",
+   "tema": "Motor de negócio",
+   "meta": "T26 · Mistério · Fato curioso",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n24",
+   "pilar": "drop",
+   "func": "metodo",
+   "hook": "Seis vendas, quinhentos dólares no dia. Eu não quero vender muito. Quero vender caro, porque margem é o que me deixa escalar.",
+   "tema": "Motor de negócio",
+   "meta": "T29 · Disrupção · Opinião forte",
+   "tier": "A",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n25",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "O governo revogou a taxa das blusinhas e todo mundo comemorou. Quem vende em dólar nem piscou. Vou te explicar por quê.",
+   "tema": "Popularidade",
+   "meta": "T26 · Popularidade · Notícia",
+   "tier": "B",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n26",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "O ChatGPT começou a testar anúncio dentro da conversa. Isso não é banner. É a maior mudança de tráfego dos últimos anos e quase ninguém percebeu.",
+   "tema": "Popularidade",
+   "meta": "T06 · Popularidade · Algo novo",
+   "tier": "B",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n27",
+   "pilar": "drop",
+   "func": "crenca",
+   "hook": "Olha a diferença no olhar desses dois jogadores antes do lance. Um quer devorar, o outro quer sumir. Nos negócios é exatamente igual.",
+   "tema": "Popularidade",
+   "meta": "T13 · Popularidade · Opinião forte",
+   "tier": "B",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n28",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Ele me mandou mensagem travado no dia quarenta. Não sumiu, não virou bot: eu respondi. Vou te mostrar onde ele estava travado e o que a gente mudou.",
+   "tema": "Ponte pra venda",
+   "meta": "T23 · Prova · História de cliente",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n29",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "O cara não fez a primeira venda porque estava caçando fornecedor antes de ter cliente. Corrigimos a ordem. Vendeu em onze dias.",
+   "tema": "Ponte pra venda",
+   "meta": "T27 · Prova · História de cliente",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
+  },
+  {
+   "id": "n30",
+   "pilar": "drop",
+   "func": "saga",
+   "hook": "Você vai me ver errar aqui. Campanha que eu matei, produto que não vendeu, conta que caiu. Guru só posta acerto. Operador posta o mês inteiro.",
+   "tema": "Ponte pra venda",
+   "meta": "T28 · Disrupção · Opinião forte",
+   "tier": "S",
+   "origem": "novos-ganchos 16/07"
   }
  ],
  "roteiros": [
