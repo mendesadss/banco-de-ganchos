@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-07-19",
+ "atualizado": "2026-07-21",
  "semanas": [
   {
    "n": 1,
@@ -1904,7 +1904,8 @@
    "meta": "Disrupção · T26 · Valor prático",
    "hook": "Estrutura de campanha não te faz vender. Mas a errada te faz perder.",
    "corpo": "Eu vejo gente montando dez conjuntos, cada um com um interesse diferente, achando que isso é estratégia. Isso era 2019.\n\nHoje o Meta lê o teu criativo e acha o público sozinho. Quem segmenta demais só amarra a mão do algoritmo e paga CPM mais caro pra alcançar menos gente.\n\nComo eu monto.\n\nTeste. Uma campanha, público aberto, Big Four. Cada criativo no seu próprio conjunto, com o mesmo orçamento. Isso serve pra uma coisa só: descobrir qual criativo o mercado quer.\n\nPorque se eu jogo cinco criativos dentro de um conjunto só, o Meta escolhe um nas primeiras horas e mata os outros quatro antes deles terem chance. Aí você nunca descobre qual era o bom.\n\nEscala. Achei o campeão, ele vai pra uma campanha nova, agora em CBO, junto com os outros que passaram no teste. Aqui eu deixo o algoritmo decidir, porque agora ele está decidindo entre coisas que já provaram que vendem.\n\nE olha, irmão, presta atenção nisso: teste e escala são duas campanhas diferentes, com objetivos diferentes. Quem mistura as duas passa o mês achando que o problema é a estrutura, quando o problema é que nunca soube qual criativo funcionava.",
-   "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\" / \"se subo tudo junto num CBO ele gasta aleatoriamente\""
+   "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\" / \"se subo tudo junto num CBO ele gasta aleatoriamente\"",
+   "gravado": "2026-07-21"
   },
   {
    "id": "r-4-criativos",
