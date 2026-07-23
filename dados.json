@@ -1898,7 +1898,8 @@
    "meta": "Disrupção + Prova · T29 · Prova + História",
    "hook": "Cento e vinte mil de faturamento. Trinta e dois por cento de margem. Cinco mil reais no bolso.",
    "corpo": "Um cara me mandou esse número essa semana, todo orgulhoso do faturamento. No papel, trinta e dois por cento de cento e vinte mil é quase quarenta mil de lucro.\n\nSobrou cinco.\n\nOnde foi parar o resto.\n\nReembolso. Produto atrasou, cliente pediu o dinheiro de volta. Você devolve o valor cheio, mas o produto já foi enviado e já foi pago. Perdeu duas vezes.\n\nChargeback. O cliente nem te procura, abre disputa no banco. Perde a venda, perde o produto, paga multa.\n\nPedido barrado. O gateway derruba por suspeita de fraude. Aquela venda aparece no gerenciador, o Meta conta como conversão, mas nunca virou dinheiro.\n\nE a taxa de processamento em cima de tudo que passou.\n\nSoma isso. Trinta e dois por cento vira quatro.\n\nE olha, irmão, o problema dele não era venda. Era operação. E ele não fazia ideia, porque passou o mês inteiro olhando pro número do faturamento.\n\nFaturamento é vaidade. Margem é opinião. Só existe o que entra na conta e fica lá.",
-   "fonte": "Direct: \"no mês de junho foi 32% de margem com 120k de faturamento\". Líquido real: R$5k."
+   "fonte": "Direct: \"no mês de junho foi 32% de margem com 120k de faturamento\". Líquido real: R$5k.",
+   "gravado": "2026-07-23"
   },
   {
    "id": "r-estrutura-campanha",
