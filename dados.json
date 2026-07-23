@@ -1870,7 +1870,8 @@
    "meta": "Disrupção · T26 · Prova + Identificação",
    "hook": "Você não vai quebrar no mês que vender pouco. Você vai quebrar no mês que vender muito.",
    "corpo": "Loja nova, faturamento subindo rápido, sem histórico. Pro gateway, isso não é sucesso. É risco.\n\nE aí acontecem três coisas que ninguém te conta.\n\nA primeira: reserva. Ele retém vinte por cento de tudo que você fatura por noventa dias.\n\nA segunda: chargeback. O cliente não pede reembolso, ele vai direto no banco. Você perde o produto, perde a venda e ainda paga multa.\n\nA terceira: retenção. Suspeitou, congelou tudo, pede documento.\n\nFaz a conta comigo. Você fatura cem mil, tem vinte retido, cinco em chargeback e o resto sai em trinta dias. Você tem cem mil de venda e não tem dez mil pra pagar fornecedor.\n\nE olha, irmão, é aqui que eu vejo gente boa quebrar. Não é operação ruim. É operação boa sem caixa pra aguentar noventa dias esperando dinheiro que já é dela.\n\nTeve uma época que eu podia ter comprado carro melhor. Comprei um Jetta e deixei o resto em caixa. Dois meses depois a operação travou. Foi o caixa que me segurou em pé.\n\nCaixa não é o que sobra. É o que te mantém vivo enquanto o teu dinheiro tá preso.",
-   "fonte": "Direct: \"tive problemas com retenções de gateway\" / \"boa parte foi embora em reembolsos e chargebacks\""
+   "fonte": "Direct: \"tive problemas com retenções de gateway\" / \"boa parte foi embora em reembolsos e chargebacks\"",
+   "gravado": "2026-07-23"
   },
   {
    "id": "r-bigfour",
