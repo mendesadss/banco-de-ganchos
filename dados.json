@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-07-21",
+ "atualizado": "2026-07-23",
  "semanas": [
   {
    "n": 1,
@@ -172,7 +172,8 @@
    "hook": "Te prometeram acompanhamento até o primeiro resultado. No dia 40, quando você travou de verdade, quem respondeu foi um bot.",
    "tema": "O inimigo: suporte que some",
    "meta": "Reconhecimento · T27 · Identificação",
-   "tier": "S"
+   "tier": "S",
+   "gravado": "2026-07-23"
   },
   {
    "id": "d6",
