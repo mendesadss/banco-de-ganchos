@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-07-23",
+ "atualizado": "2026-07-24",
  "semanas": [
   {
    "n": 1,
@@ -442,7 +442,8 @@
    "hook": "Existem 3 detalhes que denunciam que a sua loja é dropshipping. O americano vê em 2 segundos e fecha a aba sem dizer nada. Vou mostrar os 3, e você vai reconhecer os 3.",
    "tema": "Loja com cara de marca",
    "meta": "Reconhecimento · T30 · Identificação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-07-24"
   },
   {
    "id": "d35",
