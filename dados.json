@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-07-24",
+ "atualizado": "2026-07-31",
  "semanas": [
   {
    "n": 1,
@@ -1099,7 +1099,8 @@
    "hook": "Afiliado constrói audiência e aluga ela. No dia em que a plataforma cortar a comissão, você descobre que o negócio nunca foi teu.",
    "tema": "Afiliado",
    "meta": "Crença · T27 · Emoção quente",
-   "tier": "S"
+   "tier": "S",
+   "gravado": "2026-07-31"
   },
   {
    "id": "s7",
