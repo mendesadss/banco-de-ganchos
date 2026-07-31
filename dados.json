@@ -570,7 +570,8 @@
    "hook": "\"Esse produto está saturado.\" Não está. Saturou o ângulo. A dor continua lá, intacta, e quem entra com ângulo novo pega o mercado já aquecido sem pagar por isso.",
    "tema": "Produto saturado",
    "meta": "Crença · T05 · Argumentação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-07-31"
   },
   {
    "id": "d48",
