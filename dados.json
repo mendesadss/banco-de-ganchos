@@ -212,7 +212,8 @@
    "hook": "Você não está desanimado com o drop. Está desanimado com quem te vendeu o drop. E confundir as duas coisas já custou um ano da sua vida.",
    "tema": "O inimigo",
    "meta": "Reconhecimento · T26 · Emoção quente",
-   "tier": "S"
+   "tier": "S",
+   "gravado": "2026-07-31"
   },
   {
    "id": "d10",
@@ -364,7 +365,8 @@
    "hook": "Produto vencedor não existe. Existe oferta vencedora. O mesmo produto que te deu prejuízo está pagando a casa de outro cara agora, e a diferença não está no produto.",
    "tema": "Produto vencedor",
    "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-07-31"
   },
   {
    "id": "d26",
