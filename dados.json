@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-07-31",
+ "atualizado": "2026-08-06",
  "semanas": [
   {
    "n": 1,
@@ -435,7 +435,8 @@
    "hook": "Você briga por R$ 90 de ticket com um cliente que pede desconto. Lá fora o mesmo produto sai por [valor real] e ninguém pergunta o frete.",
    "tema": "Ticket BR vs global",
    "meta": "Reconhecimento · T13 · Identificação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-08-06"
   },
   {
    "id": "d33",
