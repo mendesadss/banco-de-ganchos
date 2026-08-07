@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-08-06",
+ "atualizado": "2026-08-07",
  "semanas": [
   {
    "n": 1,
@@ -1185,7 +1185,8 @@
    "hook": "Você fatura bem e não sobra nada. Imposto, maquininha, parcelamento, devolução. Vender mais não resolve isso. Vender pra outro lugar resolve.",
    "tema": "Produto próprio",
    "meta": "Reconhecimento · T27 · Argumentação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-08-07"
   },
   {
    "id": "s14",
@@ -1194,7 +1195,8 @@
    "hook": "Investidor entende de risco melhor que qualquer um. Então me responde: por que 100% do teu capital depende de decisão que outra empresa toma sem te consultar?",
    "tema": "Investidor",
    "meta": "Crença · T22 · Argumentação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-08-07"
   },
   {
    "id": "s15",
