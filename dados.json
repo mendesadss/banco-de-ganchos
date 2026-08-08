@@ -1,6 +1,6 @@
 {
  "versao": 3,
- "atualizado": "2026-08-07",
+ "atualizado": "2026-08-08",
  "semanas": [
   {
    "n": 1,
@@ -1206,7 +1206,8 @@
    "hook": "Você otimiza a campanha do dentista. O dentista compra a Hilux. E você renova o contrato no mês seguinte, pelo mesmo valor.",
    "tema": "Gestor de tráfego",
    "meta": "Reconhecimento · T19 · Identificação",
-   "tier": "A"
+   "tier": "A",
+   "gravado": "2026-08-08"
   },
   {
    "id": "s16",
