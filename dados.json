@@ -1,2145 +1,2334 @@
 {
- "versao": 3,
- "atualizado": "2026-08-08",
- "semanas": [
-  {
-   "n": 1,
-   "obj": "Ser reconhecido",
-   "d": "Peso máximo em identificação. O objetivo aqui não é ensinar, é fazer o cara pensar \"esse aí viu o que aconteceu comigo\". É o que gera o follow.",
-   "mix": {
-    "dor": 8,
-    "crenca": 6,
-    "metodo": 3,
-    "saga": 1
-   }
+  "versao": 3,
+  "atualizado": "2026-08-09",
+  "semanas": [
+    {
+      "n": 1,
+      "obj": "Ser reconhecido",
+      "d": "Peso máximo em identificação. O objetivo aqui não é ensinar, é fazer o cara pensar \"esse aí viu o que aconteceu comigo\". É o que gera o follow.",
+      "mix": {
+        "dor": 8,
+        "crenca": 6,
+        "metodo": 3,
+        "saga": 1
+      }
+    },
+    {
+      "n": 2,
+      "obj": "Ser reconhecido",
+      "d": "Ainda pesada em dor, mas a crença começa a subir. Você já foi reconhecido, agora começa a mostrar que enxerga o jogo diferente.",
+      "mix": {
+        "dor": 7,
+        "crenca": 7,
+        "metodo": 3,
+        "saga": 1
+      }
+    },
+    {
+      "n": 3,
+      "obj": "Virar a crença",
+      "d": "A dor cede espaço pra crença. Aqui ele para de achar que o problema é ele e começa a achar que o problema é o mercado onde ele estava vendendo.",
+      "mix": {
+        "dor": 6,
+        "crenca": 8,
+        "metodo": 3,
+        "saga": 1
+      }
+    },
+    {
+      "n": 4,
+      "obj": "Virar a crença",
+      "d": "Ponto de virada do calendário. Crença no topo, método subindo. Quem chegou na semana 1 já está pronto pra receber conteúdo específico.",
+      "mix": {
+        "dor": 5,
+        "crenca": 8,
+        "metodo": 4,
+        "saga": 1
+      }
+    },
+    {
+      "n": 5,
+      "obj": "Provar o método",
+      "d": "O método assume o comando. O alcance cai um pouco de propósito: você troca curioso por comprador. Especificidade é o que constrói autoridade.",
+      "mix": {
+        "dor": 4,
+        "crenca": 8,
+        "metodo": 5,
+        "saga": 1
+      }
+    },
+    {
+      "n": 6,
+      "obj": "Provar o método",
+      "d": "Semana mais técnica até aqui. Quem ficou é quem interessa. A dor continua presente em dose pequena só pra manter a porta de entrada aberta.",
+      "mix": {
+        "dor": 3,
+        "crenca": 8,
+        "metodo": 6,
+        "saga": 1
+      }
+    },
+    {
+      "n": 7,
+      "obj": "Autoridade",
+      "d": "Prova pesada e saga em dobro. O seguidor antigo já viu você errar e acertar em público. É aqui que a confiança vira intenção de compra.",
+      "mix": {
+        "dor": 1,
+        "crenca": 7,
+        "metodo": 8,
+        "saga": 2
+      }
+    },
+    {
+      "n": 8,
+      "obj": "Preparar a venda",
+      "d": "Fechamento do arco. Método, direção e escassez honesta. Você não pede a venda: mostra que o que falta pra ele não é mais conteúdo, é acompanhamento.",
+      "mix": {
+        "dor": 1,
+        "crenca": 6,
+        "metodo": 9,
+        "saga": 1
+      }
+    },
+    {
+      "n": 9,
+      "obj": "Provar com terceiro",
+      "d": "A saga assume o comando. Entra história pessoal e resultado de mentorado, que é justamente o que faltava no banco. Quem chegou até aqui já entendeu o método, agora precisa acreditar que ele mesmo consegue.",
+      "mix": {
+        "dor": 0,
+        "crenca": 5,
+        "metodo": 3,
+        "saga": 7
+      }
+    },
+    {
+      "n": 10,
+      "obj": "Fechar o ciclo",
+      "d": "Última semana da rodada. Prova de vida e ponte pra venda no topo. É onde o conteúdo para de ensinar e começa a convidar, sem precisar pedir nada de forma explícita.",
+      "mix": {
+        "dor": 0,
+        "crenca": 4,
+        "metodo": 3,
+        "saga": 8
+      }
+    }
+  ],
+  "capSec": 43,
+  "ganchos": [
+    {
+      "id": "d0",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você não falhou no drop. Você comprou, te jogaram num grupo com 400 pessoas, e chamaram aquilo de mentoria.",
+      "tema": "O inimigo: te venderam e te largaram",
+      "meta": "Reconhecimento · T26 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d1",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "O cara sumiu no dia seguinte ao pix cair. E você passou seis meses achando que o burro era você.",
+      "tema": "O inimigo: abandono",
+      "meta": "Reconhecimento · T23 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d2",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "\"Tô travado.\" Não é falta de capacidade. É falta de direção. Ninguém trava por burrice, trava por não saber qual é o próximo passo.",
+      "tema": "Travado, não burro",
+      "meta": "Reconhecimento · T27 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d3",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Esquece o milhão. 10k por mês em dólar já te tira do modo de sobrevivência. É a única meta que eu persigo com quem eu pego na mão.",
+      "tema": "A meta realista",
+      "meta": "Recompensa · T29 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d4",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você já vendeu antes. Já teve o print, já sentiu. E hoje está montando loja no Brasil de novo, brigando por margem. Você sabe que o problema não é capacidade.",
+      "tema": "Perfil B: já vendeu, quer migrar",
+      "meta": "Reconhecimento · T23 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d5",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Te prometeram acompanhamento até o primeiro resultado. No dia 40, quando você travou de verdade, quem respondeu foi um bot.",
+      "tema": "O inimigo: suporte que some",
+      "meta": "Reconhecimento · T27 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "d6",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Loja meio montada, produto meio escolhido, anúncio que nunca subiu. Você não está começando. Está congelado. E congelado tem cura.",
+      "tema": "Travado",
+      "meta": "Reconhecimento · T22 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-24"
+    },
+    {
+      "id": "d7",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O drop que te venderam é golpe mesmo: COD, contra-entrega, produto vagabundo, cliente que não atende a porta. Aquilo não é negócio, é rifa.",
+      "tema": "Drop de verdade vs COD",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d8",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "O curso te mandou rodar tráfego no dia 1. Foi ali que você queimou a grana. E ainda te venderam que a culpa foi da tua falta de constância.",
+      "tema": "Rasgar grana",
+      "meta": "Reconhecimento · T27 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d9",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você não está desanimado com o drop. Está desanimado com quem te vendeu o drop. E confundir as duas coisas já custou um ano da sua vida.",
+      "tema": "O inimigo",
+      "meta": "Reconhecimento · T26 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d10",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Estou montando uma loja global do zero na frente de vocês, com print de tudo. Se der errado, vocês vão ver também. Esse é o combinado.",
+      "tema": "A saga (prova ao vivo)",
+      "meta": "Autoridade · T06 · Prova",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d11",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você não precisa sair do Brasil pra ganhar em dólar. Precisa parar de vender pro Brasil. É diferente, e ninguém te explica isso direito.",
+      "tema": "Dólar morando no BR",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d12",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você não sente falta do dinheiro daquela primeira venda. Sente falta de como você era naquela semana. Isso dá pra ter de volta, e em dólar.",
+      "tema": "Perfil B: nostalgia do resultado",
+      "meta": "Reconhecimento · T21 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d13",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Ninguém documenta a parte feia. Por isso você acha que só você trava. Hoje eu vou te mostrar o meu dia ruim.",
+      "tema": "A saga",
+      "meta": "Disrupção · T28 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d14",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Seu colega comprou a mentoria e te deixaram de fora. Isso não foi descuido. É o modelo de negócio funcionando exatamente como foi desenhado.",
+      "tema": "O inimigo",
+      "meta": "Disrupção · T26 · Argumentação",
+      "tier": "S"
+    },
+    {
+      "id": "d15",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Todo guru te vende o Porsche porque ele precisa que você sonhe. Eu vou te dar uma meta que você acredita, porque eu preciso que você chegue nela.",
+      "tema": "A meta realista",
+      "meta": "Disrupção · T19 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d16",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você já sabe minerar produto, já sabe montar loja, já viu 40 vídeos. E continua parado. O teu problema nunca foi informação.",
+      "tema": "Travado",
+      "meta": "Reconhecimento · T23 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "d17",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Medo de torrar dinheiro de novo não é fraqueza. É cicatriz. E cicatriz bem usada te faz gastar melhor que 90% do mercado.",
+      "tema": "Medo de rasgar grana",
+      "meta": "Reconhecimento · T28 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d18",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você passou três semanas estudando estrutura de campanha e não gravou um criativo. Isso não é estratégia. É fuga com cara de estudo, e eu fiz exatamente igual.",
+      "tema": "Tráfego: fuga com cara de estudo",
+      "meta": "Reconhecimento · T23 · Identificação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d19",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Mesmo trabalho, mesma loja, mesmo anúncio. Só que numa moeda cinco vezes mais forte. É só isso que separa você de quem já foi.",
+      "tema": "Dólar",
+      "meta": "Crença · T13 · Brevidade",
+      "tier": "A",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "d20",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O Brasil está saturado, lá fora está vazio. Isso não é opinião, é o CPM. Vou colocar os dois lado a lado na tela.",
+      "tema": "Mar azul",
+      "meta": "Crença irrefutável · T13 · Prova",
+      "tier": "A",
+      "gravado": "2026-07-24"
+    },
+    {
+      "id": "d21",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "30 dias sem vender não quer dizer que não funciona. Quer dizer que você testou um produto. Um. Quem vende testa dez e o décimo paga os nove. Você parou no segundo e chamou de conclusão.",
+      "tema": "Tempo até a primeira venda",
+      "meta": "Reconhecimento · T27 · Identificação",
+      "tier": "A",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d22",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Tem um motivo pro guru vender pra 500 pessoas de uma vez: ele não precisa que você tenha resultado. Precisa que você compre.",
+      "tema": "O inimigo",
+      "meta": "Disrupção · T07 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d23",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Se você tivesse escolhido o mercado antes do produto, não teria rasgado o dinheiro que rasgou. E ninguém te ensinou essa ordem.",
+      "tema": "Mercado antes do produto",
+      "meta": "Disrupção · T27 · Algo novo",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d24",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Você não quer ficar rico. Você quer sair do sufoco e dormir tranquilo. E essas duas coisas custam números completamente diferentes.",
+      "tema": "A meta realista",
+      "meta": "Reconhecimento · T26 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "d25",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Produto vencedor não existe. Existe oferta vencedora. O mesmo produto que te deu prejuízo está pagando a casa de outro cara agora, e a diferença não está no produto.",
+      "tema": "Produto vencedor",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d26",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você faturou alto e não sobrou nada. Imposto, parcelamento, chargeback, devolução. Isso não é problema de gestão. É problema de moeda.",
+      "tema": "Perfil B: margem no BR",
+      "meta": "Disrupção · T26 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d27",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Teste simples pra saber se você comprou mentoria ou PDF caro: manda uma mensagem hoje à meia-noite. Se ninguém responder até amanhã, você já sabe.",
+      "tema": "O inimigo",
+      "meta": "Recompensa · T01 · Valor prático",
+      "tier": "A",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "d28",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Se a tua operação depende do cliente atender a campainha pra você receber, você não tem loja. Você tem torcida.",
+      "tema": "COD",
+      "meta": "Disrupção · T28 · Emoção quente",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d29",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Você já rasgou grana com anúncio. Então não sobe anúncio ainda. Existe uma etapa antes, e é exatamente a que o curso pulou.",
+      "tema": "Validação antes do tráfego",
+      "meta": "Reconhecimento · T11 · Valor prático",
+      "tier": "A",
+      "gravado": "2026-07-21"
+    },
+    {
+      "id": "d30",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você tá negociando R$ 10 de desconto com um cliente que pergunta o frete três vezes. Do outro lado, o americano paga [valor real] pelo mesmo produto e nem pergunta. A diferença não é o produto. É o bolso do outro lado.",
+      "tema": "Nacional vs internacional",
+      "meta": "Reconhecimento · T13 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "d31",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Cansado de nego que vende e não orienta? Eu também já fui esse cliente. É por isso que eu faço do jeito que faço, e não é bondade, é trauma.",
+      "tema": "O inimigo",
+      "meta": "Autoridade · T02 · História",
+      "tier": "A"
+    },
+    {
+      "id": "d32",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você briga por R$ 90 de ticket com um cliente que pede desconto. Lá fora o mesmo produto sai por [valor real] e ninguém pergunta o frete.",
+      "tema": "Ticket BR vs global",
+      "meta": "Reconhecimento · T13 · Identificação",
+      "tier": "A",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "d33",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você não precisa aprender a vender. Precisa parar de vender no país errado.",
+      "tema": "Perfil B: migrar",
+      "meta": "Disrupção · T26 · Brevidade",
+      "tier": "A"
+    },
+    {
+      "id": "d34",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Existem 3 detalhes que denunciam que a sua loja é dropshipping. O americano vê em 2 segundos e fecha a aba sem dizer nada. Vou mostrar os 3, e você vai reconhecer os 3.",
+      "tema": "Loja com cara de marca",
+      "meta": "Reconhecimento · T30 · Identificação",
+      "tier": "A",
+      "gravado": "2026-07-24"
+    },
+    {
+      "id": "d35",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Muita ideia na cabeça e nada sai do lugar. Ideia demais dá no mesmo que nenhuma. Vou te dar a única que importa essa semana.",
+      "tema": "Travado",
+      "meta": "Recompensa · T04 · Valor prático",
+      "tier": "A"
+    },
+    {
+      "id": "d36",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "\"Não tenho dinheiro pra começar.\" Você não precisa de dinheiro pra começar. Precisa de dinheiro pra errar. E ninguém te explica a diferença.",
+      "tema": "Objeção de caixa",
+      "meta": "Disrupção · T05 · Algo novo",
+      "tier": "A"
+    },
+    {
+      "id": "d37",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Feijão com arroz bem feito ganha de estratégia complexa mal feita. Você está tentando fazer risoto sem saber cozinhar arroz.",
+      "tema": "Simplicidade",
+      "meta": "Disrupção · T13 · Brevidade",
+      "tier": "A"
+    },
+    {
+      "id": "d38",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Teu CPA não está alto. Tua oferta está fraca. O leilão do Meta está te cobrando pelo criativo ruim, e ele nunca vai te avisar disso.",
+      "tema": "CPA alto",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d39",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Não precisa ser milionário. 10k por mês, todo mês, muda mais a tua vida do que um mês de 100k que nunca mais se repete.",
+      "tema": "A meta realista",
+      "meta": "Crença · T13 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d40",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Você odeia dropshipping porque só conheceu a versão ruim dele. Deixa eu te mostrar a versão que ninguém te vendeu, porque nela dá trabalho.",
+      "tema": "Drop de verdade",
+      "meta": "Reconhecimento · T05 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d41",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O drop no Brasil te obriga a vender barato pra quem não tem dinheiro. O drop global te deixa vender caro pra quem tem. A conta é essa e ela não muda.",
+      "tema": "BR vs global",
+      "meta": "Crença · T13 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d42",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Quem já vendeu e quebrou tem uma vantagem que iniciante nenhum tem: você já sabe exatamente onde dói. Só faltou o mercado certo.",
+      "tema": "Perfil B",
+      "meta": "Recompensa · T19 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "d43",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Sem carrão, sem Dubai, sem foguete. Meu dia é 40 minutos olhando anúncio, 20 minutos de suporte, e o resto é vida. Se você esperava mais do que isso, o problema não é o modelo. É o que te venderam.",
+      "tema": "Rotina real",
+      "meta": "Disrupção · T28 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "d44",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "O que destrava você não é mais conteúdo. É alguém olhando a tua loja e dizendo: muda isso aqui e sobe esse anúncio hoje.",
+      "tema": "Direção > informação",
+      "meta": "Recompensa · T29 · Ponte pra oferta",
+      "tier": "A"
+    },
+    {
+      "id": "d45",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Mil visitas e nenhuma venda não é problema de tráfego. É a sua página dizendo \"não confia em mim\" mil vezes seguidas. E ela diz isso em três lugares específicos.",
+      "tema": "Conversão baixa",
+      "meta": "Disrupção · T26 · Valor prático",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d46",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Comecei com um cartão pagando a fatura do outro. Não é conselho. É prova de que dá pra começar apertado, e eu vou te contar como não repetir os meus erros.",
+      "tema": "Começar apertado",
+      "meta": "Autoridade · T08 · História",
+      "tier": "A"
+    },
+    {
+      "id": "d47",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "\"Esse produto está saturado.\" Não está. Saturou o ângulo. A dor continua lá, intacta, e quem entra com ângulo novo pega o mercado já aquecido sem pagar por isso.",
+      "tema": "Produto saturado",
+      "meta": "Crença · T05 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d48",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Escalar no Brasil é aumentar volume e perder margem. Escalar na gringa é aumentar preço. Você já tentou o primeiro e sabe onde ele termina.",
+      "tema": "Perfil B: escalar",
+      "meta": "Crença · T13 · Argumentação",
+      "tier": "A"
+    },
+    {
+      "id": "d49",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Não larga o emprego. Sério. Eu montei a operação em 2 horas por noite, depois do expediente, com o salário pagando os testes. Quem larga antes da primeira venda volta pro CLT em três meses, e mais amargo.",
+      "tema": "Fazendo CLT",
+      "meta": "Disrupção · T11 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "d50",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Loja global não é loja de dropshipping. É marca. E o gringo compra de marca, não de página que grita promoção em vermelho.",
+      "tema": "Branding",
+      "meta": "Crença · T13 · Algo novo",
+      "tier": "A"
+    },
+    {
+      "id": "d51",
+      "pilar": "drop",
+      "func": "dor",
+      "hook": "Tem gente de 19 anos vendendo em dólar e gente de 35 esperando o momento certo. \"Momento certo\" é o nome educado do medo de perder dinheiro de novo. Eu sei, porque eu já perdi.",
+      "tema": "Momento certo",
+      "meta": "Reconhecimento · T22 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "d52",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Sabe o que 10k por mês em dólar significa na prática? É você parar de olhar o preço antes de olhar o produto. É pouco e é tudo.",
+      "tema": "A meta realista",
+      "meta": "Reconhecimento · T21 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "d53",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Antes de colocar 1 real em anúncio, eu faço um teste que custa zero e leva 40 minutos. Se você tivesse feito esse teste, não teria perdido os R$ 3 mil no último curso que comprou.",
+      "tema": "Validar antes de gastar",
+      "meta": "Reconhecimento · T24 · Valor prático",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "d54",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Existem dois negócios com o mesmo nome. Num deles você recebe em real depois que o cliente devolve. No outro você recebe em dólar antes de comprar o produto.",
+      "tema": "Drop de verdade vs COD",
+      "meta": "Disrupção · T13 · Argumentação",
+      "tier": "A"
+    },
+    {
+      "id": "d55",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Dropshipping é golpe? Metade do que te vendem sobre dropshipping é. O golpe não é o modelo, é o cara que te vende o curso e nunca teve uma loja no ar. Pede o print da conta dele e vê o que acontece.",
+      "tema": "É golpe?",
+      "meta": "Disrupção · T07 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "d56",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Você não tem caixa pra errar dez vezes. Então a gente erra barato: teste com valor definido, prazo curto e regra de corte antes de subir a campanha.",
+      "tema": "Errar barato",
+      "meta": "Recompensa · T12 · Valor prático",
+      "tier": "A",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "d57",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "\"Dropshipping morreu.\" Quem fala isso tentou vender pro Brasil. O que morreu não foi o modelo, foi o mercado que ele escolheu. E existe uma única coisa que mudou de 2020 pra cá.",
+      "tema": "Vale a pena em 2026",
+      "meta": "Crença · T26 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "d58",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Migrar pro global não é começar do zero. É levar tudo que você já sabe pra um lugar onde vale cinco vezes mais.",
+      "tema": "Perfil B: migrar",
+      "meta": "Recompensa · T28 · Ponte pra oferta",
+      "tier": "A"
+    },
+    {
+      "id": "d59",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Se você vende por menos de 3 vezes o custo do produto, você não tem negócio. Tem um hobby caro. E quem lucra com o teu hobby é o Meta.",
+      "tema": "Precificação",
+      "meta": "Disrupção · T27 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "d60",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "10 dólares por dia não testa nada. Você não está comprando dado, está comprando opinião. E opinião barata é o que faz o iniciante desistir achando que não funciona.",
+      "tema": "Quanto investir por dia",
+      "meta": "Disrupção · T27 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "d61",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Mar azul é palavra bonita pra uma coisa simples: menos gente vendendo pra quem tem mais dinheiro pra comprar. Só isso.",
+      "tema": "Mar azul",
+      "meta": "Crença · T28 · Baixo carregamento",
+      "tier": "B"
+    },
+    {
+      "id": "d62",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Os 3 primeiros segundos decidem quase todo o resultado, e você está colocando logo animado ali. O americano rola o feed em pouco mais de um segundo. Você tem menos tempo do que imagina e eu vou te dizer o que entra no lugar.",
+      "tema": "Criativo que converte",
+      "meta": "Recompensa · T11 · Valor prático",
+      "tier": "B",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "d63",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Cada real que o dólar sobe, o teu concorrente daqui chora e você comemora. Esse é o único lado da moeda em que vale a pena estar.",
+      "tema": "Dólar",
+      "meta": "Crença · T19 · Emoção quente",
+      "tier": "B"
+    },
+    {
+      "id": "d64",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Ninguém compra da sua loja no primeiro clique. Existe uma página no meio do caminho que faz o trabalho sujo, e é ela que separa quem fatura de quem só paga anúncio.",
+      "tema": "Advertorial",
+      "meta": "Mistério · T04 · Named oddity",
+      "tier": "B"
+    },
+    {
+      "id": "d65",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Loja geral vende. Loja de nicho escala. Loja de um produto vira marca. Você escolheu a primeira porque parecia mais segura, e foi a escolha mais cara que você fez.",
+      "tema": "Nicho vs loja geral",
+      "meta": "Reconhecimento · T13 · Identificação",
+      "tier": "B"
+    },
+    {
+      "id": "d66",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Dia [X] da loja. Gastei [valor], vendi [valor], e o erro de ontem me custou [valor]. Vou te mostrar exatamente onde eu errei.",
+      "tema": "A saga",
+      "meta": "Prova · T25 · Prova",
+      "tier": "B"
+    },
+    {
+      "id": "d67",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Perdi 3 contas de anúncio. Na quarta eu entendi que o Meta não pune o que você vende. Pune outra coisa. Se você não souber qual, vai perder a sua também.",
+      "tema": "Conta bloqueada",
+      "meta": "Autoridade · T04 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "d68",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Escalar não é aumentar orçamento. É aguentar o caixa. Quase ninguém quebra vendendo pouco. Quebra vendendo muito, sem saber quanto dinheiro fica preso no meio do caminho.",
+      "tema": "Escalar",
+      "meta": "Disrupção · T26 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "d69",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O americano que me comprou ontem não sabe meu nome, minha idade, nem que eu sou brasileiro. Comprou mesmo assim. Porque ele não compra de você. Ele compra de uma coisa só, e não é a sua cara.",
+      "tema": "Sem aparecer",
+      "meta": "Fato curioso · T28 · Prova",
+      "tier": "B"
+    },
+    {
+      "id": "d70",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "\"Mas como o dinheiro chega até mim?\" É aqui que a maioria trava e desiste. Não precisa de banco americano, não precisa de sócio gringo, não precisa de LLC. Precisa de três peças e eu vou desenhar as três.",
+      "tema": "Receber em dólar",
+      "meta": "Mistério · T14 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d71",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu perdi [valor real] aprendendo três coisas. Você aprende de graça nos próximos 40 segundos, e é por isso que esse vídeo existe.",
+      "tema": "Erros que quebram a loja",
+      "meta": "Autoridade · T08 · História",
+      "tier": "B"
+    },
+    {
+      "id": "d72",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O melhor momento pra começar foi ontem. O segundo melhor é antes do próximo Q4, e ele está bem mais perto do que você imagina.",
+      "tema": "Momento certo",
+      "meta": "Recompensa · T24 · Urgência honesta",
+      "tier": "B"
+    },
+    {
+      "id": "d73",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "A regra que me impediu de queimar dinheiro: gastou 3 vezes o preço do produto sem uma venda, mata. Sem chorar, sem \"mais um dia\". O \"mais um dia\" já te custou caro antes.",
+      "tema": "Matar ou escalar",
+      "meta": "Recompensa · T01 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d74",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Produto de 20 dólares é o jeito mais rápido de trabalhar 12 horas por dia e fechar o mês no zero. Volume nunca salvou margem ruim. Nunca.",
+      "tema": "Ticket baixo",
+      "meta": "Crença · T10 · Never",
+      "tier": "B"
+    },
+    {
+      "id": "d75",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Parei de comprar no AliExpress e o prazo caiu de 20 dias pra 8. Não foi escala, não foi sorte. Foi uma pessoa. Chama agente de fornecimento e ninguém no começo te conta que ele existe.",
+      "tema": "Fornecedor e agente",
+      "meta": "Mistério · T06 · Named oddity",
+      "tier": "B"
+    },
+    {
+      "id": "d76",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Mesmo produto: R$ 97 aqui, [valor] lá. Faz a conta em real e me responde uma pergunta: o problema é você ou é o país pra quem você está tentando vender?",
+      "tema": "Poder de compra",
+      "meta": "Crença irrefutável · T13 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "d77",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Todo mundo usa Shopify e usa igual. O tema que vem de fábrica entrega uma loja que grita \"não confie em mim\". Não é a plataforma. É o que você deixou do jeito que veio.",
+      "tema": "Shopify e tema padrão",
+      "meta": "Disrupção · T27 · Opinião forte",
+      "tier": "B"
+    },
+    {
+      "id": "d78",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Não é Shopify Payments. Não é PayPal. E é exatamente por não saber essa resposta que o brasileiro acha que vender pro exterior é impossível pra ele.",
+      "tema": "Gateway de pagamento",
+      "meta": "Mistério · T29 · Named oddity",
+      "tier": "B"
+    },
+    {
+      "id": "d79",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Você não precisa de R$ 10 mil. Precisa saber a hora exata de colocar o primeiro real, e não é no dia 1. É depois de um teste que custa zero e que ninguém te ensina porque não dá pra vender curso disso.",
+      "tema": "Quanto preciso pra começar",
+      "meta": "Mistério · T29 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d80",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Eu pago 15 dólares pra um americano gravar o vídeo do meu produto. Sotaque nativo, casa americana, cara comum. Ele grava, eu vendo, e o cliente confia porque vê alguém igual a ele.",
+      "tema": "UGC sem aparecer",
+      "meta": "Fato curioso · T21 · Prova",
+      "tier": "B"
+    },
+    {
+      "id": "d81",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "\"Chega em 25 dias.\" Essa frase mata a loja antes do primeiro reembolso. Existe um tipo de fornecedor que entrega em 7 e ele não está no AliExpress.",
+      "tema": "Frete e prazo",
+      "meta": "Mistério · T04 · Named oddity",
+      "tier": "B"
+    },
+    {
+      "id": "d82",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Com R$ 500 você não escala nada. Mas com R$ 500 e 4 dias você descobre se a oferta presta. E essa informação vale mais do que os R$ 500.",
+      "tema": "Começar com pouco",
+      "meta": "Recompensa · T12 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d83",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Uma fatia grande do meu faturamento vem de gente que já tinha desistido de comprar. Elas não voltaram sozinhas. Foram trazidas de volta por três mensagens que você não tem configuradas.",
+      "tema": "Carrinho abandonado",
+      "meta": "Fato curioso · T21 · Prova",
+      "tier": "B"
+    },
+    {
+      "id": "d84",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu não divulgo muito e não pego todo mundo. Não é escassez de marketing: é que eu respondo todo dia, e ninguém responde todo dia pra 400 pessoas.",
+      "tema": "Escassez honesta",
+      "meta": "Autoridade · T18 · Escassez honesta",
+      "tier": "B"
+    },
+    {
+      "id": "d85",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Esse produto custa 4 dólares no fornecedor e está faturando alto neste momento. Não anota o produto. Anota a DOR que ele resolve, porque é ela que vende, e ela não satura.",
+      "tema": "Produto vendendo agora",
+      "meta": "Recompensa · T01 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d86",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Existe um site que mostra há quanto tempo o anúncio do teu concorrente está no ar. Anúncio velho é anúncio lucrativo, porque ninguém paga pra perder. É a única espionagem que importa e é de graça.",
+      "tema": "Espionar concorrente",
+      "meta": "Fato curioso · T16 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "d87",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Abrir empresa nos Estados Unidos antes da primeira venda é a forma mais cara de procrastinar. Existe um número de faturamento em que a LLC passa a valer, e eu vou te dar o número.",
+      "tema": "LLC",
+      "meta": "Disrupção · T11 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d88",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "TikTok te dá venda barata e cliente que some. Meta te dá venda cara e cliente que volta. Escolher errado no começo é o que faz a loja parecer que \"não funciona\".",
+      "tema": "TikTok vs Meta",
+      "meta": "Crença · T13 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "d89",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Eu não falo inglês fluente e minha loja fatura em inglês todo dia. Quem escreve não sou eu e não custa nada. Isso não é atalho, é ferramenta, e a diferença entre as duas coisas é o que separa quem lucra de quem quebra.",
+      "tema": "Sem falar inglês",
+      "meta": "Crença · T28 · Prova",
+      "tier": "B"
+    },
+    {
+      "id": "d90",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Fiz 12 criativos em 20 minutos com IA. O que fez um deles funcionar não foi a IA, foi o que eu escrevi no prompt. E eu vou te entregar o prompt.",
+      "tema": "IA pra criativo",
+      "meta": "Recompensa · T08 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d91",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "O cliente pediu reembolso, você devolveu por gentileza, e o banco cobrou de novo do teu bolso. Isso tem nome, tem taxa e tem como evitar antes de acontecer, mas só se você souber antes.",
+      "tema": "Chargeback",
+      "meta": "Reconhecimento · T23 · Never",
+      "tier": "B"
+    },
+    {
+      "id": "d92",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Setembro é pra construir. Novembro é pra imprimir. Quem começa em novembro paga o CPM mais caro do ano pra aprender o que devia ter aprendido em setembro, e culpa o modelo.",
+      "tema": "Q4 e sazonalidade",
+      "meta": "Recompensa · T20 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d93",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Você pode ter a melhor oferta do mundo e perder a conta em 24 horas por causa de uma palavra na sua página. O Meta não publica essa lista. Eu aprendi ela do jeito caro.",
+      "tema": "Produtos que derrubam conta",
+      "meta": "Autoridade · T15 · Never",
+      "tier": "B"
+    },
+    {
+      "id": "d94",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Cada app instalado come um pedaço do teu lucro todo mês. Eu rodo a operação inteira com 3. Os outros 12 que você instalou cobram pra resolver um problema que você ainda não tem.",
+      "tema": "Apps",
+      "meta": "Crença · T10 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "d95",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Você não precisa de CNPJ pra vender. Precisa de CNPJ pra não perder o que vendeu. Existe uma linha exata onde isso vira urgente, e quem cruza ela sem estrutura devolve o lucro do ano inteiro.",
+      "tema": "CNPJ",
+      "meta": "Recompensa · T24 · Never",
+      "tier": "B"
+    },
+    {
+      "id": "d96",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O cliente americano não sabe que sou brasileiro e não faria diferença se soubesse. Ele não compra de um país. Ele compra de uma página que responde a dúvida dele antes de ele pensar nela.",
+      "tema": "Vender pros EUA sendo BR",
+      "meta": "Fato curioso · T21 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "d97",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Mudou uma regra na alfândega dos Estados Unidos e a margem de muita loja evaporou sem o dono perceber. Se você vende pra lá, para o que está fazendo e confere isso hoje.",
+      "tema": "Alfândega",
+      "meta": "Recompensa negativa · T15 · Notícia",
+      "tier": "B"
+    },
+    {
+      "id": "d98",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Todo mundo corre pros Estados Unidos e paga caro pela mesma atenção. Tem país europeu com CPM muito mais barato e quase ninguém anunciando. Meu critério pra escolher mercado vem antes de escolher produto, e é o inverso do que te ensinaram.",
+      "tema": "Além dos EUA",
+      "meta": "Disrupção · T19 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "d99",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Faturou em dólar e achou que o Leão não enxerga? Enxerga. E no dia em que ele bater você não vai querer estar com esse dinheiro na conta pessoal. O jeito certo é mais barato do que o susto.",
+      "tema": "Imposto",
+      "meta": "Crença · T09 · Never",
+      "tier": "B"
+    },
+    {
+      "id": "s0",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você domina a habilidade mais cara do mercado, fazer anúncio vender. E está alugando ela por R$ 1.500 por mês pra um cliente que atrasa o pagamento.",
+      "tema": "Gestor de tráfego",
+      "meta": "Reconhecimento · T27 · Opinião forte",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "s1",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você não é vendedor da Shopee. Você é o departamento de marketing dela, sem salário, sem crachá e sem participação.",
+      "tema": "Afiliado",
+      "meta": "Disrupção · T28 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "s2",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você não tem medo de tentar. Você tem medo de tentar e todo mundo ver que não deu certo. Ninguém fala isso em voz alta, e é o que trava nove em cada dez.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T22 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "s3",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Sua loja fatura R$ 100 mil e você tira R$ 8 mil. Isso não é problema de gestão. É problema de moeda, e nenhum consultor vai te falar isso.",
+      "tema": "Produto próprio",
+      "meta": "Reconhecimento · T26 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-21"
+    },
+    {
+      "id": "s4",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Um negócio que fatura 10k por mês te paga o mesmo que R$ 1 milhão aplicado. Faz a conta com calma e depois me diz de novo onde está o risco.",
+      "tema": "Investidor",
+      "meta": "Crença irrefutável · T13 · Argumentação",
+      "tier": "S",
+      "gravado": "2026-07-19"
+    },
+    {
+      "id": "s5",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Teu cliente fatura 10 e te paga 1. E ainda te cobra relatório no domingo. Me diz quem é o funcionário nessa história.",
+      "tema": "Gestor de tráfego",
+      "meta": "Disrupção · T13 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-07-21"
+    },
+    {
+      "id": "s6",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Afiliado constrói audiência e aluga ela. No dia em que a plataforma cortar a comissão, você descobre que o negócio nunca foi teu.",
+      "tema": "Afiliado",
+      "meta": "Crença · T27 · Emoção quente",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s7",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Se você já perdeu R$ 3 mil num curso, você não é burro. Você é caro. Já pagou a aula mais dolorida do mercado, agora só falta usar o que ela ensinou.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T28 · Identificação",
+      "tier": "S",
+      "gravado": "2026-07-24"
+    },
+    {
+      "id": "s8",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você tem produto próprio e margem apertada. O preço não está errado. A moeda está.",
+      "tema": "Produto próprio",
+      "meta": "Disrupção · T26 · Brevidade",
+      "tier": "S",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s9",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você estuda ativo, dividendo e renda passiva. E nunca construiu o único ativo que você controla de verdade: um negócio.",
+      "tema": "Investidor",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s10",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você sabe fazer estranho comprar. É a coisa mais rara que existe. E você usa isso pra enriquecer os outros e chama de humildade.",
+      "tema": "Gestor de tráfego",
+      "meta": "Disrupção · T22 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s11",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você grava, edita, posta, viraliza e vende. E o cadastro do cliente vai pra empresa de outra pessoa. Você fez a parte difícil e ficou com a parte pequena.",
+      "tema": "Afiliado",
+      "meta": "Disrupção · T27 · Identificação",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s12",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "\"Isso não é pra mim.\" Repete essa frase por mais dois anos e ela vira profecia. O custo de ficar exatamente onde você está não aparece em planilha nenhuma, e é o mais caro de todos.",
+      "tema": "Fora do mercado",
+      "meta": "Disrupção · T23 · Opinião forte",
+      "tier": "A",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "s13",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você fatura bem e não sobra nada. Imposto, maquininha, parcelamento, devolução. Vender mais não resolve isso. Vender pra outro lugar resolve.",
+      "tema": "Produto próprio",
+      "meta": "Reconhecimento · T27 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "s14",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Investidor entende de risco melhor que qualquer um. Então me responde: por que 100% do teu capital depende de decisão que outra empresa toma sem te consultar?",
+      "tema": "Investidor",
+      "meta": "Crença · T22 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-08-07"
+    },
+    {
+      "id": "s15",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você otimiza a campanha do dentista. O dentista compra a Hilux. E você renova o contrato no mês seguinte, pelo mesmo valor.",
+      "tema": "Gestor de tráfego",
+      "meta": "Reconhecimento · T19 · Identificação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "s16",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Se a plataforma te banir amanhã, quanto sobra? Se a resposta for zero, você não tem negócio. Tem uma conta em nome de outra empresa.",
+      "tema": "Afiliado",
+      "meta": "Crença · T22 · Argumentação",
+      "tier": "A"
+    },
+    {
+      "id": "s17",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "O que trava você não é falta de método. É não querer virar o amigo que \"vive tentando negócio\". E ele é o único do grupo que vai sair.",
+      "tema": "Fora do mercado",
+      "meta": "Disrupção · T22 · Moeda social",
+      "tier": "A"
+    },
+    {
+      "id": "s18",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você não precisa trocar de produto. Precisa trocar de cliente. É o movimento mais barato que existe e quase ninguém faz.",
+      "tema": "Produto próprio",
+      "meta": "Disrupção · T01 · Opinião forte",
+      "tier": "A"
+    },
+    {
+      "id": "s19",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Diversificar não é ter cinco ações. É ter uma fonte de renda que não depende da bolsa, do CDI e do teu chefe. Você tem uma?",
+      "tema": "Investidor",
+      "meta": "Disrupção · T26 · Algo novo",
+      "tier": "A"
+    },
+    {
+      "id": "s20",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "No dia em que teu maior cliente sair, quanto cai o teu faturamento? Se passar de 40%, você não tem um negócio. Tem um emprego com CNPJ e sem férias.",
+      "tema": "Gestor de tráfego",
+      "meta": "Crença · T22 · Argumentação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "s21",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "O algoritmo mudou e a tua renda caiu pela metade. Isso não foi azar. É o preço de construir em terreno alugado.",
+      "tema": "Afiliado",
+      "meta": "Reconhecimento · T27 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "s22",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Contando o deslocamento, você vende 13 horas do teu dia por R$ 3.500. Isso não é um emprego, é um preço. E quem aceitou o preço foi você.",
+      "tema": "Fora do mercado",
+      "meta": "Crença · T13 · Identificação",
+      "tier": "A",
+      "gravado": "2026-08-08"
+    },
+    {
+      "id": "s23",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Teu cliente pede desconto, parcela em 12 vezes e ainda quer frete grátis. O americano paga à vista e não pergunta o frete. Mesmo produto, outro bolso.",
+      "tema": "Produto próprio",
+      "meta": "Crença · T13 · Ponte pro drop",
+      "tier": "A"
+    },
+    {
+      "id": "s24",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você aprendeu a fazer o dinheiro trabalhar. Falta aprender a fazer o dinheiro nascer. São duas habilidades diferentes e só uma delas te tira do emprego.",
+      "tema": "Investidor",
+      "meta": "Disrupção · T13 · Brevidade",
+      "tier": "A"
+    },
+    {
+      "id": "s25",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você já pensou \"se eu rodo pro cliente, por que não rodo pra mim?\". Pensou, e travou na hora de escolher o produto. O produto é a parte fácil, e eu vou te provar isso.",
+      "tema": "Gestor de tráfego",
+      "meta": "Mistério · T04 · Ponte pro drop",
+      "tier": "A"
+    },
+    {
+      "id": "s26",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você entrega o cliente pra Shopee e recebe uma migalha de comissão. O cliente é dela pra sempre. Você fica sem lista, sem loja e sem cliente.",
+      "tema": "Afiliado",
+      "meta": "Disrupção · T23 · Argumentação",
+      "tier": "A"
+    },
+    {
+      "id": "s27",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você não quer ser rico. Você quer parar de somar o carrinho no mercado antes de chegar no caixa. E isso está bem mais perto do que te venderam.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T14 · Identificação",
+      "tier": "A"
+    },
+    {
+      "id": "s28",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você acha que vender pro exterior é complicado. Complicado é sustentar uma loja com 12% de margem e cliente que abre chargeback.",
+      "tema": "Produto próprio",
+      "meta": "Disrupção · T05 · Argumentação",
+      "tier": "A"
+    },
+    {
+      "id": "s29",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você aporta R$ 2 mil por mês e espera 20 anos. Ou usa os mesmos R$ 2 mil pra construir um ativo que te paga em dólar. Um dos dois financia o outro, e não é o que você pensa.",
+      "tema": "Investidor",
+      "meta": "Disrupção · T13 · Algo novo",
+      "tier": "A"
+    },
+    {
+      "id": "s30",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você não precisa de mais um cliente. Precisa de um produto teu. No serviço você troca hora por dinheiro igual CLT, só que sem carteira e sem décimo terceiro.",
+      "tema": "Gestor de tráfego",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "B"
+    },
+    {
+      "id": "s31",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você domina a parte mais difícil do jogo, que é fazer alguém querer comprar. O que te falta é a parte fácil: ser o dono do que ele compra.",
+      "tema": "Afiliado",
+      "meta": "Recompensa · T26 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s32",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Empreender é arriscado, dizem. Depender de um chefe que te demite por e-mail também é. Só que esse risco nunca te pediu permissão.",
+      "tema": "Fora do mercado",
+      "meta": "Crença · T05 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "s33",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Teu concorrente baixou o preço de novo. Você vai baixar também? Existe um mercado onde essa conversa simplesmente não acontece.",
+      "tema": "Produto próprio",
+      "meta": "Reconhecimento · T14 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s34",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Renda passiva não existe no começo. Todo ativo foi trabalho antes de virar renda. Inclusive o que você compra pronto na bolsa: alguém trabalhou pra construir.",
+      "tema": "Investidor",
+      "meta": "Crença · T05 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "s35",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você tem a habilidade e não tem o ativo. É exatamente por isso que você trabalha mais que teu cliente e ganha menos que ele.",
+      "tema": "Gestor de tráfego",
+      "meta": "Reconhecimento · T27 · Brevidade",
+      "tier": "B"
+    },
+    {
+      "id": "s36",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você já viu sua comissão ser cortada de um dia pro outro. Foi por e-mail. Sem reunião, sem aviso, sem direito a resposta. É assim que negócio dos outros funciona.",
+      "tema": "Afiliado",
+      "meta": "Reconhecimento · T23 · Identificação",
+      "tier": "B"
+    },
+    {
+      "id": "s37",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você já pesquisou \"como ganhar dinheiro na internet\" na aba anônima e fechou com vergonha. Eu também já fiz isso. Vamos falar do que tem do outro lado dessa busca.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T22 · Identificação",
+      "tier": "B"
+    },
+    {
+      "id": "s38",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Quem vende no Brasil trabalha pra pagar imposto. Quem vende em dólar trabalha pra construir caixa. Mesma jornada, vida diferente.",
+      "tema": "Produto próprio",
+      "meta": "Crença · T13 · Emoção quente",
+      "tier": "B"
+    },
+    {
+      "id": "s39",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Teu dinheiro rende 12% ao ano parado e você chama isso de patrimônio. Um negócio é a única classe de ativo onde a variável principal é você. E é justamente isso que te assusta.",
+      "tema": "Investidor",
+      "meta": "Disrupção · T26 · Opinião forte",
+      "tier": "B"
+    },
+    {
+      "id": "s40",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Todo gestor de tráfego bom, uma hora, vira dono. Os que não viram passam a vida vendendo o próprio tempo com desconto.",
+      "tema": "Gestor de tráfego",
+      "meta": "Crença · T19 · Emoção quente",
+      "tier": "B"
+    },
+    {
+      "id": "s41",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você vende um produto de R$ 30 pra ganhar R$ 2. Do outro lado do mundo, o mesmo vídeo vende um produto de dólar com margem de dono.",
+      "tema": "Afiliado",
+      "meta": "Disrupção · T13 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s42",
+      "pilar": "sec",
+      "func": "dor",
+      "hook": "Você tem 19 anos e já se sente atrasado. Atrasado é chegar aos 30 com o mesmo salário e a mesma desculpa que você tem hoje.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T09 · Emoção quente",
+      "tier": "B"
+    },
+    {
+      "id": "s43",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Gestor de tráfego não vive de tráfego. Vive de cliente. E é por isso que o teu maior problema nunca vai ser o CPA.",
+      "tema": "Gestor de tráfego",
+      "meta": "Disrupção · T26 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "s44",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Rodar tráfego pro teu próprio produto tem uma diferença que ninguém te conta: o resultado não precisa da aprovação de ninguém. Nem do cliente, nem do sócio dele.",
+      "tema": "Gestor de tráfego",
+      "meta": "Recompensa · T21 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "s45",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Teu cliente te paga em real. Tua habilidade vale em dólar. E o Meta cobra o mesmo dos dois.",
+      "tema": "Gestor de tráfego",
+      "meta": "Crença · T13 · Brevidade",
+      "tier": "B"
+    },
+    {
+      "id": "s46",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Comissão em real, ou margem de dono em dólar. Mesmo criativo, mesmo esforço, mesmo público frio. A única diferença é de quem é a oferta.",
+      "tema": "Afiliado",
+      "meta": "Crença · T13 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s47",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "O jogo do afiliado é volume. O jogo do dono é margem. Um dos dois te obriga a trabalhar pra sempre, e você já sabe qual.",
+      "tema": "Afiliado",
+      "meta": "Crença · T13 · Brevidade",
+      "tier": "B"
+    },
+    {
+      "id": "s48",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Todo afiliado grande, uma hora, cria o próprio produto. Nenhum deles voltou atrás. Pensa no porquê.",
+      "tema": "Afiliado",
+      "meta": "Crença · T04 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "s49",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você não precisa de dinheiro. Você precisa começar a ganhar dinheiro. São duas frases diferentes e é aí que a maioria trava a vida inteira.",
+      "tema": "Fora do mercado",
+      "meta": "Reconhecimento · T26 · Brevidade",
+      "tier": "B"
+    },
+    {
+      "id": "s50",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Toda vez que aparece um anúncio de renda extra, você pensa: golpe. E na maioria das vezes você está certo. Vou te ensinar a separar os dois em 30 segundos, de graça.",
+      "tema": "Fora do mercado",
+      "meta": "Crença · T05 · Valor prático",
+      "tier": "B"
+    },
+    {
+      "id": "s51",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "\"Não sei o que fazer da minha vida.\" Ninguém descobre pensando. Descobre depois da primeira venda, porque ela muda a pergunta que você faz.",
+      "tema": "Fora do mercado",
+      "meta": "Disrupção · T14 · Algo novo",
+      "tier": "B"
+    },
+    {
+      "id": "s52",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Enquanto você espera segurança, a inflação come teu salário todo mês. Ninguém chama isso de risco, mas é o único risco que já está acontecendo com você.",
+      "tema": "Fora do mercado",
+      "meta": "Crença irrefutável · T23 · Argumentação",
+      "tier": "B"
+    },
+    {
+      "id": "s53",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Não larga o emprego. O teu CLT é o teu investidor e ele nem sabe disso. Usa o dinheiro dele pra construir a tua saída.",
+      "tema": "Fora do mercado",
+      "meta": "Disrupção · T11 · Opinião forte",
+      "tier": "B"
+    },
+    {
+      "id": "s54",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Não precisa de talento pra vender na internet. Precisa de um produto que resolve dor e de alguém com dinheiro pra pagar. As duas coisas já existem, e nenhuma delas está no Brasil.",
+      "tema": "Fora do mercado",
+      "meta": "Crença · T29 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s55",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Aqui você briga por preço. Lá fora você briga por atenção. Só uma dessas duas brigas tem margem no final do mês.",
+      "tema": "Produto próprio",
+      "meta": "Crença · T13 · Opinião forte",
+      "tier": "B"
+    },
+    {
+      "id": "s56",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Você já tem fornecedor, operação e criativo. Falta uma coisa só, e ela não custa dinheiro: um mercado que tenha dinheiro.",
+      "tema": "Produto próprio",
+      "meta": "Recompensa · T29 · Ponte pro drop",
+      "tier": "B"
+    },
+    {
+      "id": "s57",
+      "pilar": "sec",
+      "func": "crenca",
+      "hook": "Escalar no Brasil é aumentar volume. Escalar lá fora é aumentar preço. Sente a diferença de vida que isso dá.",
+      "tema": "Produto próprio",
+      "meta": "Disrupção · T13 · Brevidade",
+      "tier": "B"
+    },
+    {
+      "id": "n1",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Vinte e três minutos atrás caiu uma venda. Eu estava dirigindo. Não é sobre trabalhar menos, é sobre a máquina não depender de você estar acordado.",
+      "tema": "Prova de vida",
+      "meta": "T21 · Autoridade · Prova",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n2",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "São oito e meia da noite de domingo e eu acabei de subir dez criativos. Isso não é disciplina. Isso é o preço que quase ninguém quer pagar.",
+      "tema": "Prova de vida",
+      "meta": "T02 · Autoridade · Emoção quente",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n3",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Meu celular hoje: uma venda da loja do Brasil, uma da loja em dólar, e uma da loja nova. Três operações, um celular, um cara. É isso que estrutura faz.",
+      "tema": "Prova de vida",
+      "meta": "T21 · Prova · Recompensa",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n4",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu não vim pra internet pra ser bonitinho. Vim porque quem tem atenção domina o jogo, e eu precisava sentar em mesas onde eu não era convidado.",
+      "tema": "Prova de vida",
+      "meta": "T26 · Disrupção · Opinião forte",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n5",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Deixa eu te mostrar o escritório vazio que eu aluguei semana passada. Em seis meses eu quero equipe aqui dentro. Você vai ver isso acontecendo em tempo real.",
+      "tema": "Prova de vida",
+      "meta": "T06 · Mistério · Abre saga",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n6",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu vendi um relógio e uma bicicleta por setecentos reais. Foi todo o dinheiro que eu tinha. Foi com isso que tudo começou.",
+      "tema": "História",
+      "meta": "T08 · Recompensa · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n7",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu ia comprar uma BMW com o primeiro lucro forte. Uma pergunta de um amigo me impediu. Dois meses depois essa pergunta salvou minha empresa.",
+      "tema": "História",
+      "meta": "T26 · Mistério · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n8",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Passei um ano no deserto. Trinta mil reais perdidos em curso, mentoria e loja que não vendia. Aí eu apostei a última ficha e faturei cento e cinquenta mil num mês.",
+      "tema": "História",
+      "meta": "T08 · Recompensa · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n9",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Com catorze anos eu vi minha mãe aperreada pra fazer a feira. Naquele dia eu entendi que se eu não fizesse por mim, ninguém faria.",
+      "tema": "História",
+      "meta": "T23 · Reconhecimento · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n10",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu me isolei mais de um ano. Sem sair, sem festa. Aí meus amigos disseram que eu mudei do nada. Ninguém viu o ano que eu passei trancado.",
+      "tema": "História",
+      "meta": "T02 · Disrupção · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n11",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Um seguidor me mandou uma sugestão boa em vez de pedir alguma coisa. Um mês depois ele era meu sócio. É assim que se entra numa mesa.",
+      "tema": "História",
+      "meta": "T26 · Fato curioso · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n12",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Eu comprava tênis de um fornecedor de Minas e revendia dobrando o valor. Vendia camisa no Facebook. Não era chique, mas era o outro lado do balcão.",
+      "tema": "História",
+      "meta": "T21 · Reconhecimento · História",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n13",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Não é sobre ficar rico. É sobre acordar sem aquele aperto no peito de segunda-feira. Dez mil dólares por mês já compra isso.",
+      "tema": "Desejo",
+      "meta": "T29 · Disrupção · Identificação",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n14",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Eu moro a dez minutos da praia e trabalho de onde eu quiser. Falam que eu tinha que estar em São Paulo pra crescer. Eu quero é paz.",
+      "tema": "Desejo",
+      "meta": "T26 · Disrupção · Opinião forte",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n15",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "A liberdade não é não trabalhar. É trabalhar no domingo porque você quis, não porque um patrão mandou.",
+      "tema": "Desejo",
+      "meta": "T13 · Crença · Brevidade",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n16",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "A melhor sensação não é a primeira venda. É a décima venda de um dia que você nem abriu o computador.",
+      "tema": "Desejo",
+      "meta": "T29 · Recompensa · Identificação",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n17",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Sem estoque, sem funcionário, sem loja física, sem sair de casa. E o cliente paga em dólar. Me diz qual outro negócio te dá isso hoje.",
+      "tema": "Desejo",
+      "meta": "T13 · Recompensa · Argumentação",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n18",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Trinta mil reais por mês não te faz rico. Te faz dono do teu horário. E dono do horário é o que eu chamo de vida começando.",
+      "tema": "Desejo",
+      "meta": "T29 · Disrupção · Opinião forte",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n19",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Testo vinte criativos. Um valida. Aí eu replico esse um mais vinte vezes. Não é sorte, é jogo de números, e eu vou te mostrar a conta.",
+      "tema": "Motor de negócio",
+      "meta": "T01 · Autoridade · Valor prático",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n20",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Gastei três vezes o valor do produto e não vendeu? Eu mato a campanha na hora. E não perdi dinheiro: eu comprei dados.",
+      "tema": "Motor de negócio",
+      "meta": "T01 · Recompensa · Valor prático",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n21",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Duas mil e trezentas visualizações num post orgânico me economizaram quarenta dólares de CPM. Conteúdo não é vaidade, é redução de custo de tráfego.",
+      "tema": "Motor de negócio",
+      "meta": "T21 · Fato curioso · Argumentação",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n22",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Fiz dois mil e trezentos dólares em sete dias sem gastar um real em tráfego. Foi e-mail. Se você depende cem por cento de anúncio, você não tem ativo.",
+      "tema": "Motor de negócio",
+      "meta": "T26 · Recompensa · Prova",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n23",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Uma almofada faz cem mil dólares por mês. Não é o produto. É que eles não vendem almofada, vendem dor nas costas resolvida.",
+      "tema": "Motor de negócio",
+      "meta": "T26 · Mistério · Fato curioso",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n24",
+      "pilar": "drop",
+      "func": "metodo",
+      "hook": "Seis vendas, quinhentos dólares no dia. Eu não quero vender muito. Quero vender caro, porque margem é o que me deixa escalar.",
+      "tema": "Motor de negócio",
+      "meta": "T29 · Disrupção · Opinião forte",
+      "tier": "A",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n25",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O governo revogou a taxa das blusinhas e todo mundo comemorou. Quem vende em dólar nem piscou. Vou te explicar por quê.",
+      "tema": "Popularidade",
+      "meta": "T26 · Popularidade · Notícia",
+      "tier": "B",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n26",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "O ChatGPT começou a testar anúncio dentro da conversa. Isso não é banner. É a maior mudança de tráfego dos últimos anos e quase ninguém percebeu.",
+      "tema": "Popularidade",
+      "meta": "T06 · Popularidade · Algo novo",
+      "tier": "B",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n27",
+      "pilar": "drop",
+      "func": "crenca",
+      "hook": "Olha a diferença no olhar desses dois jogadores antes do lance. Um quer devorar, o outro quer sumir. Nos negócios é exatamente igual.",
+      "tema": "Popularidade",
+      "meta": "T13 · Popularidade · Opinião forte",
+      "tier": "B",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n28",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Ele me mandou mensagem travado no dia quarenta. Não sumiu, não virou bot: eu respondi. Vou te mostrar onde ele estava travado e o que a gente mudou.",
+      "tema": "Ponte pra venda",
+      "meta": "T23 · Prova · História de cliente",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n29",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "O cara não fez a primeira venda porque estava caçando fornecedor antes de ter cliente. Corrigimos a ordem. Vendeu em onze dias.",
+      "tema": "Ponte pra venda",
+      "meta": "T27 · Prova · História de cliente",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    },
+    {
+      "id": "n30",
+      "pilar": "drop",
+      "func": "saga",
+      "hook": "Você vai me ver errar aqui. Campanha que eu matei, produto que não vendeu, conta que caiu. Guru só posta acerto. Operador posta o mês inteiro.",
+      "tema": "Ponte pra venda",
+      "meta": "T28 · Disrupção · Opinião forte",
+      "tier": "S",
+      "origem": "novos-ganchos 16/07"
+    }
+  ],
+  "roteiros": [
+    {
+      "id": "r-gateway",
+      "criado": "2026-07-19",
+      "func": "metodo",
+      "publico": "operador",
+      "titulo": "O gateway é onde o drop global morre",
+      "duracao": "90s",
+      "cta": "GATEWAY",
+      "meta": "Disrupção · T26 · Prova + Identificação",
+      "hook": "Você não vai quebrar no mês que vender pouco. Você vai quebrar no mês que vender muito.",
+      "corpo": "Loja nova, faturamento subindo rápido, sem histórico. Pro gateway, isso não é sucesso. É risco.\n\nE aí acontecem três coisas que ninguém te conta.\n\nA primeira: reserva. Ele retém vinte por cento de tudo que você fatura por noventa dias.\n\nA segunda: chargeback. O cliente não pede reembolso, ele vai direto no banco. Você perde o produto, perde a venda e ainda paga multa.\n\nA terceira: retenção. Suspeitou, congelou tudo, pede documento.\n\nFaz a conta comigo. Você fatura cem mil, tem vinte retido, cinco em chargeback e o resto sai em trinta dias. Você tem cem mil de venda e não tem dez mil pra pagar fornecedor.\n\nE olha, irmão, é aqui que eu vejo gente boa quebrar. Não é operação ruim. É operação boa sem caixa pra aguentar noventa dias esperando dinheiro que já é dela.\n\nTeve uma época que eu podia ter comprado carro melhor. Comprei um Jetta e deixei o resto em caixa. Dois meses depois a operação travou. Foi o caixa que me segurou em pé.\n\nCaixa não é o que sobra. É o que te mantém vivo enquanto o teu dinheiro tá preso.",
+      "fonte": "Direct: \"tive problemas com retenções de gateway\" / \"boa parte foi embora em reembolsos e chargebacks\"",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "r-bigfour",
+      "criado": "2026-07-19",
+      "func": "metodo",
+      "publico": "operador",
+      "titulo": "Por que eu testo o Big Four",
+      "duracao": "90s",
+      "cta": "BIG FOUR",
+      "meta": "Disrupção · T26 · Opinião forte + Argumentação",
+      "hook": "Começar por um país só pra economizar é o jeito mais caro de fazer drop global.",
+      "corpo": "Eu testo quatro de uma vez. Estados Unidos, Reino Unido, Canadá e Austrália.\n\nBig Four. Os quatro maiores mercados consumidores do planeta.\n\nMesma língua. Mesmo comportamento de compra. Mesma cultura de comprar online. Isso significa mesmo criativo, mesma página, mesma oferta.\n\nNão são quatro operações. É uma operação com quatro portas.\n\nSim, o CPM é mais alto. Não vou mentir pra você.\n\nMas presta atenção no que a maioria não enxerga: quando você valida uma oferta no Big Four, você não validou pra um mercado. Você validou pro mundo.\n\nPorque se aquilo converte no consumidor mais caro e mais disputado que existe, aquela mesma oferta desce pra Europa, desce pra Ásia, desce pra América Latina. E desce mais barato, com CPM menor e menos concorrência.\n\nE aí, irmão, você para de caçar produto. Você passa a ter uma oferta que se expande sozinha.\n\nO erro que eu mais vejo é o cara testar mercado pequeno porque é barato, acertar ali, e não conseguir levar aquilo pra lugar nenhum.\n\nBarato na entrada. Teto baixo na saída.",
+      "fonte": "Tese do Nicanor. Direct: \"rodando UK, França, Espanha e Alemanha na mesma campanha\"",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "r-120mil",
+      "criado": "2026-07-19",
+      "func": "crenca",
+      "publico": "operador",
+      "titulo": "120 mil de faturamento, 5 mil no bolso",
+      "duracao": "95s",
+      "cta": "LÍQUIDO",
+      "meta": "Disrupção + Prova · T29 · Prova + História",
+      "hook": "Cento e vinte mil de faturamento. Trinta e dois por cento de margem. Cinco mil reais no bolso.",
+      "corpo": "Um cara me mandou esse número essa semana, todo orgulhoso do faturamento. No papel, trinta e dois por cento de cento e vinte mil é quase quarenta mil de lucro.\n\nSobrou cinco.\n\nOnde foi parar o resto.\n\nReembolso. Produto atrasou, cliente pediu o dinheiro de volta. Você devolve o valor cheio, mas o produto já foi enviado e já foi pago. Perdeu duas vezes.\n\nChargeback. O cliente nem te procura, abre disputa no banco. Perde a venda, perde o produto, paga multa.\n\nPedido barrado. O gateway derruba por suspeita de fraude. Aquela venda aparece no gerenciador, o Meta conta como conversão, mas nunca virou dinheiro.\n\nE a taxa de processamento em cima de tudo que passou.\n\nSoma isso. Trinta e dois por cento vira quatro.\n\nE olha, irmão, o problema dele não era venda. Era operação. E ele não fazia ideia, porque passou o mês inteiro olhando pro número do faturamento.\n\nFaturamento é vaidade. Margem é opinião. Só existe o que entra na conta e fica lá.",
+      "fonte": "Direct: \"no mês de junho foi 32% de margem com 120k de faturamento\". Líquido real: R$5k.",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "r-estrutura-campanha",
+      "criado": "2026-07-19",
+      "func": "metodo",
+      "publico": "operador",
+      "titulo": "Estrutura de campanha pro Meta Ads",
+      "duracao": "95s",
+      "cta": "ESTRUTURA",
+      "meta": "Disrupção · T26 · Valor prático",
+      "hook": "Estrutura de campanha não te faz vender. Mas a errada te faz perder.",
+      "corpo": "Eu vejo gente montando dez conjuntos, cada um com um interesse diferente, achando que isso é estratégia. Isso era 2019.\n\nHoje o Meta lê o teu criativo e acha o público sozinho. Quem segmenta demais só amarra a mão do algoritmo e paga CPM mais caro pra alcançar menos gente.\n\nComo eu monto.\n\nTeste. Uma campanha, público aberto, Big Four. Cada criativo no seu próprio conjunto, com o mesmo orçamento. Isso serve pra uma coisa só: descobrir qual criativo o mercado quer.\n\nPorque se eu jogo cinco criativos dentro de um conjunto só, o Meta escolhe um nas primeiras horas e mata os outros quatro antes deles terem chance. Aí você nunca descobre qual era o bom.\n\nEscala. Achei o campeão, ele vai pra uma campanha nova, agora em CBO, junto com os outros que passaram no teste. Aqui eu deixo o algoritmo decidir, porque agora ele está decidindo entre coisas que já provaram que vendem.\n\nE olha, irmão, presta atenção nisso: teste e escala são duas campanhas diferentes, com objetivos diferentes. Quem mistura as duas passa o mês achando que o problema é a estrutura, quando o problema é que nunca soube qual criativo funcionava.",
+      "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\" / \"se subo tudo junto num CBO ele gasta aleatoriamente\"",
+      "gravado": "2026-07-21"
+    },
+    {
+      "id": "r-4-criativos",
+      "criado": "2026-07-19",
+      "func": "metodo",
+      "publico": "operador",
+      "titulo": "Os 4 formatos de criativo que mais funcionam no Meta Ads",
+      "duracao": "105s",
+      "cta": "FORMATOS",
+      "meta": "Autoridade · T25 · Valor prático",
+      "hook": "Eu já testei formato de criativo de tudo quanto é jeito. Quatro pagam a conta. O resto é enfeite.",
+      "corpo": "O primeiro é o UGC nativo. Uma pessoa comum, do país onde você vende, segurando o produto e falando como gente fala. Eu pago quinze dólares pra um americano gravar isso na casa dele. Sotaque nativo, cozinha americana, cara comum. O cliente confia porque vê alguém igual a ele.\n\nO segundo é problema e solução. Mostra a dor nos primeiros três segundos e o produto resolvendo logo em seguida. Sem introdução, sem logo, sem música bonita. Dor e alívio.\n\nO terceiro é o comparativo lado a lado. Tela dividida: de um lado o jeito velho e sofrido, do outro o teu produto. O cérebro entende a diferença antes de ler qualquer texto.\n\nO quarto é o estático de oferta. Uma imagem, o produto grande, o benefício em quatro palavras. Parece simples demais pra funcionar, e é exatamente por isso que funciona: não parece anúncio.\n\nE olha, irmão, o que muda o jogo não é escolher um. É ter os quatro no ar ao mesmo tempo. Porque o Meta hoje te entrega alcance quando você tem variedade de criativo, não quando você tem o criativo perfeito.\n\nQuatro formatos, três ângulos em cada um. Isso dá doze criativos. É esse o número que faz a conta girar.",
+      "fonte": "Gancho do banco: \"pago 15 dólares pra um americano gravar o vídeo do meu produto\". Direct: \"tenho dificuldade em criativo\"",
+      "gravado": "2026-07-23"
+    },
+    {
+      "id": "r-duplicar-campanha",
+      "criado": "2026-07-19",
+      "func": "crenca",
+      "publico": "operador",
+      "titulo": "Duplicar campanha encarece teu tráfego e te faz perder dinheiro",
+      "duracao": "100s",
+      "cta": "DUPLICAR",
+      "meta": "Disrupção · T27 · Argumentação",
+      "hook": "Toda vez que você duplica uma campanha que está vendendo, você começa a competir contra você mesmo.",
+      "corpo": "Vendeu bem, o cara duplica. Vendeu bem de novo, duplica mais. Chega num ponto que tem seis campanhas iguais no ar, o resultado despencou, e ele conclui que o produto saturou.\n\nNão saturou. Você criou seis concorrentes de você mesmo.\n\nO leilão do Meta é disputado por pessoa, não por campanha. Se as tuas seis campanhas miram o mesmo público, elas dão lance uma contra a outra pela mesma pessoa. E quem paga a diferença é você. É por isso que o CPM sobe do nada, sem você ter mudado nada.\n\nTem um segundo problema, e esse é pior. Cada cópia nova volta pra fase de aprendizado. Você pega uma campanha madura, que já sabia pra quem entregar, e troca por uma recém-nascida que vai queimar teu dinheiro pra aprender o que a outra já sabia.\n\nE olha, irmão, o que eu faço no lugar disso: eu aumento o orçamento da campanha que já está funcionando. Vinte por cento por vez, com um dia de intervalo entre cada aumento. Ela continua madura, continua barata, e escala sem reiniciar nada.\n\nDuplicar é o atalho que parece rápido e cobra caro depois. Subir orçamento é mais devagar e mantém a máquina de pé.",
+      "fonte": "Tema trazido pelo Nicanor. Direct: \"que horas devo escalar... tentei várias, agora estou em 1-1-1\"",
+      "gravado": "2026-07-23"
+    }
+  ],
+  "ideias": [
+    {
+      "id": "i-llc",
+      "titulo": "Precisa de LLC pra começar?",
+      "nota": "LLC custa 350 dólares e não vende nada. Quando importa e quando é só custo.",
+      "func": "metodo",
+      "publico": "ambos",
+      "fonte": "Direct: \"Pra iniciar precisa da llc?\" / \"tem algum mentorado seu rodando sem LLC logo de cara?\"",
+      "criado": "2026-07-19",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "i-abo-cbo",
+      "titulo": "ABO pra testar, CBO pra escalar",
+      "nota": "Se joga criativo novo direto no CBO, o Meta escolhe por você. E escolhe errado.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-criativo-validado",
+      "titulo": "Quando um criativo está validado de verdade",
+      "nota": "CTR alto não valida criativo. Dar critério com número: dias, gasto, qual sinal.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"quantos dias ou quanto de investimento pra concluir que um criativo está validado?\"",
+      "criado": "2026-07-19",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "i-criativo-ia",
+      "titulo": "Criativo de IA ou produto na mão?",
+      "nota": "Debate atual, divide opinião, e ele tem operação pra responder.",
+      "func": "crenca",
+      "publico": "operador",
+      "fonte": "Direct: \"hoje você tá tendo mais resultado com criativo de IA ou compra o produto e grava?\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-meta-ignora",
+      "titulo": "Por que o Meta ignora teu melhor criativo",
+      "nota": "Quase ninguém explica direito. Tipo de conteúdo que faz operador seguir.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"criativos promissores a plataforma ignorava e gastava em outros com CTR mais alto\"",
+      "criado": "2026-07-19",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "i-uk-caixa",
+      "titulo": "Reino Unido exige mais caixa?",
+      "nota": "Raciocínio de CPM e ticket em moeda forte. Contraintuitivo.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"se meu caixa aguentaria começar no Reino Unido, considerando a moeda 7x mais forte\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-margem-escala",
+      "titulo": "Margem de entrada versus margem de escala",
+      "nota": "Margem alta no começo e menor na escala é escolha, não acidente.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"trabalhei nos primeiros 2 dias com 71% de margem\" / \"baixei a margem pra 30%\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-caixa-validar",
+      "titulo": "Quanto de caixa pra validar sem quebrar",
+      "nota": "Reformula a pergunta de preço numa lógica de operação.",
+      "func": "metodo",
+      "publico": "ambos",
+      "fonte": "Direct: \"a pergunta certa é de quanto é preciso pra começar, com margem de segurança\"",
+      "criado": "2026-07-19",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "i-hora-escalar",
+      "titulo": "A hora certa de escalar",
+      "nota": "Estrutura 1-1-1, quando duplicar, quando subir orçamento.",
+      "func": "metodo",
+      "publico": "operador",
+      "fonte": "Direct: \"que horas devo escalar... última agora estou em 1-1-1\"",
+      "criado": "2026-07-19",
+      "gravado": "2026-07-31"
+    },
+    {
+      "id": "i-morde-assopra",
+      "titulo": "Por que você está travado no morde e assopra",
+      "nota": "Expressão do próprio público vira título.",
+      "func": "dor",
+      "publico": "operador",
+      "fonte": "Direct: \"quero sair desse morde e assopra e construir estrutura sólida\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-falta-respeito",
+      "titulo": "Considerei uma falta de respeito",
+      "nota": "Comprou mentoria e recebeu plataforma gravada. Definir a régua do que mentoria tem que entregar.",
+      "func": "dor",
+      "publico": "ambos",
+      "fonte": "Direct: \"me entregaram plataforma com conteúdo gravado pra eu me virar, considerei uma falta de respeito\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-llc-sumiu",
+      "titulo": "Depois que consegui a LLC, a galera sumiu",
+      "nota": "Ataca a venda de estrutura como se fosse resultado.",
+      "func": "dor",
+      "publico": "ambos",
+      "fonte": "Direct: \"depois que ele conseguiu essa LLC a galera sumiu moço\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-sobe-campanha",
+      "titulo": "Falam só pra subir mais campanha",
+      "nota": "Se teu mentor só sabe dizer sobe mais campanha, ele não sabe ler dado.",
+      "func": "dor",
+      "publico": "operador",
+      "fonte": "Direct: \"não tem mais acompanhamento, demora pra responder, falam só pra subir mais campanha\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-planilha",
+      "titulo": "A planilha do pai de três filhos",
+      "nota": "Ler o orçamento doméstico que o cara mandou. Conecta com vender relógio e bicicleta por R$700.",
+      "func": "dor",
+      "publico": "iniciante",
+      "fonte": "Direct: \"Aluguel 700, água 80, luz 240... toda vez que tento algo tem que pagar\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-mae",
+      "titulo": "Só quero melhorar de vida pra ajudar minha mãe",
+      "nota": "Conecta com ver a mãe aperreada pra fazer a feira aos 14 anos.",
+      "func": "saga",
+      "publico": "iniciante",
+      "fonte": "Direct, literal",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-onda-passou",
+      "titulo": "A onda do digital já passou",
+      "nota": "Crença aceita + você contra ela + prova. Usar os R$3 milhões em 4 anos.",
+      "func": "crenca",
+      "publico": "ambos",
+      "fonte": "Direct: \"muitas pessoas falam que a onda do digital já passou\"",
+      "criado": "2026-07-19"
+    },
+    {
+      "id": "i-mentorado",
+      "titulo": "Primeiro conteúdo com resultado de mentorado",
+      "nota": "Categoria inexistente hoje. Mentorado falando, com número e prazo. Responde ao medo de será que eu dou conta.",
+      "func": "saga",
+      "publico": "ambos",
+      "fonte": "DNA: mentorado=0, aluno=0 em 150 roteiros. Direct: \"será que estou no caminho certo\"",
+      "criado": "2026-07-19"
+    }
+  ],
+  "pauta_hoje": {
+    "data": "2026-08-09",
+    "data_br": "Sábado, 9 de agosto",
+    "resumo": "3 táticos, 2 de mentalidade e 1 de prova. Os dois primeiros saíram das lacunas dos mentorados: dor de quem já pagou e que o curso ainda não responde.",
+    "reels": [
+      {
+        "id": "r-2026-08-09-gateway",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "lote",
+        "func": "metodo",
+        "publico": "operador",
+        "titulo": "O gateway é onde o drop global morre",
+        "duracao": "110s",
+        "cta": "GATEWAY",
+        "meta": "Perda · T08 autópsia de erro · Lacuna dos mentorados (9 menções)",
+        "fonte": "mentorado",
+        "origem_dor": "Beleza, mas ainda não conectei nenhuma gateway de pagamentos, tem alguma aula lá que ensina?",
+        "hook": "Dá pra montar loja bonita, achar produto bom, rodar tráfego certo e mesmo assim não receber um real.",
+        "corpo": "Essa é a dúvida que mais aparece nos meus grupos de mentoria, e ela chega sempre tarde demais: o cara já montou tudo e só então descobre que não consegue receber.\n\nGateway é a parte que ninguém mostra no conteúdo porque não é bonita. E é justamente onde o drop global mata a maioria.\n\nTrês coisas pra decidir ANTES de subir a loja, tá?\n\nPrimeiro: em que moeda você quer receber. Isso muda o gateway, muda a taxa e muda quanto sobra no fim.\n\nSegundo: qual gateway aceita o teu país de origem. Muita gente monta a estrutura inteira pra descobrir que não pode abrir conta.\n\nTerceiro: quanto tempo o dinheiro fica retido. Gateway que retém 30 dias com você rodando tráfego todo dia é caixa que você não tem.\n\nIrmão, decide isso no primeiro dia. Descobrir gateway depois da primeira venda é o jeito mais caro de aprender."
+      },
+      {
+        "id": "r-2026-08-09-rastreio",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "lote",
+        "func": "metodo",
+        "publico": "operador",
+        "titulo": "O anúncio tá bombando e a venda não aparece",
+        "duracao": "110s",
+        "cta": "RASTREIO",
+        "meta": "Confusão · T12 espelho · Lacuna dos mentorados (8 menções)",
+        "fonte": "mentorado",
+        "origem_dor": "O que eu tô achando estranho é não marcar nem no Shopify analytics",
+        "hook": "Se o gerenciador mostra clique e a tua loja não mostra nada, o problema quase nunca é o produto.",
+        "corpo": "Recebo essa quase toda semana e ela faz gente boa desistir achando que escolheu o produto errado.\n\nO cara vê clique, vê engajamento, vê gente entrando. Abre o Shopify e não tem nada. Nem carrinho.\n\nAntes de trocar produto, criativo ou verba, confere três coisas nessa ordem:\n\nUm: o pixel está disparando de verdade, não só instalado. Instalado e disparando são coisas diferentes.\n\nDois: o evento de compra está configurado, e não só o de visualização de página.\n\nTrês: você está comparando as duas telas no mesmo fuso. Conta de anúncio costuma vir configurada em fuso gringo e tua loja no do Brasil. Isso sozinho já faz um dia parecer vazio.\n\nEu falo por mim, cara: já perdi semana achando que o produto tinha morrido. O que tinha morrido era a medição.\n\nEnquanto você não confia no que mede, você não está escalando. Está apostando."
+      },
+      {
+        "id": "r-2026-08-09-ia-loja",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "do dia",
+        "func": "crenca",
+        "publico": "ambos",
+        "titulo": "Montar loja parou de ser vantagem",
+        "duracao": "100s",
+        "cta": "DIFERENÇA",
+        "meta": "Urgência · T03 verdade incômoda · Pauta de mercado",
+        "fonte": "pauta-quente",
+        "origem_dor": "Posso começar a montar o design da loja tendo esse subnicho em vista?",
+        "hook": "Qualquer um monta uma loja em dez minutos com IA agora. Isso destruiu a vantagem de quem só sabia montar loja.",
+        "corpo": "Cinco anos atrás, saber montar loja já te colocava na frente da maioria. Hoje a ferramenta faz em dez minutos, e é por isso que tem tanta loja igual por aí.\n\nE olha o que estão dizendo sobre o mercado em 2026: a maior barreira deixou de ser tecnologia e passou a ser excesso de concorrência. Ferramenta virou commodity.\n\nEntão o que sobrou de vantagem? Exatamente o que a IA não faz por você:\n\nEscolher o produto certo, que é leitura de mercado. Saber ler o dado quando a campanha sobe. E atender bem quem chega.\n\nEu falo por mim: minhas primeiras lojas eram feias. Feias mesmo. E venderam. Loja bonita com produto errado não vende nada.\n\nIrmão, enquanto todo mundo corre pra montar mais rápido, quem ganha dinheiro é quem escolhe melhor."
+      },
+      {
+        "id": "r-2026-08-09-medo",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "lote",
+        "func": "dor",
+        "publico": "iniciante",
+        "titulo": "Você não tem medo de começar",
+        "duracao": "100s",
+        "cta": "",
+        "meta": "Medo · T04 confissão · Dor Nº1 do formulário (12 menções)",
+        "fonte": "formulário",
+        "origem_dor": "Hoje o digital está em alta, porém não sei por onde começar, e o que trava é o medo.",
+        "hook": "Ninguém tem medo de abrir uma loja. Abrir loja é um botão.",
+        "corpo": "Quando alguém me diz que tem medo de começar, eu já sei que não é bem isso.\n\nO medo é de tentar de verdade e descobrir que a culpa não era da falta de oportunidade.\n\nEnquanto você não tenta, dá pra continuar acreditando que teria dado certo se você tivesse tentado. Tentar tira essa proteção. É por isso que tanta gente fica anos estudando e nunca sobe a primeira campanha.\n\nEu falo por mim: meu medo, quando comecei, era gastar seis meses da minha vida e chegar no fim sem nada, tendo que encarar que o problema era eu.\n\nE aí é que tá, irmão: nas duas situações passam seis meses. A diferença é que numa você aprende alguma coisa e na outra você continua exatamente onde estava, só que seis meses mais velho."
+      },
+      {
+        "id": "r-2026-08-09-sozinho",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "lote",
+        "func": "crenca",
+        "publico": "iniciante",
+        "titulo": "Ninguém trava por falta de informação",
+        "duracao": "100s",
+        "cta": "",
+        "meta": "Solidão · T09 diagnóstico · Dor de estar sem direção (9 menções)",
+        "fonte": "direct",
+        "origem_dor": "Infelizmente o que mais me trava e não ter uma direção ou alguém para me ajudar nesse mercado de vendas",
+        "hook": "Tá tudo no YouTube, de graça. E mesmo assim a maioria não sai do lugar.",
+        "corpo": "Recebo mensagem todo dia de gente dizendo que não sabe por onde começar. Só que quando eu pergunto, o cara já sabe 70, 80% do que precisa. Já viu aula, já sabe o que é Shopify, já sabe o que é tráfego.\n\nO que falta não é informação. É ordem e é alguém pra dizer se o que você está fazendo tá certo antes de você gastar três meses no caminho errado.\n\nInformação solta te deixa mais confuso, não menos. Você assiste dez aulas de dez pessoas diferentes, cada uma falando uma coisa, e no fim você tem dez opiniões e nenhuma decisão.\n\nEu falo por mim, gente: o que mudou o meu jogo não foi aprender mais. Foi parar de estudar tudo e executar uma coisa até o fim.\n\nIrmão, se você tá há meses estudando e não subiu nada, teu problema não é falta de aula."
+      },
+      {
+        "id": "r-2026-08-09-prova",
+        "criado": "2026-08-09",
+        "status": "revisar",
+        "canal": "instagram",
+        "quando": "lote",
+        "func": "saga",
+        "publico": "ambos",
+        "titulo": "Prova do dia (precisa de material)",
+        "duracao": "90s",
+        "cta": "COMEÇAR",
+        "meta": "Prova social · T15 antes e depois · Pendente de material",
+        "fonte": "provas",
+        "origem_dor": "",
+        "hook": "[definir na hora, em cima do print escolhido]",
+        "corpo": "A pasta conteudo/provas/ está vazia, então nada foi inventado aqui.\n\nO formato que funciona: pega UM print de resultado de mentorado (primeira venda, painel da loja, faturamento) e conta em três tempos.\n\nUm: onde ele estava travado, com a frase dele se possível.\nDois: o que mudou na prática, uma coisa só.\nTrês: onde chegou, com o número real do print.\n\nSem promessa de prazo e sem dizer que todo mundo consegue.\n\nJogando dois ou três prints na pasta, amanhã este reel já sai escrito."
+      }
+    ],
+    "stories": {
+      "titulo": "Bastidor do sábado + a pergunta que separa quem executa",
+      "abertura": "rotina",
+      "porque": "Ontem a abertura foi print, então hoje não repete. A enquete faz a triagem sozinha: quem responde 'nunca subi' é iniciante, quem responde 'já subi e travei' é operador, e operador é quem fecha mentoria.",
+      "telas": [
+        {
+          "tipo": "1 · Rotina (você falando)",
+          "texto": "Sábado e eu aqui trabalhando. Vou te contar uma coisa que eu vi essa semana nos grupos da mentoria.",
+          "como": "Vídeo curto, rosto e voz. Sem edição, sem legenda pronta. É a tela de conexão do dia."
+        },
+        {
+          "tipo": "2 · O que você viu",
+          "texto": "A dúvida que mais apareceu não foi produto, nem tráfego. Foi gateway de pagamento. Gente que montou a loja inteira e não sabia como ia receber.",
+          "como": "Pode ser você falando ou texto sobre fundo simples."
+        },
+        {
+          "tipo": "3 · Bastidor",
+          "texto": "Mostra a tela: painel da loja, gerenciador, ou o próprio grupo (sem expor nome de ninguém).",
+          "como": "Bastidor com coisa real vale mais que frase motivacional."
+        },
+        {
+          "tipo": "4 · Enquete",
+          "texto": "Você já subiu uma campanha de verdade?  [ Já subi ]  [ Nunca subi ]",
+          "como": "Enquete, não caixinha. Ontem não teve enquete, então hoje pode."
+        },
+        {
+          "tipo": "5 · Fechamento",
+          "texto": "Quem marcou 'já subi', me manda GATEWAY aqui que eu te falo os três pontos pra conferir antes de escalar.",
+          "como": "Puxa DM com o assunto declarado. Quem responder já vem qualificado pro Mikael."
+        }
+      ]
+    }
   },
-  {
-   "n": 2,
-   "obj": "Ser reconhecido",
-   "d": "Ainda pesada em dor, mas a crença começa a subir. Você já foi reconhecido, agora começa a mostrar que enxerga o jogo diferente.",
-   "mix": {
-    "dor": 7,
-    "crenca": 7,
-    "metodo": 3,
-    "saga": 1
-   }
-  },
-  {
-   "n": 3,
-   "obj": "Virar a crença",
-   "d": "A dor cede espaço pra crença. Aqui ele para de achar que o problema é ele e começa a achar que o problema é o mercado onde ele estava vendendo.",
-   "mix": {
-    "dor": 6,
-    "crenca": 8,
-    "metodo": 3,
-    "saga": 1
-   }
-  },
-  {
-   "n": 4,
-   "obj": "Virar a crença",
-   "d": "Ponto de virada do calendário. Crença no topo, método subindo. Quem chegou na semana 1 já está pronto pra receber conteúdo específico.",
-   "mix": {
-    "dor": 5,
-    "crenca": 8,
-    "metodo": 4,
-    "saga": 1
-   }
-  },
-  {
-   "n": 5,
-   "obj": "Provar o método",
-   "d": "O método assume o comando. O alcance cai um pouco de propósito: você troca curioso por comprador. Especificidade é o que constrói autoridade.",
-   "mix": {
-    "dor": 4,
-    "crenca": 8,
-    "metodo": 5,
-    "saga": 1
-   }
-  },
-  {
-   "n": 6,
-   "obj": "Provar o método",
-   "d": "Semana mais técnica até aqui. Quem ficou é quem interessa. A dor continua presente em dose pequena só pra manter a porta de entrada aberta.",
-   "mix": {
-    "dor": 3,
-    "crenca": 8,
-    "metodo": 6,
-    "saga": 1
-   }
-  },
-  {
-   "n": 7,
-   "obj": "Autoridade",
-   "d": "Prova pesada e saga em dobro. O seguidor antigo já viu você errar e acertar em público. É aqui que a confiança vira intenção de compra.",
-   "mix": {
-    "dor": 1,
-    "crenca": 7,
-    "metodo": 8,
-    "saga": 2
-   }
-  },
-  {
-   "n": 8,
-   "obj": "Preparar a venda",
-   "d": "Fechamento do arco. Método, direção e escassez honesta. Você não pede a venda: mostra que o que falta pra ele não é mais conteúdo, é acompanhamento.",
-   "mix": {
-    "dor": 1,
-    "crenca": 6,
-    "metodo": 9,
-    "saga": 1
-   }
-  },
-  {
-   "n": 9,
-   "obj": "Provar com terceiro",
-   "d": "A saga assume o comando. Entra história pessoal e resultado de mentorado, que é justamente o que faltava no banco. Quem chegou até aqui já entendeu o método, agora precisa acreditar que ele mesmo consegue.",
-   "mix": {
-    "dor": 0,
-    "crenca": 5,
-    "metodo": 3,
-    "saga": 7
-   }
-  },
-  {
-   "n": 10,
-   "obj": "Fechar o ciclo",
-   "d": "Última semana da rodada. Prova de vida e ponte pra venda no topo. É onde o conteúdo para de ensinar e começa a convidar, sem precisar pedir nada de forma explícita.",
-   "mix": {
-    "dor": 0,
-    "crenca": 4,
-    "metodo": 3,
-    "saga": 8
-   }
+  "youtube": {
+    "semana": "2026-08-09",
+    "semana_br": "9 a 15 de agosto",
+    "resumo": "Cinco temas cruzando as lacunas dos mentorados, o que já performou no perfil e o que o mercado está discutindo. O primeiro tem roteiro completo.",
+    "temas": [
+      {
+        "id": "yt-2026-08-09-gateway",
+        "titulo": "Como receber em dólar vendendo pro mundo inteiro (a parte que ninguém ensina)",
+        "angulo": "O assunto que trava mais aluno pagante e que quase não tem conteúdo bom em português. Vídeo de referência: quem procurar isso no YouTube não acha nada decente.",
+        "dado": "9 menções nos grupos da mentoria, a maior lacuna do curso",
+        "duracao": "12 a 18 min",
+        "publico": "operador",
+        "roteiro": "ABERTURA (0-45s)\nComeça pelo fim: mostra que dá pra fazer tudo certo e ainda assim não receber. Fala que essa é a dúvida número um dos teus mentorados e que quase ninguém fala disso porque não dá view fácil.\n\nBLOCO 1 · Por que ninguém ensina (2 min)\nGateway não é assunto bonito. Não tem print de faturamento, não tem promessa. Mas é o ponto onde a operação inteira para.\n\nBLOCO 2 · As três decisões (6 min)\nMoeda em que você quer receber e o efeito na margem. Qual gateway aceita o teu país de origem. Tempo de retenção e o que isso faz com o teu caixa quando você roda tráfego diário.\nMostrar na tela cada uma.\n\nBLOCO 3 · A ordem certa (3 min)\nPor que isso se decide ANTES de montar a loja, e não depois da primeira venda. Contar o custo de descobrir tarde.\n\nBLOCO 4 · O erro mais caro (2 min)\nQuem escala com gateway errado e fica com o dinheiro preso enquanto o anúncio continua rodando.\n\nFECHAMENTO (1 min)\nO bordão. Convite pra comentar a dúvida específica."
+      },
+      {
+        "id": "yt-2026-08-09-metricas",
+        "titulo": "Esse número é bom ou ruim? Como ler as métricas da sua campanha",
+        "angulo": "Sai de uma pergunta literal de mentorado. Ensina a ler o funil de trás pra frente: cada etapa culpa a anterior. É o tipo de vídeo que fica sendo assistido por meses.",
+        "dado": "8 menções nos grupos, e o post tático sobre Meta Ads fez 9,8% de engajamento no perfil",
+        "duracao": "15 a 20 min",
+        "publico": "operador"
+      },
+      {
+        "id": "yt-2026-08-09-rastreio",
+        "titulo": "Seu anúncio está vendendo e você não está vendo (erro de rastreamento)",
+        "angulo": "Problema que faz gente desistir de produto bom. Vídeo prático, com a tela do gerenciador e do Shopify lado a lado.",
+        "dado": "8 menções nos grupos da mentoria",
+        "duracao": "12 a 15 min",
+        "publico": "operador"
+      },
+      {
+        "id": "yt-2026-08-09-ia",
+        "titulo": "A IA acabou com a vantagem de quem só sabia montar loja",
+        "angulo": "Tema quente e polêmico, ancorado em dado de mercado: a barreira de 2026 deixou de ser tecnologia e virou concorrência. Bom pra alcance e pra posicionamento.",
+        "dado": "pauta de mercado + 3 menções de dúvida sobre usar IA pra montar a loja",
+        "duracao": "10 a 14 min",
+        "publico": "ambos"
+      },
+      {
+        "id": "yt-2026-08-09-caixa",
+        "titulo": "Caixa é rei: por que quem tem reserva testa mais e erra melhor",
+        "angulo": "Reaproveita o argumento do teu conteúdo de maior engajamento orgânico e desenvolve em formato longo, com a conta na tela.",
+        "dado": "o reel com esse argumento fez 21.250 views e 11,1% de engajamento, o melhor da janela",
+        "duracao": "10 a 14 min",
+        "publico": "ambos"
+      }
+    ]
   }
- ],
- "capSec": 43,
- "ganchos": [
-  {
-   "id": "d0",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você não falhou no drop. Você comprou, te jogaram num grupo com 400 pessoas, e chamaram aquilo de mentoria.",
-   "tema": "O inimigo: te venderam e te largaram",
-   "meta": "Reconhecimento · T26 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d1",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "O cara sumiu no dia seguinte ao pix cair. E você passou seis meses achando que o burro era você.",
-   "tema": "O inimigo: abandono",
-   "meta": "Reconhecimento · T23 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d2",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "\"Tô travado.\" Não é falta de capacidade. É falta de direção. Ninguém trava por burrice, trava por não saber qual é o próximo passo.",
-   "tema": "Travado, não burro",
-   "meta": "Reconhecimento · T27 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d3",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Esquece o milhão. 10k por mês em dólar já te tira do modo de sobrevivência. É a única meta que eu persigo com quem eu pego na mão.",
-   "tema": "A meta realista",
-   "meta": "Recompensa · T29 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d4",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você já vendeu antes. Já teve o print, já sentiu. E hoje está montando loja no Brasil de novo, brigando por margem. Você sabe que o problema não é capacidade.",
-   "tema": "Perfil B: já vendeu, quer migrar",
-   "meta": "Reconhecimento · T23 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d5",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Te prometeram acompanhamento até o primeiro resultado. No dia 40, quando você travou de verdade, quem respondeu foi um bot.",
-   "tema": "O inimigo: suporte que some",
-   "meta": "Reconhecimento · T27 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "d6",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Loja meio montada, produto meio escolhido, anúncio que nunca subiu. Você não está começando. Está congelado. E congelado tem cura.",
-   "tema": "Travado",
-   "meta": "Reconhecimento · T22 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-24"
-  },
-  {
-   "id": "d7",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O drop que te venderam é golpe mesmo: COD, contra-entrega, produto vagabundo, cliente que não atende a porta. Aquilo não é negócio, é rifa.",
-   "tema": "Drop de verdade vs COD",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d8",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "O curso te mandou rodar tráfego no dia 1. Foi ali que você queimou a grana. E ainda te venderam que a culpa foi da tua falta de constância.",
-   "tema": "Rasgar grana",
-   "meta": "Reconhecimento · T27 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d9",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você não está desanimado com o drop. Está desanimado com quem te vendeu o drop. E confundir as duas coisas já custou um ano da sua vida.",
-   "tema": "O inimigo",
-   "meta": "Reconhecimento · T26 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d10",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Estou montando uma loja global do zero na frente de vocês, com print de tudo. Se der errado, vocês vão ver também. Esse é o combinado.",
-   "tema": "A saga (prova ao vivo)",
-   "meta": "Autoridade · T06 · Prova",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d11",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você não precisa sair do Brasil pra ganhar em dólar. Precisa parar de vender pro Brasil. É diferente, e ninguém te explica isso direito.",
-   "tema": "Dólar morando no BR",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d12",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você não sente falta do dinheiro daquela primeira venda. Sente falta de como você era naquela semana. Isso dá pra ter de volta, e em dólar.",
-   "tema": "Perfil B: nostalgia do resultado",
-   "meta": "Reconhecimento · T21 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d13",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Ninguém documenta a parte feia. Por isso você acha que só você trava. Hoje eu vou te mostrar o meu dia ruim.",
-   "tema": "A saga",
-   "meta": "Disrupção · T28 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d14",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Seu colega comprou a mentoria e te deixaram de fora. Isso não foi descuido. É o modelo de negócio funcionando exatamente como foi desenhado.",
-   "tema": "O inimigo",
-   "meta": "Disrupção · T26 · Argumentação",
-   "tier": "S"
-  },
-  {
-   "id": "d15",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Todo guru te vende o Porsche porque ele precisa que você sonhe. Eu vou te dar uma meta que você acredita, porque eu preciso que você chegue nela.",
-   "tema": "A meta realista",
-   "meta": "Disrupção · T19 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d16",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você já sabe minerar produto, já sabe montar loja, já viu 40 vídeos. E continua parado. O teu problema nunca foi informação.",
-   "tema": "Travado",
-   "meta": "Reconhecimento · T23 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "d17",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Medo de torrar dinheiro de novo não é fraqueza. É cicatriz. E cicatriz bem usada te faz gastar melhor que 90% do mercado.",
-   "tema": "Medo de rasgar grana",
-   "meta": "Reconhecimento · T28 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d18",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você passou três semanas estudando estrutura de campanha e não gravou um criativo. Isso não é estratégia. É fuga com cara de estudo, e eu fiz exatamente igual.",
-   "tema": "Tráfego: fuga com cara de estudo",
-   "meta": "Reconhecimento · T23 · Identificação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d19",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Mesmo trabalho, mesma loja, mesmo anúncio. Só que numa moeda cinco vezes mais forte. É só isso que separa você de quem já foi.",
-   "tema": "Dólar",
-   "meta": "Crença · T13 · Brevidade",
-   "tier": "A",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "d20",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O Brasil está saturado, lá fora está vazio. Isso não é opinião, é o CPM. Vou colocar os dois lado a lado na tela.",
-   "tema": "Mar azul",
-   "meta": "Crença irrefutável · T13 · Prova",
-   "tier": "A",
-   "gravado": "2026-07-24"
-  },
-  {
-   "id": "d21",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "30 dias sem vender não quer dizer que não funciona. Quer dizer que você testou um produto. Um. Quem vende testa dez e o décimo paga os nove. Você parou no segundo e chamou de conclusão.",
-   "tema": "Tempo até a primeira venda",
-   "meta": "Reconhecimento · T27 · Identificação",
-   "tier": "A",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d22",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Tem um motivo pro guru vender pra 500 pessoas de uma vez: ele não precisa que você tenha resultado. Precisa que você compre.",
-   "tema": "O inimigo",
-   "meta": "Disrupção · T07 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d23",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Se você tivesse escolhido o mercado antes do produto, não teria rasgado o dinheiro que rasgou. E ninguém te ensinou essa ordem.",
-   "tema": "Mercado antes do produto",
-   "meta": "Disrupção · T27 · Algo novo",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d24",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Você não quer ficar rico. Você quer sair do sufoco e dormir tranquilo. E essas duas coisas custam números completamente diferentes.",
-   "tema": "A meta realista",
-   "meta": "Reconhecimento · T26 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "d25",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Produto vencedor não existe. Existe oferta vencedora. O mesmo produto que te deu prejuízo está pagando a casa de outro cara agora, e a diferença não está no produto.",
-   "tema": "Produto vencedor",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d26",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você faturou alto e não sobrou nada. Imposto, parcelamento, chargeback, devolução. Isso não é problema de gestão. É problema de moeda.",
-   "tema": "Perfil B: margem no BR",
-   "meta": "Disrupção · T26 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d27",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Teste simples pra saber se você comprou mentoria ou PDF caro: manda uma mensagem hoje à meia-noite. Se ninguém responder até amanhã, você já sabe.",
-   "tema": "O inimigo",
-   "meta": "Recompensa · T01 · Valor prático",
-   "tier": "A",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "d28",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Se a tua operação depende do cliente atender a campainha pra você receber, você não tem loja. Você tem torcida.",
-   "tema": "COD",
-   "meta": "Disrupção · T28 · Emoção quente",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d29",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Você já rasgou grana com anúncio. Então não sobe anúncio ainda. Existe uma etapa antes, e é exatamente a que o curso pulou.",
-   "tema": "Validação antes do tráfego",
-   "meta": "Reconhecimento · T11 · Valor prático",
-   "tier": "A",
-   "gravado": "2026-07-21"
-  },
-  {
-   "id": "d30",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você tá negociando R$ 10 de desconto com um cliente que pergunta o frete três vezes. Do outro lado, o americano paga [valor real] pelo mesmo produto e nem pergunta. A diferença não é o produto. É o bolso do outro lado.",
-   "tema": "Nacional vs internacional",
-   "meta": "Reconhecimento · T13 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "d31",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Cansado de nego que vende e não orienta? Eu também já fui esse cliente. É por isso que eu faço do jeito que faço, e não é bondade, é trauma.",
-   "tema": "O inimigo",
-   "meta": "Autoridade · T02 · História",
-   "tier": "A"
-  },
-  {
-   "id": "d32",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você briga por R$ 90 de ticket com um cliente que pede desconto. Lá fora o mesmo produto sai por [valor real] e ninguém pergunta o frete.",
-   "tema": "Ticket BR vs global",
-   "meta": "Reconhecimento · T13 · Identificação",
-   "tier": "A",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "d33",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você não precisa aprender a vender. Precisa parar de vender no país errado.",
-   "tema": "Perfil B: migrar",
-   "meta": "Disrupção · T26 · Brevidade",
-   "tier": "A"
-  },
-  {
-   "id": "d34",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Existem 3 detalhes que denunciam que a sua loja é dropshipping. O americano vê em 2 segundos e fecha a aba sem dizer nada. Vou mostrar os 3, e você vai reconhecer os 3.",
-   "tema": "Loja com cara de marca",
-   "meta": "Reconhecimento · T30 · Identificação",
-   "tier": "A",
-   "gravado": "2026-07-24"
-  },
-  {
-   "id": "d35",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Muita ideia na cabeça e nada sai do lugar. Ideia demais dá no mesmo que nenhuma. Vou te dar a única que importa essa semana.",
-   "tema": "Travado",
-   "meta": "Recompensa · T04 · Valor prático",
-   "tier": "A"
-  },
-  {
-   "id": "d36",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "\"Não tenho dinheiro pra começar.\" Você não precisa de dinheiro pra começar. Precisa de dinheiro pra errar. E ninguém te explica a diferença.",
-   "tema": "Objeção de caixa",
-   "meta": "Disrupção · T05 · Algo novo",
-   "tier": "A"
-  },
-  {
-   "id": "d37",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Feijão com arroz bem feito ganha de estratégia complexa mal feita. Você está tentando fazer risoto sem saber cozinhar arroz.",
-   "tema": "Simplicidade",
-   "meta": "Disrupção · T13 · Brevidade",
-   "tier": "A"
-  },
-  {
-   "id": "d38",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Teu CPA não está alto. Tua oferta está fraca. O leilão do Meta está te cobrando pelo criativo ruim, e ele nunca vai te avisar disso.",
-   "tema": "CPA alto",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d39",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Não precisa ser milionário. 10k por mês, todo mês, muda mais a tua vida do que um mês de 100k que nunca mais se repete.",
-   "tema": "A meta realista",
-   "meta": "Crença · T13 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d40",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Você odeia dropshipping porque só conheceu a versão ruim dele. Deixa eu te mostrar a versão que ninguém te vendeu, porque nela dá trabalho.",
-   "tema": "Drop de verdade",
-   "meta": "Reconhecimento · T05 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d41",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O drop no Brasil te obriga a vender barato pra quem não tem dinheiro. O drop global te deixa vender caro pra quem tem. A conta é essa e ela não muda.",
-   "tema": "BR vs global",
-   "meta": "Crença · T13 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d42",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Quem já vendeu e quebrou tem uma vantagem que iniciante nenhum tem: você já sabe exatamente onde dói. Só faltou o mercado certo.",
-   "tema": "Perfil B",
-   "meta": "Recompensa · T19 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "d43",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Sem carrão, sem Dubai, sem foguete. Meu dia é 40 minutos olhando anúncio, 20 minutos de suporte, e o resto é vida. Se você esperava mais do que isso, o problema não é o modelo. É o que te venderam.",
-   "tema": "Rotina real",
-   "meta": "Disrupção · T28 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "d44",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "O que destrava você não é mais conteúdo. É alguém olhando a tua loja e dizendo: muda isso aqui e sobe esse anúncio hoje.",
-   "tema": "Direção > informação",
-   "meta": "Recompensa · T29 · Ponte pra oferta",
-   "tier": "A"
-  },
-  {
-   "id": "d45",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Mil visitas e nenhuma venda não é problema de tráfego. É a sua página dizendo \"não confia em mim\" mil vezes seguidas. E ela diz isso em três lugares específicos.",
-   "tema": "Conversão baixa",
-   "meta": "Disrupção · T26 · Valor prático",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d46",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Comecei com um cartão pagando a fatura do outro. Não é conselho. É prova de que dá pra começar apertado, e eu vou te contar como não repetir os meus erros.",
-   "tema": "Começar apertado",
-   "meta": "Autoridade · T08 · História",
-   "tier": "A"
-  },
-  {
-   "id": "d47",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "\"Esse produto está saturado.\" Não está. Saturou o ângulo. A dor continua lá, intacta, e quem entra com ângulo novo pega o mercado já aquecido sem pagar por isso.",
-   "tema": "Produto saturado",
-   "meta": "Crença · T05 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d48",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Escalar no Brasil é aumentar volume e perder margem. Escalar na gringa é aumentar preço. Você já tentou o primeiro e sabe onde ele termina.",
-   "tema": "Perfil B: escalar",
-   "meta": "Crença · T13 · Argumentação",
-   "tier": "A"
-  },
-  {
-   "id": "d49",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Não larga o emprego. Sério. Eu montei a operação em 2 horas por noite, depois do expediente, com o salário pagando os testes. Quem larga antes da primeira venda volta pro CLT em três meses, e mais amargo.",
-   "tema": "Fazendo CLT",
-   "meta": "Disrupção · T11 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "d50",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Loja global não é loja de dropshipping. É marca. E o gringo compra de marca, não de página que grita promoção em vermelho.",
-   "tema": "Branding",
-   "meta": "Crença · T13 · Algo novo",
-   "tier": "A"
-  },
-  {
-   "id": "d51",
-   "pilar": "drop",
-   "func": "dor",
-   "hook": "Tem gente de 19 anos vendendo em dólar e gente de 35 esperando o momento certo. \"Momento certo\" é o nome educado do medo de perder dinheiro de novo. Eu sei, porque eu já perdi.",
-   "tema": "Momento certo",
-   "meta": "Reconhecimento · T22 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "d52",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Sabe o que 10k por mês em dólar significa na prática? É você parar de olhar o preço antes de olhar o produto. É pouco e é tudo.",
-   "tema": "A meta realista",
-   "meta": "Reconhecimento · T21 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "d53",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Antes de colocar 1 real em anúncio, eu faço um teste que custa zero e leva 40 minutos. Se você tivesse feito esse teste, não teria perdido os R$ 3 mil no último curso que comprou.",
-   "tema": "Validar antes de gastar",
-   "meta": "Reconhecimento · T24 · Valor prático",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "d54",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Existem dois negócios com o mesmo nome. Num deles você recebe em real depois que o cliente devolve. No outro você recebe em dólar antes de comprar o produto.",
-   "tema": "Drop de verdade vs COD",
-   "meta": "Disrupção · T13 · Argumentação",
-   "tier": "A"
-  },
-  {
-   "id": "d55",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Dropshipping é golpe? Metade do que te vendem sobre dropshipping é. O golpe não é o modelo, é o cara que te vende o curso e nunca teve uma loja no ar. Pede o print da conta dele e vê o que acontece.",
-   "tema": "É golpe?",
-   "meta": "Disrupção · T07 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "d56",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Você não tem caixa pra errar dez vezes. Então a gente erra barato: teste com valor definido, prazo curto e regra de corte antes de subir a campanha.",
-   "tema": "Errar barato",
-   "meta": "Recompensa · T12 · Valor prático",
-   "tier": "A",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "d57",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "\"Dropshipping morreu.\" Quem fala isso tentou vender pro Brasil. O que morreu não foi o modelo, foi o mercado que ele escolheu. E existe uma única coisa que mudou de 2020 pra cá.",
-   "tema": "Vale a pena em 2026",
-   "meta": "Crença · T26 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "d58",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Migrar pro global não é começar do zero. É levar tudo que você já sabe pra um lugar onde vale cinco vezes mais.",
-   "tema": "Perfil B: migrar",
-   "meta": "Recompensa · T28 · Ponte pra oferta",
-   "tier": "A"
-  },
-  {
-   "id": "d59",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Se você vende por menos de 3 vezes o custo do produto, você não tem negócio. Tem um hobby caro. E quem lucra com o teu hobby é o Meta.",
-   "tema": "Precificação",
-   "meta": "Disrupção · T27 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "d60",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "10 dólares por dia não testa nada. Você não está comprando dado, está comprando opinião. E opinião barata é o que faz o iniciante desistir achando que não funciona.",
-   "tema": "Quanto investir por dia",
-   "meta": "Disrupção · T27 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "d61",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Mar azul é palavra bonita pra uma coisa simples: menos gente vendendo pra quem tem mais dinheiro pra comprar. Só isso.",
-   "tema": "Mar azul",
-   "meta": "Crença · T28 · Baixo carregamento",
-   "tier": "B"
-  },
-  {
-   "id": "d62",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Os 3 primeiros segundos decidem quase todo o resultado, e você está colocando logo animado ali. O americano rola o feed em pouco mais de um segundo. Você tem menos tempo do que imagina e eu vou te dizer o que entra no lugar.",
-   "tema": "Criativo que converte",
-   "meta": "Recompensa · T11 · Valor prático",
-   "tier": "B",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "d63",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Cada real que o dólar sobe, o teu concorrente daqui chora e você comemora. Esse é o único lado da moeda em que vale a pena estar.",
-   "tema": "Dólar",
-   "meta": "Crença · T19 · Emoção quente",
-   "tier": "B"
-  },
-  {
-   "id": "d64",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Ninguém compra da sua loja no primeiro clique. Existe uma página no meio do caminho que faz o trabalho sujo, e é ela que separa quem fatura de quem só paga anúncio.",
-   "tema": "Advertorial",
-   "meta": "Mistério · T04 · Named oddity",
-   "tier": "B"
-  },
-  {
-   "id": "d65",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Loja geral vende. Loja de nicho escala. Loja de um produto vira marca. Você escolheu a primeira porque parecia mais segura, e foi a escolha mais cara que você fez.",
-   "tema": "Nicho vs loja geral",
-   "meta": "Reconhecimento · T13 · Identificação",
-   "tier": "B"
-  },
-  {
-   "id": "d66",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Dia [X] da loja. Gastei [valor], vendi [valor], e o erro de ontem me custou [valor]. Vou te mostrar exatamente onde eu errei.",
-   "tema": "A saga",
-   "meta": "Prova · T25 · Prova",
-   "tier": "B"
-  },
-  {
-   "id": "d67",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Perdi 3 contas de anúncio. Na quarta eu entendi que o Meta não pune o que você vende. Pune outra coisa. Se você não souber qual, vai perder a sua também.",
-   "tema": "Conta bloqueada",
-   "meta": "Autoridade · T04 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "d68",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Escalar não é aumentar orçamento. É aguentar o caixa. Quase ninguém quebra vendendo pouco. Quebra vendendo muito, sem saber quanto dinheiro fica preso no meio do caminho.",
-   "tema": "Escalar",
-   "meta": "Disrupção · T26 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "d69",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O americano que me comprou ontem não sabe meu nome, minha idade, nem que eu sou brasileiro. Comprou mesmo assim. Porque ele não compra de você. Ele compra de uma coisa só, e não é a sua cara.",
-   "tema": "Sem aparecer",
-   "meta": "Fato curioso · T28 · Prova",
-   "tier": "B"
-  },
-  {
-   "id": "d70",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "\"Mas como o dinheiro chega até mim?\" É aqui que a maioria trava e desiste. Não precisa de banco americano, não precisa de sócio gringo, não precisa de LLC. Precisa de três peças e eu vou desenhar as três.",
-   "tema": "Receber em dólar",
-   "meta": "Mistério · T14 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d71",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu perdi [valor real] aprendendo três coisas. Você aprende de graça nos próximos 40 segundos, e é por isso que esse vídeo existe.",
-   "tema": "Erros que quebram a loja",
-   "meta": "Autoridade · T08 · História",
-   "tier": "B"
-  },
-  {
-   "id": "d72",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O melhor momento pra começar foi ontem. O segundo melhor é antes do próximo Q4, e ele está bem mais perto do que você imagina.",
-   "tema": "Momento certo",
-   "meta": "Recompensa · T24 · Urgência honesta",
-   "tier": "B"
-  },
-  {
-   "id": "d73",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "A regra que me impediu de queimar dinheiro: gastou 3 vezes o preço do produto sem uma venda, mata. Sem chorar, sem \"mais um dia\". O \"mais um dia\" já te custou caro antes.",
-   "tema": "Matar ou escalar",
-   "meta": "Recompensa · T01 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d74",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Produto de 20 dólares é o jeito mais rápido de trabalhar 12 horas por dia e fechar o mês no zero. Volume nunca salvou margem ruim. Nunca.",
-   "tema": "Ticket baixo",
-   "meta": "Crença · T10 · Never",
-   "tier": "B"
-  },
-  {
-   "id": "d75",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Parei de comprar no AliExpress e o prazo caiu de 20 dias pra 8. Não foi escala, não foi sorte. Foi uma pessoa. Chama agente de fornecimento e ninguém no começo te conta que ele existe.",
-   "tema": "Fornecedor e agente",
-   "meta": "Mistério · T06 · Named oddity",
-   "tier": "B"
-  },
-  {
-   "id": "d76",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Mesmo produto: R$ 97 aqui, [valor] lá. Faz a conta em real e me responde uma pergunta: o problema é você ou é o país pra quem você está tentando vender?",
-   "tema": "Poder de compra",
-   "meta": "Crença irrefutável · T13 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "d77",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Todo mundo usa Shopify e usa igual. O tema que vem de fábrica entrega uma loja que grita \"não confie em mim\". Não é a plataforma. É o que você deixou do jeito que veio.",
-   "tema": "Shopify e tema padrão",
-   "meta": "Disrupção · T27 · Opinião forte",
-   "tier": "B"
-  },
-  {
-   "id": "d78",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Não é Shopify Payments. Não é PayPal. E é exatamente por não saber essa resposta que o brasileiro acha que vender pro exterior é impossível pra ele.",
-   "tema": "Gateway de pagamento",
-   "meta": "Mistério · T29 · Named oddity",
-   "tier": "B"
-  },
-  {
-   "id": "d79",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Você não precisa de R$ 10 mil. Precisa saber a hora exata de colocar o primeiro real, e não é no dia 1. É depois de um teste que custa zero e que ninguém te ensina porque não dá pra vender curso disso.",
-   "tema": "Quanto preciso pra começar",
-   "meta": "Mistério · T29 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d80",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Eu pago 15 dólares pra um americano gravar o vídeo do meu produto. Sotaque nativo, casa americana, cara comum. Ele grava, eu vendo, e o cliente confia porque vê alguém igual a ele.",
-   "tema": "UGC sem aparecer",
-   "meta": "Fato curioso · T21 · Prova",
-   "tier": "B"
-  },
-  {
-   "id": "d81",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "\"Chega em 25 dias.\" Essa frase mata a loja antes do primeiro reembolso. Existe um tipo de fornecedor que entrega em 7 e ele não está no AliExpress.",
-   "tema": "Frete e prazo",
-   "meta": "Mistério · T04 · Named oddity",
-   "tier": "B"
-  },
-  {
-   "id": "d82",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Com R$ 500 você não escala nada. Mas com R$ 500 e 4 dias você descobre se a oferta presta. E essa informação vale mais do que os R$ 500.",
-   "tema": "Começar com pouco",
-   "meta": "Recompensa · T12 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d83",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Uma fatia grande do meu faturamento vem de gente que já tinha desistido de comprar. Elas não voltaram sozinhas. Foram trazidas de volta por três mensagens que você não tem configuradas.",
-   "tema": "Carrinho abandonado",
-   "meta": "Fato curioso · T21 · Prova",
-   "tier": "B"
-  },
-  {
-   "id": "d84",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu não divulgo muito e não pego todo mundo. Não é escassez de marketing: é que eu respondo todo dia, e ninguém responde todo dia pra 400 pessoas.",
-   "tema": "Escassez honesta",
-   "meta": "Autoridade · T18 · Escassez honesta",
-   "tier": "B"
-  },
-  {
-   "id": "d85",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Esse produto custa 4 dólares no fornecedor e está faturando alto neste momento. Não anota o produto. Anota a DOR que ele resolve, porque é ela que vende, e ela não satura.",
-   "tema": "Produto vendendo agora",
-   "meta": "Recompensa · T01 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d86",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Existe um site que mostra há quanto tempo o anúncio do teu concorrente está no ar. Anúncio velho é anúncio lucrativo, porque ninguém paga pra perder. É a única espionagem que importa e é de graça.",
-   "tema": "Espionar concorrente",
-   "meta": "Fato curioso · T16 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "d87",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Abrir empresa nos Estados Unidos antes da primeira venda é a forma mais cara de procrastinar. Existe um número de faturamento em que a LLC passa a valer, e eu vou te dar o número.",
-   "tema": "LLC",
-   "meta": "Disrupção · T11 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d88",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "TikTok te dá venda barata e cliente que some. Meta te dá venda cara e cliente que volta. Escolher errado no começo é o que faz a loja parecer que \"não funciona\".",
-   "tema": "TikTok vs Meta",
-   "meta": "Crença · T13 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "d89",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Eu não falo inglês fluente e minha loja fatura em inglês todo dia. Quem escreve não sou eu e não custa nada. Isso não é atalho, é ferramenta, e a diferença entre as duas coisas é o que separa quem lucra de quem quebra.",
-   "tema": "Sem falar inglês",
-   "meta": "Crença · T28 · Prova",
-   "tier": "B"
-  },
-  {
-   "id": "d90",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Fiz 12 criativos em 20 minutos com IA. O que fez um deles funcionar não foi a IA, foi o que eu escrevi no prompt. E eu vou te entregar o prompt.",
-   "tema": "IA pra criativo",
-   "meta": "Recompensa · T08 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d91",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "O cliente pediu reembolso, você devolveu por gentileza, e o banco cobrou de novo do teu bolso. Isso tem nome, tem taxa e tem como evitar antes de acontecer, mas só se você souber antes.",
-   "tema": "Chargeback",
-   "meta": "Reconhecimento · T23 · Never",
-   "tier": "B"
-  },
-  {
-   "id": "d92",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Setembro é pra construir. Novembro é pra imprimir. Quem começa em novembro paga o CPM mais caro do ano pra aprender o que devia ter aprendido em setembro, e culpa o modelo.",
-   "tema": "Q4 e sazonalidade",
-   "meta": "Recompensa · T20 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d93",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Você pode ter a melhor oferta do mundo e perder a conta em 24 horas por causa de uma palavra na sua página. O Meta não publica essa lista. Eu aprendi ela do jeito caro.",
-   "tema": "Produtos que derrubam conta",
-   "meta": "Autoridade · T15 · Never",
-   "tier": "B"
-  },
-  {
-   "id": "d94",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Cada app instalado come um pedaço do teu lucro todo mês. Eu rodo a operação inteira com 3. Os outros 12 que você instalou cobram pra resolver um problema que você ainda não tem.",
-   "tema": "Apps",
-   "meta": "Crença · T10 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "d95",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Você não precisa de CNPJ pra vender. Precisa de CNPJ pra não perder o que vendeu. Existe uma linha exata onde isso vira urgente, e quem cruza ela sem estrutura devolve o lucro do ano inteiro.",
-   "tema": "CNPJ",
-   "meta": "Recompensa · T24 · Never",
-   "tier": "B"
-  },
-  {
-   "id": "d96",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O cliente americano não sabe que sou brasileiro e não faria diferença se soubesse. Ele não compra de um país. Ele compra de uma página que responde a dúvida dele antes de ele pensar nela.",
-   "tema": "Vender pros EUA sendo BR",
-   "meta": "Fato curioso · T21 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "d97",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Mudou uma regra na alfândega dos Estados Unidos e a margem de muita loja evaporou sem o dono perceber. Se você vende pra lá, para o que está fazendo e confere isso hoje.",
-   "tema": "Alfândega",
-   "meta": "Recompensa negativa · T15 · Notícia",
-   "tier": "B"
-  },
-  {
-   "id": "d98",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Todo mundo corre pros Estados Unidos e paga caro pela mesma atenção. Tem país europeu com CPM muito mais barato e quase ninguém anunciando. Meu critério pra escolher mercado vem antes de escolher produto, e é o inverso do que te ensinaram.",
-   "tema": "Além dos EUA",
-   "meta": "Disrupção · T19 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "d99",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Faturou em dólar e achou que o Leão não enxerga? Enxerga. E no dia em que ele bater você não vai querer estar com esse dinheiro na conta pessoal. O jeito certo é mais barato do que o susto.",
-   "tema": "Imposto",
-   "meta": "Crença · T09 · Never",
-   "tier": "B"
-  },
-  {
-   "id": "s0",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você domina a habilidade mais cara do mercado, fazer anúncio vender. E está alugando ela por R$ 1.500 por mês pra um cliente que atrasa o pagamento.",
-   "tema": "Gestor de tráfego",
-   "meta": "Reconhecimento · T27 · Opinião forte",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "s1",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você não é vendedor da Shopee. Você é o departamento de marketing dela, sem salário, sem crachá e sem participação.",
-   "tema": "Afiliado",
-   "meta": "Disrupção · T28 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "s2",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você não tem medo de tentar. Você tem medo de tentar e todo mundo ver que não deu certo. Ninguém fala isso em voz alta, e é o que trava nove em cada dez.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T22 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "s3",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Sua loja fatura R$ 100 mil e você tira R$ 8 mil. Isso não é problema de gestão. É problema de moeda, e nenhum consultor vai te falar isso.",
-   "tema": "Produto próprio",
-   "meta": "Reconhecimento · T26 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-21"
-  },
-  {
-   "id": "s4",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Um negócio que fatura 10k por mês te paga o mesmo que R$ 1 milhão aplicado. Faz a conta com calma e depois me diz de novo onde está o risco.",
-   "tema": "Investidor",
-   "meta": "Crença irrefutável · T13 · Argumentação",
-   "tier": "S",
-   "gravado": "2026-07-19"
-  },
-  {
-   "id": "s5",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Teu cliente fatura 10 e te paga 1. E ainda te cobra relatório no domingo. Me diz quem é o funcionário nessa história.",
-   "tema": "Gestor de tráfego",
-   "meta": "Disrupção · T13 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-07-21"
-  },
-  {
-   "id": "s6",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Afiliado constrói audiência e aluga ela. No dia em que a plataforma cortar a comissão, você descobre que o negócio nunca foi teu.",
-   "tema": "Afiliado",
-   "meta": "Crença · T27 · Emoção quente",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s7",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Se você já perdeu R$ 3 mil num curso, você não é burro. Você é caro. Já pagou a aula mais dolorida do mercado, agora só falta usar o que ela ensinou.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T28 · Identificação",
-   "tier": "S",
-   "gravado": "2026-07-24"
-  },
-  {
-   "id": "s8",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você tem produto próprio e margem apertada. O preço não está errado. A moeda está.",
-   "tema": "Produto próprio",
-   "meta": "Disrupção · T26 · Brevidade",
-   "tier": "S",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s9",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você estuda ativo, dividendo e renda passiva. E nunca construiu o único ativo que você controla de verdade: um negócio.",
-   "tema": "Investidor",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s10",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você sabe fazer estranho comprar. É a coisa mais rara que existe. E você usa isso pra enriquecer os outros e chama de humildade.",
-   "tema": "Gestor de tráfego",
-   "meta": "Disrupção · T22 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s11",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você grava, edita, posta, viraliza e vende. E o cadastro do cliente vai pra empresa de outra pessoa. Você fez a parte difícil e ficou com a parte pequena.",
-   "tema": "Afiliado",
-   "meta": "Disrupção · T27 · Identificação",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s12",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "\"Isso não é pra mim.\" Repete essa frase por mais dois anos e ela vira profecia. O custo de ficar exatamente onde você está não aparece em planilha nenhuma, e é o mais caro de todos.",
-   "tema": "Fora do mercado",
-   "meta": "Disrupção · T23 · Opinião forte",
-   "tier": "A",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "s13",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você fatura bem e não sobra nada. Imposto, maquininha, parcelamento, devolução. Vender mais não resolve isso. Vender pra outro lugar resolve.",
-   "tema": "Produto próprio",
-   "meta": "Reconhecimento · T27 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "s14",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Investidor entende de risco melhor que qualquer um. Então me responde: por que 100% do teu capital depende de decisão que outra empresa toma sem te consultar?",
-   "tema": "Investidor",
-   "meta": "Crença · T22 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-08-07"
-  },
-  {
-   "id": "s15",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você otimiza a campanha do dentista. O dentista compra a Hilux. E você renova o contrato no mês seguinte, pelo mesmo valor.",
-   "tema": "Gestor de tráfego",
-   "meta": "Reconhecimento · T19 · Identificação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "s16",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Se a plataforma te banir amanhã, quanto sobra? Se a resposta for zero, você não tem negócio. Tem uma conta em nome de outra empresa.",
-   "tema": "Afiliado",
-   "meta": "Crença · T22 · Argumentação",
-   "tier": "A"
-  },
-  {
-   "id": "s17",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "O que trava você não é falta de método. É não querer virar o amigo que \"vive tentando negócio\". E ele é o único do grupo que vai sair.",
-   "tema": "Fora do mercado",
-   "meta": "Disrupção · T22 · Moeda social",
-   "tier": "A"
-  },
-  {
-   "id": "s18",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você não precisa trocar de produto. Precisa trocar de cliente. É o movimento mais barato que existe e quase ninguém faz.",
-   "tema": "Produto próprio",
-   "meta": "Disrupção · T01 · Opinião forte",
-   "tier": "A"
-  },
-  {
-   "id": "s19",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Diversificar não é ter cinco ações. É ter uma fonte de renda que não depende da bolsa, do CDI e do teu chefe. Você tem uma?",
-   "tema": "Investidor",
-   "meta": "Disrupção · T26 · Algo novo",
-   "tier": "A"
-  },
-  {
-   "id": "s20",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "No dia em que teu maior cliente sair, quanto cai o teu faturamento? Se passar de 40%, você não tem um negócio. Tem um emprego com CNPJ e sem férias.",
-   "tema": "Gestor de tráfego",
-   "meta": "Crença · T22 · Argumentação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "s21",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "O algoritmo mudou e a tua renda caiu pela metade. Isso não foi azar. É o preço de construir em terreno alugado.",
-   "tema": "Afiliado",
-   "meta": "Reconhecimento · T27 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "s22",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Contando o deslocamento, você vende 13 horas do teu dia por R$ 3.500. Isso não é um emprego, é um preço. E quem aceitou o preço foi você.",
-   "tema": "Fora do mercado",
-   "meta": "Crença · T13 · Identificação",
-   "tier": "A",
-   "gravado": "2026-08-08"
-  },
-  {
-   "id": "s23",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Teu cliente pede desconto, parcela em 12 vezes e ainda quer frete grátis. O americano paga à vista e não pergunta o frete. Mesmo produto, outro bolso.",
-   "tema": "Produto próprio",
-   "meta": "Crença · T13 · Ponte pro drop",
-   "tier": "A"
-  },
-  {
-   "id": "s24",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você aprendeu a fazer o dinheiro trabalhar. Falta aprender a fazer o dinheiro nascer. São duas habilidades diferentes e só uma delas te tira do emprego.",
-   "tema": "Investidor",
-   "meta": "Disrupção · T13 · Brevidade",
-   "tier": "A"
-  },
-  {
-   "id": "s25",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você já pensou \"se eu rodo pro cliente, por que não rodo pra mim?\". Pensou, e travou na hora de escolher o produto. O produto é a parte fácil, e eu vou te provar isso.",
-   "tema": "Gestor de tráfego",
-   "meta": "Mistério · T04 · Ponte pro drop",
-   "tier": "A"
-  },
-  {
-   "id": "s26",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você entrega o cliente pra Shopee e recebe uma migalha de comissão. O cliente é dela pra sempre. Você fica sem lista, sem loja e sem cliente.",
-   "tema": "Afiliado",
-   "meta": "Disrupção · T23 · Argumentação",
-   "tier": "A"
-  },
-  {
-   "id": "s27",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você não quer ser rico. Você quer parar de somar o carrinho no mercado antes de chegar no caixa. E isso está bem mais perto do que te venderam.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T14 · Identificação",
-   "tier": "A"
-  },
-  {
-   "id": "s28",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você acha que vender pro exterior é complicado. Complicado é sustentar uma loja com 12% de margem e cliente que abre chargeback.",
-   "tema": "Produto próprio",
-   "meta": "Disrupção · T05 · Argumentação",
-   "tier": "A"
-  },
-  {
-   "id": "s29",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você aporta R$ 2 mil por mês e espera 20 anos. Ou usa os mesmos R$ 2 mil pra construir um ativo que te paga em dólar. Um dos dois financia o outro, e não é o que você pensa.",
-   "tema": "Investidor",
-   "meta": "Disrupção · T13 · Algo novo",
-   "tier": "A"
-  },
-  {
-   "id": "s30",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você não precisa de mais um cliente. Precisa de um produto teu. No serviço você troca hora por dinheiro igual CLT, só que sem carteira e sem décimo terceiro.",
-   "tema": "Gestor de tráfego",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "B"
-  },
-  {
-   "id": "s31",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você domina a parte mais difícil do jogo, que é fazer alguém querer comprar. O que te falta é a parte fácil: ser o dono do que ele compra.",
-   "tema": "Afiliado",
-   "meta": "Recompensa · T26 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s32",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Empreender é arriscado, dizem. Depender de um chefe que te demite por e-mail também é. Só que esse risco nunca te pediu permissão.",
-   "tema": "Fora do mercado",
-   "meta": "Crença · T05 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "s33",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Teu concorrente baixou o preço de novo. Você vai baixar também? Existe um mercado onde essa conversa simplesmente não acontece.",
-   "tema": "Produto próprio",
-   "meta": "Reconhecimento · T14 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s34",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Renda passiva não existe no começo. Todo ativo foi trabalho antes de virar renda. Inclusive o que você compra pronto na bolsa: alguém trabalhou pra construir.",
-   "tema": "Investidor",
-   "meta": "Crença · T05 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "s35",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você tem a habilidade e não tem o ativo. É exatamente por isso que você trabalha mais que teu cliente e ganha menos que ele.",
-   "tema": "Gestor de tráfego",
-   "meta": "Reconhecimento · T27 · Brevidade",
-   "tier": "B"
-  },
-  {
-   "id": "s36",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você já viu sua comissão ser cortada de um dia pro outro. Foi por e-mail. Sem reunião, sem aviso, sem direito a resposta. É assim que negócio dos outros funciona.",
-   "tema": "Afiliado",
-   "meta": "Reconhecimento · T23 · Identificação",
-   "tier": "B"
-  },
-  {
-   "id": "s37",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você já pesquisou \"como ganhar dinheiro na internet\" na aba anônima e fechou com vergonha. Eu também já fiz isso. Vamos falar do que tem do outro lado dessa busca.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T22 · Identificação",
-   "tier": "B"
-  },
-  {
-   "id": "s38",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Quem vende no Brasil trabalha pra pagar imposto. Quem vende em dólar trabalha pra construir caixa. Mesma jornada, vida diferente.",
-   "tema": "Produto próprio",
-   "meta": "Crença · T13 · Emoção quente",
-   "tier": "B"
-  },
-  {
-   "id": "s39",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Teu dinheiro rende 12% ao ano parado e você chama isso de patrimônio. Um negócio é a única classe de ativo onde a variável principal é você. E é justamente isso que te assusta.",
-   "tema": "Investidor",
-   "meta": "Disrupção · T26 · Opinião forte",
-   "tier": "B"
-  },
-  {
-   "id": "s40",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Todo gestor de tráfego bom, uma hora, vira dono. Os que não viram passam a vida vendendo o próprio tempo com desconto.",
-   "tema": "Gestor de tráfego",
-   "meta": "Crença · T19 · Emoção quente",
-   "tier": "B"
-  },
-  {
-   "id": "s41",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você vende um produto de R$ 30 pra ganhar R$ 2. Do outro lado do mundo, o mesmo vídeo vende um produto de dólar com margem de dono.",
-   "tema": "Afiliado",
-   "meta": "Disrupção · T13 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s42",
-   "pilar": "sec",
-   "func": "dor",
-   "hook": "Você tem 19 anos e já se sente atrasado. Atrasado é chegar aos 30 com o mesmo salário e a mesma desculpa que você tem hoje.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T09 · Emoção quente",
-   "tier": "B"
-  },
-  {
-   "id": "s43",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Gestor de tráfego não vive de tráfego. Vive de cliente. E é por isso que o teu maior problema nunca vai ser o CPA.",
-   "tema": "Gestor de tráfego",
-   "meta": "Disrupção · T26 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "s44",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Rodar tráfego pro teu próprio produto tem uma diferença que ninguém te conta: o resultado não precisa da aprovação de ninguém. Nem do cliente, nem do sócio dele.",
-   "tema": "Gestor de tráfego",
-   "meta": "Recompensa · T21 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "s45",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Teu cliente te paga em real. Tua habilidade vale em dólar. E o Meta cobra o mesmo dos dois.",
-   "tema": "Gestor de tráfego",
-   "meta": "Crença · T13 · Brevidade",
-   "tier": "B"
-  },
-  {
-   "id": "s46",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Comissão em real, ou margem de dono em dólar. Mesmo criativo, mesmo esforço, mesmo público frio. A única diferença é de quem é a oferta.",
-   "tema": "Afiliado",
-   "meta": "Crença · T13 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s47",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "O jogo do afiliado é volume. O jogo do dono é margem. Um dos dois te obriga a trabalhar pra sempre, e você já sabe qual.",
-   "tema": "Afiliado",
-   "meta": "Crença · T13 · Brevidade",
-   "tier": "B"
-  },
-  {
-   "id": "s48",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Todo afiliado grande, uma hora, cria o próprio produto. Nenhum deles voltou atrás. Pensa no porquê.",
-   "tema": "Afiliado",
-   "meta": "Crença · T04 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "s49",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você não precisa de dinheiro. Você precisa começar a ganhar dinheiro. São duas frases diferentes e é aí que a maioria trava a vida inteira.",
-   "tema": "Fora do mercado",
-   "meta": "Reconhecimento · T26 · Brevidade",
-   "tier": "B"
-  },
-  {
-   "id": "s50",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Toda vez que aparece um anúncio de renda extra, você pensa: golpe. E na maioria das vezes você está certo. Vou te ensinar a separar os dois em 30 segundos, de graça.",
-   "tema": "Fora do mercado",
-   "meta": "Crença · T05 · Valor prático",
-   "tier": "B"
-  },
-  {
-   "id": "s51",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "\"Não sei o que fazer da minha vida.\" Ninguém descobre pensando. Descobre depois da primeira venda, porque ela muda a pergunta que você faz.",
-   "tema": "Fora do mercado",
-   "meta": "Disrupção · T14 · Algo novo",
-   "tier": "B"
-  },
-  {
-   "id": "s52",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Enquanto você espera segurança, a inflação come teu salário todo mês. Ninguém chama isso de risco, mas é o único risco que já está acontecendo com você.",
-   "tema": "Fora do mercado",
-   "meta": "Crença irrefutável · T23 · Argumentação",
-   "tier": "B"
-  },
-  {
-   "id": "s53",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Não larga o emprego. O teu CLT é o teu investidor e ele nem sabe disso. Usa o dinheiro dele pra construir a tua saída.",
-   "tema": "Fora do mercado",
-   "meta": "Disrupção · T11 · Opinião forte",
-   "tier": "B"
-  },
-  {
-   "id": "s54",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Não precisa de talento pra vender na internet. Precisa de um produto que resolve dor e de alguém com dinheiro pra pagar. As duas coisas já existem, e nenhuma delas está no Brasil.",
-   "tema": "Fora do mercado",
-   "meta": "Crença · T29 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s55",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Aqui você briga por preço. Lá fora você briga por atenção. Só uma dessas duas brigas tem margem no final do mês.",
-   "tema": "Produto próprio",
-   "meta": "Crença · T13 · Opinião forte",
-   "tier": "B"
-  },
-  {
-   "id": "s56",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Você já tem fornecedor, operação e criativo. Falta uma coisa só, e ela não custa dinheiro: um mercado que tenha dinheiro.",
-   "tema": "Produto próprio",
-   "meta": "Recompensa · T29 · Ponte pro drop",
-   "tier": "B"
-  },
-  {
-   "id": "s57",
-   "pilar": "sec",
-   "func": "crenca",
-   "hook": "Escalar no Brasil é aumentar volume. Escalar lá fora é aumentar preço. Sente a diferença de vida que isso dá.",
-   "tema": "Produto próprio",
-   "meta": "Disrupção · T13 · Brevidade",
-   "tier": "B"
-  },
-  {
-   "id": "n1",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Vinte e três minutos atrás caiu uma venda. Eu estava dirigindo. Não é sobre trabalhar menos, é sobre a máquina não depender de você estar acordado.",
-   "tema": "Prova de vida",
-   "meta": "T21 · Autoridade · Prova",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n2",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "São oito e meia da noite de domingo e eu acabei de subir dez criativos. Isso não é disciplina. Isso é o preço que quase ninguém quer pagar.",
-   "tema": "Prova de vida",
-   "meta": "T02 · Autoridade · Emoção quente",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n3",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Meu celular hoje: uma venda da loja do Brasil, uma da loja em dólar, e uma da loja nova. Três operações, um celular, um cara. É isso que estrutura faz.",
-   "tema": "Prova de vida",
-   "meta": "T21 · Prova · Recompensa",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n4",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu não vim pra internet pra ser bonitinho. Vim porque quem tem atenção domina o jogo, e eu precisava sentar em mesas onde eu não era convidado.",
-   "tema": "Prova de vida",
-   "meta": "T26 · Disrupção · Opinião forte",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n5",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Deixa eu te mostrar o escritório vazio que eu aluguei semana passada. Em seis meses eu quero equipe aqui dentro. Você vai ver isso acontecendo em tempo real.",
-   "tema": "Prova de vida",
-   "meta": "T06 · Mistério · Abre saga",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n6",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu vendi um relógio e uma bicicleta por setecentos reais. Foi todo o dinheiro que eu tinha. Foi com isso que tudo começou.",
-   "tema": "História",
-   "meta": "T08 · Recompensa · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n7",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu ia comprar uma BMW com o primeiro lucro forte. Uma pergunta de um amigo me impediu. Dois meses depois essa pergunta salvou minha empresa.",
-   "tema": "História",
-   "meta": "T26 · Mistério · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n8",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Passei um ano no deserto. Trinta mil reais perdidos em curso, mentoria e loja que não vendia. Aí eu apostei a última ficha e faturei cento e cinquenta mil num mês.",
-   "tema": "História",
-   "meta": "T08 · Recompensa · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n9",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Com catorze anos eu vi minha mãe aperreada pra fazer a feira. Naquele dia eu entendi que se eu não fizesse por mim, ninguém faria.",
-   "tema": "História",
-   "meta": "T23 · Reconhecimento · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n10",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu me isolei mais de um ano. Sem sair, sem festa. Aí meus amigos disseram que eu mudei do nada. Ninguém viu o ano que eu passei trancado.",
-   "tema": "História",
-   "meta": "T02 · Disrupção · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n11",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Um seguidor me mandou uma sugestão boa em vez de pedir alguma coisa. Um mês depois ele era meu sócio. É assim que se entra numa mesa.",
-   "tema": "História",
-   "meta": "T26 · Fato curioso · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n12",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Eu comprava tênis de um fornecedor de Minas e revendia dobrando o valor. Vendia camisa no Facebook. Não era chique, mas era o outro lado do balcão.",
-   "tema": "História",
-   "meta": "T21 · Reconhecimento · História",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n13",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Não é sobre ficar rico. É sobre acordar sem aquele aperto no peito de segunda-feira. Dez mil dólares por mês já compra isso.",
-   "tema": "Desejo",
-   "meta": "T29 · Disrupção · Identificação",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n14",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Eu moro a dez minutos da praia e trabalho de onde eu quiser. Falam que eu tinha que estar em São Paulo pra crescer. Eu quero é paz.",
-   "tema": "Desejo",
-   "meta": "T26 · Disrupção · Opinião forte",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n15",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "A liberdade não é não trabalhar. É trabalhar no domingo porque você quis, não porque um patrão mandou.",
-   "tema": "Desejo",
-   "meta": "T13 · Crença · Brevidade",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n16",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "A melhor sensação não é a primeira venda. É a décima venda de um dia que você nem abriu o computador.",
-   "tema": "Desejo",
-   "meta": "T29 · Recompensa · Identificação",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n17",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Sem estoque, sem funcionário, sem loja física, sem sair de casa. E o cliente paga em dólar. Me diz qual outro negócio te dá isso hoje.",
-   "tema": "Desejo",
-   "meta": "T13 · Recompensa · Argumentação",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n18",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Trinta mil reais por mês não te faz rico. Te faz dono do teu horário. E dono do horário é o que eu chamo de vida começando.",
-   "tema": "Desejo",
-   "meta": "T29 · Disrupção · Opinião forte",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n19",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Testo vinte criativos. Um valida. Aí eu replico esse um mais vinte vezes. Não é sorte, é jogo de números, e eu vou te mostrar a conta.",
-   "tema": "Motor de negócio",
-   "meta": "T01 · Autoridade · Valor prático",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n20",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Gastei três vezes o valor do produto e não vendeu? Eu mato a campanha na hora. E não perdi dinheiro: eu comprei dados.",
-   "tema": "Motor de negócio",
-   "meta": "T01 · Recompensa · Valor prático",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n21",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Duas mil e trezentas visualizações num post orgânico me economizaram quarenta dólares de CPM. Conteúdo não é vaidade, é redução de custo de tráfego.",
-   "tema": "Motor de negócio",
-   "meta": "T21 · Fato curioso · Argumentação",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n22",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Fiz dois mil e trezentos dólares em sete dias sem gastar um real em tráfego. Foi e-mail. Se você depende cem por cento de anúncio, você não tem ativo.",
-   "tema": "Motor de negócio",
-   "meta": "T26 · Recompensa · Prova",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n23",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Uma almofada faz cem mil dólares por mês. Não é o produto. É que eles não vendem almofada, vendem dor nas costas resolvida.",
-   "tema": "Motor de negócio",
-   "meta": "T26 · Mistério · Fato curioso",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n24",
-   "pilar": "drop",
-   "func": "metodo",
-   "hook": "Seis vendas, quinhentos dólares no dia. Eu não quero vender muito. Quero vender caro, porque margem é o que me deixa escalar.",
-   "tema": "Motor de negócio",
-   "meta": "T29 · Disrupção · Opinião forte",
-   "tier": "A",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n25",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O governo revogou a taxa das blusinhas e todo mundo comemorou. Quem vende em dólar nem piscou. Vou te explicar por quê.",
-   "tema": "Popularidade",
-   "meta": "T26 · Popularidade · Notícia",
-   "tier": "B",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n26",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "O ChatGPT começou a testar anúncio dentro da conversa. Isso não é banner. É a maior mudança de tráfego dos últimos anos e quase ninguém percebeu.",
-   "tema": "Popularidade",
-   "meta": "T06 · Popularidade · Algo novo",
-   "tier": "B",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n27",
-   "pilar": "drop",
-   "func": "crenca",
-   "hook": "Olha a diferença no olhar desses dois jogadores antes do lance. Um quer devorar, o outro quer sumir. Nos negócios é exatamente igual.",
-   "tema": "Popularidade",
-   "meta": "T13 · Popularidade · Opinião forte",
-   "tier": "B",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n28",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Ele me mandou mensagem travado no dia quarenta. Não sumiu, não virou bot: eu respondi. Vou te mostrar onde ele estava travado e o que a gente mudou.",
-   "tema": "Ponte pra venda",
-   "meta": "T23 · Prova · História de cliente",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n29",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "O cara não fez a primeira venda porque estava caçando fornecedor antes de ter cliente. Corrigimos a ordem. Vendeu em onze dias.",
-   "tema": "Ponte pra venda",
-   "meta": "T27 · Prova · História de cliente",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  },
-  {
-   "id": "n30",
-   "pilar": "drop",
-   "func": "saga",
-   "hook": "Você vai me ver errar aqui. Campanha que eu matei, produto que não vendeu, conta que caiu. Guru só posta acerto. Operador posta o mês inteiro.",
-   "tema": "Ponte pra venda",
-   "meta": "T28 · Disrupção · Opinião forte",
-   "tier": "S",
-   "origem": "novos-ganchos 16/07"
-  }
- ],
- "roteiros": [
-  {
-   "id": "r-gateway",
-   "criado": "2026-07-19",
-   "func": "metodo",
-   "publico": "operador",
-   "titulo": "O gateway é onde o drop global morre",
-   "duracao": "90s",
-   "cta": "GATEWAY",
-   "meta": "Disrupção · T26 · Prova + Identificação",
-   "hook": "Você não vai quebrar no mês que vender pouco. Você vai quebrar no mês que vender muito.",
-   "corpo": "Loja nova, faturamento subindo rápido, sem histórico. Pro gateway, isso não é sucesso. É risco.\n\nE aí acontecem três coisas que ninguém te conta.\n\nA primeira: reserva. Ele retém vinte por cento de tudo que você fatura por noventa dias.\n\nA segunda: chargeback. O cliente não pede reembolso, ele vai direto no banco. Você perde o produto, perde a venda e ainda paga multa.\n\nA terceira: retenção. Suspeitou, congelou tudo, pede documento.\n\nFaz a conta comigo. Você fatura cem mil, tem vinte retido, cinco em chargeback e o resto sai em trinta dias. Você tem cem mil de venda e não tem dez mil pra pagar fornecedor.\n\nE olha, irmão, é aqui que eu vejo gente boa quebrar. Não é operação ruim. É operação boa sem caixa pra aguentar noventa dias esperando dinheiro que já é dela.\n\nTeve uma época que eu podia ter comprado carro melhor. Comprei um Jetta e deixei o resto em caixa. Dois meses depois a operação travou. Foi o caixa que me segurou em pé.\n\nCaixa não é o que sobra. É o que te mantém vivo enquanto o teu dinheiro tá preso.",
-   "fonte": "Direct: \"tive problemas com retenções de gateway\" / \"boa parte foi embora em reembolsos e chargebacks\"",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "r-bigfour",
-   "criado": "2026-07-19",
-   "func": "metodo",
-   "publico": "operador",
-   "titulo": "Por que eu testo o Big Four",
-   "duracao": "90s",
-   "cta": "BIG FOUR",
-   "meta": "Disrupção · T26 · Opinião forte + Argumentação",
-   "hook": "Começar por um país só pra economizar é o jeito mais caro de fazer drop global.",
-   "corpo": "Eu testo quatro de uma vez. Estados Unidos, Reino Unido, Canadá e Austrália.\n\nBig Four. Os quatro maiores mercados consumidores do planeta.\n\nMesma língua. Mesmo comportamento de compra. Mesma cultura de comprar online. Isso significa mesmo criativo, mesma página, mesma oferta.\n\nNão são quatro operações. É uma operação com quatro portas.\n\nSim, o CPM é mais alto. Não vou mentir pra você.\n\nMas presta atenção no que a maioria não enxerga: quando você valida uma oferta no Big Four, você não validou pra um mercado. Você validou pro mundo.\n\nPorque se aquilo converte no consumidor mais caro e mais disputado que existe, aquela mesma oferta desce pra Europa, desce pra Ásia, desce pra América Latina. E desce mais barato, com CPM menor e menos concorrência.\n\nE aí, irmão, você para de caçar produto. Você passa a ter uma oferta que se expande sozinha.\n\nO erro que eu mais vejo é o cara testar mercado pequeno porque é barato, acertar ali, e não conseguir levar aquilo pra lugar nenhum.\n\nBarato na entrada. Teto baixo na saída.",
-   "fonte": "Tese do Nicanor. Direct: \"rodando UK, França, Espanha e Alemanha na mesma campanha\"",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "r-120mil",
-   "criado": "2026-07-19",
-   "func": "crenca",
-   "publico": "operador",
-   "titulo": "120 mil de faturamento, 5 mil no bolso",
-   "duracao": "95s",
-   "cta": "LÍQUIDO",
-   "meta": "Disrupção + Prova · T29 · Prova + História",
-   "hook": "Cento e vinte mil de faturamento. Trinta e dois por cento de margem. Cinco mil reais no bolso.",
-   "corpo": "Um cara me mandou esse número essa semana, todo orgulhoso do faturamento. No papel, trinta e dois por cento de cento e vinte mil é quase quarenta mil de lucro.\n\nSobrou cinco.\n\nOnde foi parar o resto.\n\nReembolso. Produto atrasou, cliente pediu o dinheiro de volta. Você devolve o valor cheio, mas o produto já foi enviado e já foi pago. Perdeu duas vezes.\n\nChargeback. O cliente nem te procura, abre disputa no banco. Perde a venda, perde o produto, paga multa.\n\nPedido barrado. O gateway derruba por suspeita de fraude. Aquela venda aparece no gerenciador, o Meta conta como conversão, mas nunca virou dinheiro.\n\nE a taxa de processamento em cima de tudo que passou.\n\nSoma isso. Trinta e dois por cento vira quatro.\n\nE olha, irmão, o problema dele não era venda. Era operação. E ele não fazia ideia, porque passou o mês inteiro olhando pro número do faturamento.\n\nFaturamento é vaidade. Margem é opinião. Só existe o que entra na conta e fica lá.",
-   "fonte": "Direct: \"no mês de junho foi 32% de margem com 120k de faturamento\". Líquido real: R$5k.",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "r-estrutura-campanha",
-   "criado": "2026-07-19",
-   "func": "metodo",
-   "publico": "operador",
-   "titulo": "Estrutura de campanha pro Meta Ads",
-   "duracao": "95s",
-   "cta": "ESTRUTURA",
-   "meta": "Disrupção · T26 · Valor prático",
-   "hook": "Estrutura de campanha não te faz vender. Mas a errada te faz perder.",
-   "corpo": "Eu vejo gente montando dez conjuntos, cada um com um interesse diferente, achando que isso é estratégia. Isso era 2019.\n\nHoje o Meta lê o teu criativo e acha o público sozinho. Quem segmenta demais só amarra a mão do algoritmo e paga CPM mais caro pra alcançar menos gente.\n\nComo eu monto.\n\nTeste. Uma campanha, público aberto, Big Four. Cada criativo no seu próprio conjunto, com o mesmo orçamento. Isso serve pra uma coisa só: descobrir qual criativo o mercado quer.\n\nPorque se eu jogo cinco criativos dentro de um conjunto só, o Meta escolhe um nas primeiras horas e mata os outros quatro antes deles terem chance. Aí você nunca descobre qual era o bom.\n\nEscala. Achei o campeão, ele vai pra uma campanha nova, agora em CBO, junto com os outros que passaram no teste. Aqui eu deixo o algoritmo decidir, porque agora ele está decidindo entre coisas que já provaram que vendem.\n\nE olha, irmão, presta atenção nisso: teste e escala são duas campanhas diferentes, com objetivos diferentes. Quem mistura as duas passa o mês achando que o problema é a estrutura, quando o problema é que nunca soube qual criativo funcionava.",
-   "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\" / \"se subo tudo junto num CBO ele gasta aleatoriamente\"",
-   "gravado": "2026-07-21"
-  },
-  {
-   "id": "r-4-criativos",
-   "criado": "2026-07-19",
-   "func": "metodo",
-   "publico": "operador",
-   "titulo": "Os 4 formatos de criativo que mais funcionam no Meta Ads",
-   "duracao": "105s",
-   "cta": "FORMATOS",
-   "meta": "Autoridade · T25 · Valor prático",
-   "hook": "Eu já testei formato de criativo de tudo quanto é jeito. Quatro pagam a conta. O resto é enfeite.",
-   "corpo": "O primeiro é o UGC nativo. Uma pessoa comum, do país onde você vende, segurando o produto e falando como gente fala. Eu pago quinze dólares pra um americano gravar isso na casa dele. Sotaque nativo, cozinha americana, cara comum. O cliente confia porque vê alguém igual a ele.\n\nO segundo é problema e solução. Mostra a dor nos primeiros três segundos e o produto resolvendo logo em seguida. Sem introdução, sem logo, sem música bonita. Dor e alívio.\n\nO terceiro é o comparativo lado a lado. Tela dividida: de um lado o jeito velho e sofrido, do outro o teu produto. O cérebro entende a diferença antes de ler qualquer texto.\n\nO quarto é o estático de oferta. Uma imagem, o produto grande, o benefício em quatro palavras. Parece simples demais pra funcionar, e é exatamente por isso que funciona: não parece anúncio.\n\nE olha, irmão, o que muda o jogo não é escolher um. É ter os quatro no ar ao mesmo tempo. Porque o Meta hoje te entrega alcance quando você tem variedade de criativo, não quando você tem o criativo perfeito.\n\nQuatro formatos, três ângulos em cada um. Isso dá doze criativos. É esse o número que faz a conta girar.",
-   "fonte": "Gancho do banco: \"pago 15 dólares pra um americano gravar o vídeo do meu produto\". Direct: \"tenho dificuldade em criativo\"",
-   "gravado": "2026-07-23"
-  },
-  {
-   "id": "r-duplicar-campanha",
-   "criado": "2026-07-19",
-   "func": "crenca",
-   "publico": "operador",
-   "titulo": "Duplicar campanha encarece teu tráfego e te faz perder dinheiro",
-   "duracao": "100s",
-   "cta": "DUPLICAR",
-   "meta": "Disrupção · T27 · Argumentação",
-   "hook": "Toda vez que você duplica uma campanha que está vendendo, você começa a competir contra você mesmo.",
-   "corpo": "Vendeu bem, o cara duplica. Vendeu bem de novo, duplica mais. Chega num ponto que tem seis campanhas iguais no ar, o resultado despencou, e ele conclui que o produto saturou.\n\nNão saturou. Você criou seis concorrentes de você mesmo.\n\nO leilão do Meta é disputado por pessoa, não por campanha. Se as tuas seis campanhas miram o mesmo público, elas dão lance uma contra a outra pela mesma pessoa. E quem paga a diferença é você. É por isso que o CPM sobe do nada, sem você ter mudado nada.\n\nTem um segundo problema, e esse é pior. Cada cópia nova volta pra fase de aprendizado. Você pega uma campanha madura, que já sabia pra quem entregar, e troca por uma recém-nascida que vai queimar teu dinheiro pra aprender o que a outra já sabia.\n\nE olha, irmão, o que eu faço no lugar disso: eu aumento o orçamento da campanha que já está funcionando. Vinte por cento por vez, com um dia de intervalo entre cada aumento. Ela continua madura, continua barata, e escala sem reiniciar nada.\n\nDuplicar é o atalho que parece rápido e cobra caro depois. Subir orçamento é mais devagar e mantém a máquina de pé.",
-   "fonte": "Tema trazido pelo Nicanor. Direct: \"que horas devo escalar... tentei várias, agora estou em 1-1-1\"",
-   "gravado": "2026-07-23"
-  }
- ],
- "ideias": [
-  {
-   "id": "i-llc",
-   "titulo": "Precisa de LLC pra começar?",
-   "nota": "LLC custa 350 dólares e não vende nada. Quando importa e quando é só custo.",
-   "func": "metodo",
-   "publico": "ambos",
-   "fonte": "Direct: \"Pra iniciar precisa da llc?\" / \"tem algum mentorado seu rodando sem LLC logo de cara?\"",
-   "criado": "2026-07-19",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "i-abo-cbo",
-   "titulo": "ABO pra testar, CBO pra escalar",
-   "nota": "Se joga criativo novo direto no CBO, o Meta escolhe por você. E escolhe errado.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"gosto de testar em ABO e depois levo pro CBO\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-criativo-validado",
-   "titulo": "Quando um criativo está validado de verdade",
-   "nota": "CTR alto não valida criativo. Dar critério com número: dias, gasto, qual sinal.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"quantos dias ou quanto de investimento pra concluir que um criativo está validado?\"",
-   "criado": "2026-07-19",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "i-criativo-ia",
-   "titulo": "Criativo de IA ou produto na mão?",
-   "nota": "Debate atual, divide opinião, e ele tem operação pra responder.",
-   "func": "crenca",
-   "publico": "operador",
-   "fonte": "Direct: \"hoje você tá tendo mais resultado com criativo de IA ou compra o produto e grava?\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-meta-ignora",
-   "titulo": "Por que o Meta ignora teu melhor criativo",
-   "nota": "Quase ninguém explica direito. Tipo de conteúdo que faz operador seguir.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"criativos promissores a plataforma ignorava e gastava em outros com CTR mais alto\"",
-   "criado": "2026-07-19",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "i-uk-caixa",
-   "titulo": "Reino Unido exige mais caixa?",
-   "nota": "Raciocínio de CPM e ticket em moeda forte. Contraintuitivo.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"se meu caixa aguentaria começar no Reino Unido, considerando a moeda 7x mais forte\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-margem-escala",
-   "titulo": "Margem de entrada versus margem de escala",
-   "nota": "Margem alta no começo e menor na escala é escolha, não acidente.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"trabalhei nos primeiros 2 dias com 71% de margem\" / \"baixei a margem pra 30%\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-caixa-validar",
-   "titulo": "Quanto de caixa pra validar sem quebrar",
-   "nota": "Reformula a pergunta de preço numa lógica de operação.",
-   "func": "metodo",
-   "publico": "ambos",
-   "fonte": "Direct: \"a pergunta certa é de quanto é preciso pra começar, com margem de segurança\"",
-   "criado": "2026-07-19",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "i-hora-escalar",
-   "titulo": "A hora certa de escalar",
-   "nota": "Estrutura 1-1-1, quando duplicar, quando subir orçamento.",
-   "func": "metodo",
-   "publico": "operador",
-   "fonte": "Direct: \"que horas devo escalar... última agora estou em 1-1-1\"",
-   "criado": "2026-07-19",
-   "gravado": "2026-07-31"
-  },
-  {
-   "id": "i-morde-assopra",
-   "titulo": "Por que você está travado no morde e assopra",
-   "nota": "Expressão do próprio público vira título.",
-   "func": "dor",
-   "publico": "operador",
-   "fonte": "Direct: \"quero sair desse morde e assopra e construir estrutura sólida\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-falta-respeito",
-   "titulo": "Considerei uma falta de respeito",
-   "nota": "Comprou mentoria e recebeu plataforma gravada. Definir a régua do que mentoria tem que entregar.",
-   "func": "dor",
-   "publico": "ambos",
-   "fonte": "Direct: \"me entregaram plataforma com conteúdo gravado pra eu me virar, considerei uma falta de respeito\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-llc-sumiu",
-   "titulo": "Depois que consegui a LLC, a galera sumiu",
-   "nota": "Ataca a venda de estrutura como se fosse resultado.",
-   "func": "dor",
-   "publico": "ambos",
-   "fonte": "Direct: \"depois que ele conseguiu essa LLC a galera sumiu moço\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-sobe-campanha",
-   "titulo": "Falam só pra subir mais campanha",
-   "nota": "Se teu mentor só sabe dizer sobe mais campanha, ele não sabe ler dado.",
-   "func": "dor",
-   "publico": "operador",
-   "fonte": "Direct: \"não tem mais acompanhamento, demora pra responder, falam só pra subir mais campanha\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-planilha",
-   "titulo": "A planilha do pai de três filhos",
-   "nota": "Ler o orçamento doméstico que o cara mandou. Conecta com vender relógio e bicicleta por R$700.",
-   "func": "dor",
-   "publico": "iniciante",
-   "fonte": "Direct: \"Aluguel 700, água 80, luz 240... toda vez que tento algo tem que pagar\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-mae",
-   "titulo": "Só quero melhorar de vida pra ajudar minha mãe",
-   "nota": "Conecta com ver a mãe aperreada pra fazer a feira aos 14 anos.",
-   "func": "saga",
-   "publico": "iniciante",
-   "fonte": "Direct, literal",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-onda-passou",
-   "titulo": "A onda do digital já passou",
-   "nota": "Crença aceita + você contra ela + prova. Usar os R$3 milhões em 4 anos.",
-   "func": "crenca",
-   "publico": "ambos",
-   "fonte": "Direct: \"muitas pessoas falam que a onda do digital já passou\"",
-   "criado": "2026-07-19"
-  },
-  {
-   "id": "i-mentorado",
-   "titulo": "Primeiro conteúdo com resultado de mentorado",
-   "nota": "Categoria inexistente hoje. Mentorado falando, com número e prazo. Responde ao medo de será que eu dou conta.",
-   "func": "saga",
-   "publico": "ambos",
-   "fonte": "DNA: mentorado=0, aluno=0 em 150 roteiros. Direct: \"será que estou no caminho certo\"",
-   "criado": "2026-07-19"
-  }
- ]
 }

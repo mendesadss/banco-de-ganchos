@@ -49,6 +49,13 @@
   .progresso p{font-size:12px;color:var(--cinza);margin-top:8px}
   .progresso p b{color:var(--verde-claro)}
 
+  /* Stories do dia: uma tela por linha, na ordem de postar */
+  .card.stories .telas{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+  .card.stories .tela{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--linha);border-radius:10px;padding:11px 12px}
+  .card.stories .tela .n{flex:0 0 22px;height:22px;border-radius:50%;background:var(--verde);color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .card.stories .tela .txt{margin-top:5px;font-size:14.5px;line-height:1.55}
+  .card.stories .tela .como{margin-top:5px;font-size:12.5px;color:var(--cinza);line-height:1.5}
+  .card.yt .titulo{font-size:16px}
   .abas{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--linha)}
   .abas-row{display:flex;gap:4px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
   .abas-row::-webkit-scrollbar{display:none}
@@ -181,7 +188,9 @@
 <div class="abas">
   <div class="wrap">
     <div class="abas-row">
-      <button class="aba on" data-aba="fila">Fila <span class="c" id="c-fila"></span></button>
+      <button class="aba on" data-aba="hoje">Hoje <span class="c" id="c-hoje"></span></button>
+      <button class="aba" data-aba="youtube">YouTube <span class="c" id="c-youtube"></span></button>
+      <button class="aba" data-aba="fila">Ganchos <span class="c" id="c-fila"></span></button>
       <button class="aba" data-aba="roteiros">Roteiros <span class="c" id="c-roteiros"></span></button>
       <button class="aba" data-aba="ideias">Ideias <span class="c" id="c-ideias"></span></button>
       <button class="aba" data-aba="arquivo">Arquivo <span class="c" id="c-arquivo"></span></button>
@@ -395,10 +404,88 @@ function cardIdeia(i){
     '</div></div>';
 }
 
+// Roteiro pode estar em três lugares agora: no acervo, na pauta de hoje ou no
+// YouTube. Sem isso, "Modo Gravação" e "Copiar roteiro" só funcionavam no acervo.
+function acharRoteiro(id){
+  const reels = (D.pauta_hoje && D.pauta_hoje.reels) || [];
+  const temas = (D.youtube && D.youtube.temas) || [];
+  return D.roteiros.find(r => r.id === id)
+      || reels.find(r => r.id === id)
+      || temas.find(t => t.id === id);
+}
+
+// Sequência de stories do dia: cada tela é um passo, na ordem de postar.
+function cardStories(s){
+  if (!s) return '';
+  const telas = (s.telas||[]).map((t,i) =>
+    '<div class="tela"><span class="n">' + (i+1) + '</span>' +
+    '<div><span class="tag pilar">' + esc(t.tipo||'') + '</span>' +
+    '<div class="txt">' + esc(t.texto||'') + '</div>' +
+    (t.como ? '<div class="como">' + esc(t.como) + '</div>' : '') + '</div></div>'
+  ).join('');
+  return '<div class="card stories"><div class="body">' +
+    '<div class="meta"><span class="tag func">Stories</span>' +
+    '<span class="tag pilar">' + (s.telas||[]).length + ' telas</span>' +
+    (s.abertura ? '<span class="tag">abertura: ' + esc(s.abertura) + '</span>' : '') + '</div>' +
+    '<div class="titulo">' + esc(s.titulo || 'Sequência do dia') + '</div>' +
+    '<div class="telas">' + telas + '</div>' +
+    (s.porque ? '<div class="fonte">' + esc(s.porque) + '</div>' : '') +
+    '</div></div>';
+}
+
+// Tema de YouTube: some da lista quando marcado, igual ao resto.
+function cardYoutube(t){
+  const marcado = !!feitos[t.id];
+  return '<div class="card yt ' + (marcado?'feito':'') + '" data-id="' + t.id + '">' +
+    '<label class="chk"><input type="checkbox" ' + (marcado?'checked':'') + '></label>' +
+    '<div class="body"><div class="meta">' +
+      '<span class="tag func">YouTube</span>' +
+      (t.duracao ? '<span class="tag pilar">' + esc(t.duracao) + '</span>' : '') +
+      (t.publico ? '<span class="tag">' + esc(t.publico) + '</span>' : '') +
+    '</div>' +
+    '<div class="titulo">' + esc(t.titulo) + '</div>' +
+    (t.angulo ? '<div class="hook">' + esc(t.angulo) + '</div>' : '') +
+    (t.dado ? '<div class="rodape"><span class="tec">' + esc(t.dado) + '</span></div>' : '') +
+    (t.roteiro ? '<div class="abre" data-abre="' + t.id + '"><span class="seta">▶</span>Ver roteiro</div>' +
+      '<div class="corpo"><div class="txt">' + esc(t.roteiro) + '</div></div>' : '') +
+    '<div class="acoes"><button class="bt" data-copy="' + esc(t.titulo) + '">Copiar título</button>' +
+    (t.roteiro ? '<button class="bt prim" data-full="' + t.id + '">Copiar roteiro</button>' : '') +
+    '</div></div></div>';
+}
+
 function render(){
   const lista = document.getElementById('lista');
   const fila = D.fila;
   let html = '', vis = 0;
+
+  if (aba === 'hoje'){
+    const p = D.pauta_hoje;
+    if (!p || !(p.reels||[]).length){
+      html = '<div class="vazio">A pauta de hoje ainda não subiu.<br>Enquanto isso, pega algo em <b>Ganchos</b> ou <b>Roteiros</b>.</div>';
+    } else {
+      const pend = p.reels.filter(r => !feitos[r.id]);
+      vis = pend.length;
+      html += '<div class="semana"><div class="top"><h2>' + esc(p.data_br || p.data || '') + '</h2>' +
+        '<span class="obj">' + pend.length + ' de ' + p.reels.length + ' pra gravar</span></div>' +
+        '<p>' + esc(p.resumo || '') + '</p></div>';
+      html += p.reels.filter(r => bate(r, r.titulo + ' ' + r.hook + ' ' + r.corpo)).map(cardRoteiro).join('');
+      if (p.stories) html += cardStories(p.stories);
+    }
+  }
+
+  if (aba === 'youtube'){
+    const y = D.youtube;
+    const temas = (y && y.temas) || [];
+    const pend = temas.filter(t => !feitos[t.id]);
+    vis = pend.length;
+    if (!temas.length) html = '<div class="vazio">Nenhum tema de YouTube ainda.</div>';
+    else {
+      html += '<div class="semana"><div class="top"><h2>Semana de ' + esc(y.semana_br || y.semana || '') + '</h2>' +
+        '<span class="obj">' + pend.length + ' de ' + temas.length + '</span></div>' +
+        '<p>' + esc(y.resumo || '') + '</p></div>';
+      html += temas.filter(t => bate(t, t.titulo + ' ' + (t.angulo||''))).map(cardYoutube).join('');
+    }
+  }
 
   if (aba === 'fila'){
     D.semanas.forEach(sem => {
@@ -450,6 +537,10 @@ function atualizarStats(){
   const pct = total ? Math.round(feitosN/total*100) : 0;
   document.getElementById('barra').style.width = pct + '%';
   document.getElementById('p-pct').textContent = pct + '%';
+  const reelsHoje = (D.pauta_hoje && D.pauta_hoje.reels) || [];
+  const temasYt = (D.youtube && D.youtube.temas) || [];
+  document.getElementById('c-hoje').textContent = reelsHoje.filter(x => !feitos[x.id]).length;
+  document.getElementById('c-youtube').textContent = temasYt.filter(x => !feitos[x.id]).length;
   document.getElementById('c-fila').textContent = D.fila.filter(x => !feitos[x.id]).length;
   document.getElementById('c-roteiros').textContent = D.roteiros.filter(x => !feitos[x.id]).length;
   document.getElementById('c-ideias').textContent = D.ideias.filter(x => !feitos[x.id]).length;
@@ -484,9 +575,9 @@ document.getElementById('lista').addEventListener('click', e => {
   const cp = e.target.closest('[data-copy]');
   if (cp){ copiar(cp.dataset.copy, 'Copiado'); return; }
   const gv = e.target.closest('[data-grav]');
-  if (gv){ abrirGrav(D.roteiros.find(r => r.id === gv.dataset.grav)); return; }
+  if (gv){ abrirGrav(acharRoteiro(gv.dataset.grav)); return; }
   const fl = e.target.closest('[data-full]');
-  if (fl){ copiar(textoRoteiro(D.roteiros.find(r => r.id === fl.dataset.full)), 'Roteiro copiado'); return; }
+  if (fl){ copiar(textoRoteiro(acharRoteiro(fl.dataset.full)), 'Roteiro copiado'); return; }
 });
 document.getElementById('lista').addEventListener('change', e => {
   if (e.target.type !== 'checkbox') return;
